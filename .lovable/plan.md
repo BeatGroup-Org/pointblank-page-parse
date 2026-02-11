@@ -1,23 +1,19 @@
 
 
-## Fix navigazione: logo "Mousikè" e scroll-to-top tra pagine
+## Aggiungere la sezione Team nella pagina Chi Siamo (condivisa con la Homepage)
 
-### Problema 1 — Logo "Mousikè"
-Il link del logo nell'header punta a `href="#"` invece che alla homepage. Va cambiato per navigare a `/` e scrollare in cima.
+### Cosa cambia
 
-### Problema 2 — Scroll-to-top al cambio pagina
-Quando si naviga tra pagine (es. da Chi Siamo a Eventi), la nuova pagina non parte dall'alto. Serve un componente `ScrollToTop` che riporti la finestra in cima ad ogni cambio di route, con un effetto elegante e leggero.
+La sezione Team viene aggiunta nella pagina "Chi Siamo" subito dopo la CTA finale e prima del Footer. Per evitare duplicazione di codice, il componente `TeamSection` gia' esistente viene semplicemente importato e riutilizzato — lo stesso identico componente usato in homepage.
+
+Questo significa che ogni modifica futura al componente `TeamSection.tsx` si riflettera' automaticamente sia in homepage che in Chi Siamo.
 
 ### Dettaglio tecnico
 
-**File: `src/components/Header.tsx`**
-- Riga 162: cambiare il tag `<a href="#">` del logo in un elemento che usa `navigate("/")` con `window.scrollTo(0, 0)`, oppure un `<Link to="/">` con onClick che scrolla in cima.
+**File: `src/pages/ChiSiamo.tsx`**
 
-**Nuovo file: `src/components/ScrollToTop.tsx`**
-- Componente che ascolta i cambi di `location.pathname` (da `react-router-dom`) e chiama `window.scrollTo({ top: 0, behavior: "instant" })` ad ogni cambio.
-- Comportamento "instant" (non "smooth") per evitare uno scroll visibile dalla posizione precedente: la pagina appare direttamente dall'alto.
-- In aggiunta, un effetto di **fade-in** leggero sul `<main>` al mount della pagina (opacity da 0 a 1 in ~300ms con CSS transition) per dare un senso di caricamento elegante senza pesantezza.
+1. Aggiungere l'import di `TeamSection` da `@/components/sections/TeamSection`
+2. Inserire `<TeamSection />` dopo la sezione CTA finale (riga 240) e prima di `</main>`
 
-**File: `src/App.tsx`**
-- Aggiungere `<ScrollToTop />` dentro `<BrowserRouter>`, prima di `<Routes>`.
+Nessuna modifica necessaria a `TeamSection.tsx` ne' alla homepage: il componente e' gia' autonomo e riutilizzabile.
 
