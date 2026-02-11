@@ -10,15 +10,6 @@ const HeroSection = () => (
         className="w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black/50" />
-      <video
-        src="https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Video%20Promo%20Test.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9WaWRlbyBQcm9tbyBUZXN0Lm1wNCIsImlhdCI6MTc3MDgyODM4NSwiZXhwIjoyNjM0ODI4Mzg1fQ.czzRpzv8LxsDiW3APLTG_r_BnLJ0SXHcut5gu2fq9ho"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        className="absolute inset-0 w-full h-full object-cover opacity-30"
-      />
     </div>
 
     <div className="relative z-10 container mx-auto px-6 text-center text-white max-w-4xl">
