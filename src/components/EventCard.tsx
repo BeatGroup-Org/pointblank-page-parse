@@ -19,9 +19,15 @@ const EventCard = ({ evento }: { evento: Evento }) => (
 
     {/* Content */}
     <div className="p-5 flex flex-col flex-1">
-      <h3 className="text-lg font-bold text-white leading-snug mb-4">
+      <h3 className="text-lg font-bold text-white leading-snug mb-2">
         {evento.titolo}
       </h3>
+
+      {evento.descrizione && (
+        <p className="text-white/60 text-sm leading-relaxed mb-4 line-clamp-2">
+          {evento.descrizione}
+        </p>
+      )}
 
       <div className="mt-auto flex items-end justify-between">
         <div className="flex gap-6">
@@ -32,13 +38,15 @@ const EventCard = ({ evento }: { evento: Evento }) => (
               {evento.data}
             </div>
           </div>
-          <div>
-            <span className="event-label">time</span>
-            <div className="flex items-center gap-1.5 text-white text-sm font-medium">
-              <Clock size={13} className="text-white/50" />
-              {evento.ora}
+          {evento.ora && (
+            <div>
+              <span className="event-label">time</span>
+              <div className="flex items-center gap-1.5 text-white text-sm font-medium">
+                <Clock size={13} className="text-white/50" />
+                {evento.ora}
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <a
