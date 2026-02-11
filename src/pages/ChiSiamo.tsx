@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useFadeIn } from "@/hooks/useFadeIn";
+import chiSiamoPhoto1 from "@/assets/chi-siamo-photo-1.jpg";
 
 const TextSection = ({
   title,
@@ -71,7 +72,14 @@ const ChiSiamo = () => {
         </TextSection>
 
         {/* Stacco foto 1 */}
-        <PhotoBreak />
+        <section className="w-full">
+          <img
+            src={chiSiamoPhoto1}
+            alt="Lezione di musica a Mousikè"
+            className="w-full aspect-[21/9] object-cover"
+            loading="lazy"
+          />
+        </section>
 
         {/* Sezione 2 – La scuola */}
         <TextSection title="La nostra scuola" alt>
