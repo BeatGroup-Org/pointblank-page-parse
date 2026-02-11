@@ -5,22 +5,22 @@ const ambiti = [
   {
     title: "Formazione musicale",
     subtitle: "Percorsi strutturati per bambini, ragazzi e adulti",
-    image: "https://images.unsplash.com/photo-1514119412350-e174d90d585e?w=800&q=80&grayscale",
+    image: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/A.%20Formazione%20musicale.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9BLiBGb3JtYXppb25lIG11c2ljYWxlLmpwZyIsImlhdCI6MTc3MDgzNTEwOSwiZXhwIjoyNjM0ODM1MTA5fQ.xesWC9XRNTUnzZITW77ucL75cLyO0dQg-YYW8wDQXJk",
   },
   {
     title: "Programmi educativi nelle scuole",
     subtitle: "Interventi continuativi negli istituti pubblici del territorio",
-    image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&q=80&grayscale",
+    image: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/A.%20Programmi%20educativi%20nelle%20scuole.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9BLiBQcm9ncmFtbWkgZWR1Y2F0aXZpIG5lbGxlIHNjdW9sZS5qcGciLCJpYXQiOjE3NzA4MzQ4ODIsImV4cCI6MjYzNDgzNDg4Mn0.Y5joUh1M5nXyDgNoDylTveXsnlnWgFA044r1ee2phk4",
   },
   {
     title: "Produzioni culturali",
     subtitle: "Musical, spettacoli e restituzione pubblica del percorso formativo",
-    image: "https://images.unsplash.com/photo-1503095396549-807759245b35?w=800&q=80&grayscale",
+    image: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/A.%20Produzione%20Culturale.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9BLiBQcm9kdXppb25lIEN1bHR1cmFsZS5KUEciLCJpYXQiOjE3NzA4MzQ2MzEsImV4cCI6MjYzNDgzNDYzMX0.T0Ijtnqisq0KVBUIqMd4QZ2jTz1VQJjgx9O4K2oynF8",
   },
   {
     title: "Inclusione e impatto sociale",
     subtitle: "La musica come strumento di integrazione e crescita",
-    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80&grayscale",
+    image: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/A.%20Inclusione%20e%20Impatto%20sociale.JPEG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9BLiBJbmNsdXNpb25lIGUgSW1wYXR0byBzb2NpYWxlLkpQRUciLCJpYXQiOjE3NzA4MzQ2NDcsImV4cCI6MjYzNDgzNDY0N30.1V8VG-Bqi-tecMF2MHSLJRP7vwc4OBPm-hM8xNop_6g",
   },
 ];
 
