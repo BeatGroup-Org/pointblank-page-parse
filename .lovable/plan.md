@@ -1,44 +1,34 @@
 
-## Menu Eventi + Sezione Eventi in Homepage
 
-### 1. Link "Eventi" nel menu di navigazione
+## Foto in bianco e nero per le card dei Percorsi Formativi
 
-**File: `src/components/Header.tsx`**
-- Aggiungere `{ label: "Eventi", href: "/eventi" }` all'array `navLinks`
-- Modificare il tag `<a>` nel menu per usare un semplice `window.location` o un link diretto per le voci che puntano a pagine (href che iniziano con `/`) invece di ancoraggi `#`
+### Cosa cambia
 
-### 2. Nuova sezione "Prossimi Eventi" in homepage
+Ogni card del carosello ricevera un'immagine di sfondo in bianco e nero, tematica rispetto al corso. L'immagine sostituira il gradient colorato come sfondo principale, mantenendo l'overlay scuro per la leggibilita del testo.
 
-**Nuovo file: `src/components/sections/EventiPreviewSection.tsx`**
-- Importa l'`EventCard` e i dati eventi da un file condiviso (o li ridefinisce internamente prendendo solo i primi 3)
-- Mostra i primi 3 eventi in una griglia responsive (3 colonne desktop, 2 tablet, 1 mobile) con lo stesso stile delle card nella pagina `/eventi`
-- Sotto la griglia, un bottone CTA "Vedi tutti gli eventi" che linka a `/eventi`
-- Stile CTA: bottone con bordo, icona freccia, coerente col design del sito
+### Immagini scelte (da Unsplash, gratuite)
 
-### 3. Condivisione dati e componente EventCard
+| Corso | Foto | Motivazione |
+|-------|------|-------------|
+| Musica classica | Violino / orchestra classica | Strumenti ad arco, atmosfera classica |
+| Musica pop | Microfono da studio / cantante | Ambiente pop/studio di registrazione |
+| Strumenti popolari calabresi | Chitarra acustica / strumenti folk | Richiamo alla musica tradizionale |
+| Musicoterapia e teatroterapia | Mani su tamburo / cerchio terapeutico | Aspetto terapeutico e sensoriale |
+| Certificazioni Trinity | Pianoforte / spartiti musicali | Rigore accademico, esame formale |
 
-**Nuovo file: `src/data/eventi.ts`**
-- Spostare l'array `eventi` e l'interfaccia `Evento` qui, in modo che sia la pagina `/eventi` sia la sezione homepage usino gli stessi dati
+### Modifiche tecniche
 
-**Nuovo file: `src/components/EventCard.tsx`**
-- Spostare il componente `EventCard` qui per riutilizzarlo in entrambi i contesti
+**File: `src/components/sections/CorsiSection.tsx`**
 
-**Modifica: `src/pages/Eventi.tsx`**
-- Importare `eventi` e `EventCard` dai nuovi file condivisi invece di definirli internamente
+1. Aggiungere un campo `image` a ogni oggetto nell'array `corsi` con URL Unsplash (con parametro `&grayscale` per il bianco e nero)
+2. Sostituire il `<div>` con gradient colorato con un tag `<img>` che:
+   - Usa `object-cover` per riempire la card
+   - Applica il filtro `grayscale` via CSS (`className="grayscale"`)
+   - Mantiene l'effetto zoom on hover (`group-hover:scale-105`)
+3. Mantenere l'overlay scuro (`bg-gradient-to-t from-black/70`) sopra l'immagine per garantire leggibilita del testo
+4. Rimuovere il campo `gradient` dall'array dato che non servira piu
 
-### 4. Inserimento in homepage
+### Risultato visivo
 
-**File: `src/pages/Index.tsx`**
-- Importare `EventiPreviewSection`
-- Inserirlo dopo `CorsiSection` e prima di `ProduzioniSection`
+Le card avranno lo stesso layout attuale (numerazione, titolo, link "Scopri di piu") ma con una foto in bianco e nero sullo sfondo invece del gradient colorato, con effetto zoom al passaggio del mouse.
 
-### Riepilogo file
-
-| File | Azione |
-|------|--------|
-| `src/data/eventi.ts` | Nuovo — dati e interfaccia condivisi |
-| `src/components/EventCard.tsx` | Nuovo — componente card riutilizzabile |
-| `src/components/sections/EventiPreviewSection.tsx` | Nuovo — sezione homepage con 3 card + CTA |
-| `src/pages/Eventi.tsx` | Modifica — importa da file condivisi |
-| `src/pages/Index.tsx` | Modifica — aggiunge EventiPreviewSection dopo CorsiSection |
-| `src/components/Header.tsx` | Modifica — aggiunge "Eventi" a navLinks |
