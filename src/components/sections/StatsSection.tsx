@@ -35,7 +35,7 @@ const StatsSection = () => {
             Cosa facciamo
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            I nostri ambiti
+            Il nostro impegno
           </h2>
         </div>
 
