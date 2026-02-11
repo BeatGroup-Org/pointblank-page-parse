@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import StatsSection from "@/components/sections/StatsSection";
 import VideoPromoSection from "@/components/sections/VideoPromoSection";
-import ProgrammaSection from "@/components/sections/ProgrammaSection";
 import CorsiSection from "@/components/sections/CorsiSection";
 import EventiPreviewSection from "@/components/sections/EventiPreviewSection";
 import ProduzioniSection from "@/components/sections/ProduzioniSection";
@@ -18,14 +17,13 @@ const Index = () => (
     <main>
       <HeroSection />
       <StatsSection />
-      <VideoPromoSection />
-      <ProgrammaSection />
-      <CorsiSection />
+      <PartnerSection />
       <EventiPreviewSection />
+      <VideoPromoSection />
+      <CorsiSection />
       <ProduzioniSection />
       <ImpattoSection />
       <TeamSection />
-      <PartnerSection />
       <CtaSection />
     </main>
     <Footer />
