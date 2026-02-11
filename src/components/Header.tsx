@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 
@@ -9,6 +10,7 @@ if (typeof window !== "undefined") {
 const navLinks = [
   { label: "Programma", href: "#programma" },
   { label: "Corsi", href: "#corsi" },
+  { label: "Eventi", href: "/eventi" },
   { label: "Produzioni", href: "#produzioni" },
   { label: "Impatto", href: "#impatto" },
   { label: "Team", href: "#team" },
@@ -17,6 +19,8 @@ const navLinks = [
 
 const Header = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -246,7 +250,17 @@ const Header = () => {
                   <a
                     href={link.href}
                     className="nav-link w-inline-block"
-                    onClick={closeMenu}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      closeMenu();
+                      if (link.href.startsWith("/")) {
+                        navigate(link.href);
+                      } else if (location.pathname !== "/") {
+                        navigate("/" + link.href);
+                      } else {
+                        document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
                   >
                     <p className="nav-link-text">{link.label}</p>
                     <div className="nav-link-hover-bg"></div>
