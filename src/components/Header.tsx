@@ -18,11 +18,16 @@ const navLinks = [
 const Header = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Scroll detection
+  // Scroll detection + progress
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(docHeight > 0 ? Math.min(window.scrollY / docHeight, 1) : 0);
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -144,11 +149,11 @@ const Header = () => {
   return (
     <div ref={containerRef}>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-card/95 backdrop-blur shadow-sm" : "bg-transparent"
+        className={`header-pill transition-all duration-300 ${
+          scrolled ? "header-pill--scrolled" : ""
         }`}
       >
-        <div className="container mx-auto flex items-center justify-between py-4 px-6">
+        <div className="flex items-center justify-between py-3 px-6">
           <a href="#" className="text-2xl font-bold tracking-tight z-[60]" style={{ fontFamily: "'Playfair Display', serif" }}>
             Mousikè
           </a>
@@ -175,6 +180,13 @@ const Header = () => {
               </svg>
             </div>
           </button>
+        </div>
+        {/* Scroll progress bar */}
+        <div className="header-progress-track">
+          <div
+            className="header-progress-bar"
+            style={{ width: `${scrollProgress * 100}%` }}
+          />
         </div>
       </header>
 
