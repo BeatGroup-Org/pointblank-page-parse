@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import chiSiamoPhoto1 from "@/assets/chi-siamo-photo-1.png";
+import musicaMaestroImg from "@/assets/chi-siamo-musica-maestro.jpg";
 
 const TextSection = ({
   title,
@@ -131,10 +132,12 @@ const ChiSiamo = () => {
                 </div>
                 <hr className="border-border mt-6" />
               </div>
-              <div className="w-full aspect-[4/5] bg-muted flex items-center justify-center">
-                <span className="text-muted-foreground/50 text-sm tracking-wide uppercase">
-                  Foto in arrivo
-                </span>
+              <div className="w-full aspect-[4/5] overflow-hidden">
+                <img
+                  src={musicaMaestroImg}
+                  alt="Ma che musica maestro – studenti durante il progetto"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
