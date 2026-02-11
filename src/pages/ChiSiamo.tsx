@@ -47,6 +47,7 @@ const ChiSiamo = () => {
 
   const introRef = useFadeIn();
   const scuoleRef = useFadeIn();
+  const musicaRef = useFadeIn();
   const ctaRef = useFadeIn();
 
   return (
@@ -158,26 +159,43 @@ const ChiSiamo = () => {
         </TextSection>
 
         {/* Sezione 5 – Inclusione */}
-        <TextSection title="La musica è di tutti">
-          <p>
-            Negli anni abbiamo lavorato con ragazzi con disabilità, con giovani
-            che faticavano a trovare il proprio spazio, con realtà fragili.
-          </p>
-          <p>
-            La musica crea un linguaggio comune.
-            <br />
-            Mette tutti allo stesso livello: davanti a uno strumento, davanti a
-            un ritmo, davanti a una voce.
-          </p>
-          <p>
-            È lì che succede qualcosa di importante.
-            <br />
-            Senza proclami. Senza etichette.
-          </p>
-        </TextSection>
-
-        {/* Stacco foto 3 */}
-        <PhotoBreak />
+        <section className="bg-background">
+          <div
+            ref={musicaRef}
+            className="fade-in-section py-20 md:py-28 container mx-auto px-6"
+          >
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight mb-12 md:mb-16 text-right">
+              La musica<br />è di tutti
+            </h2>
+            <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+              <div className="w-full aspect-[4/5] bg-muted flex items-center justify-center">
+                <span className="text-muted-foreground/50 text-sm tracking-wide uppercase">
+                  Foto in arrivo
+                </span>
+              </div>
+              <div className="space-y-4">
+                <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
+                  <p>
+                    Negli anni abbiamo lavorato con ragazzi con disabilità, con giovani
+                    che faticavano a trovare il proprio spazio, con realtà fragili.
+                  </p>
+                  <p>
+                    La musica crea un linguaggio comune.
+                    <br />
+                    Mette tutti allo stesso livello: davanti a uno strumento, davanti a
+                    un ritmo, davanti a una voce.
+                  </p>
+                  <p>
+                    È lì che succede qualcosa di importante.
+                    <br />
+                    Senza proclami. Senza etichette.
+                  </p>
+                </div>
+                <hr className="border-border mt-6" />
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Sezione 6 – Oggi */}
         <TextSection title="Oggi" alt>
