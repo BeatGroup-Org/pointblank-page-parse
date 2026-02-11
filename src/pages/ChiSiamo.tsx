@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import chiSiamoPhoto1 from "@/assets/chi-siamo-photo-1.png";
+import TeamSection from "@/components/sections/TeamSection";
 import musicaMaestroImg from "@/assets/chi-siamo-musica-maestro.jpg";
 import musicaTuttiImg from "@/assets/chi-siamo-musica-tutti.jpg";
 
@@ -238,6 +239,7 @@ const ChiSiamo = () => {
             </div>
           </div>
         </section>
+        <TeamSection />
       </main>
       <Footer />
     </>
