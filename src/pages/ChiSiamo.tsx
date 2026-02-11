@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import chiSiamoPhoto1 from "@/assets/chi-siamo-photo-1.png";
 import musicaMaestroImg from "@/assets/chi-siamo-musica-maestro.jpg";
+import musicaTuttiImg from "@/assets/chi-siamo-musica-tutti.jpg";
 
 const TextSection = ({
   title,
@@ -171,10 +172,12 @@ const ChiSiamo = () => {
               La musica<br />è di tutti
             </h2>
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
-              <div className="w-full aspect-[4/5] bg-muted flex items-center justify-center">
-                <span className="text-muted-foreground/50 text-sm tracking-wide uppercase">
-                  Foto in arrivo
-                </span>
+              <div className="w-full aspect-[4/5] overflow-hidden">
+                <img
+                  src={musicaTuttiImg}
+                  alt="La musica è di tutti – inclusione attraverso la musica"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="space-y-4">
                 <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
