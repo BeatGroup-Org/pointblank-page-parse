@@ -102,6 +102,44 @@
   }
 }
 
+/* ===== Header Pill ===== */
+
+.header-pill {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  width: calc(100% - 32px);
+  max-width: 1200px;
+  border-radius: 9999px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.header-pill--scrolled {
+  background: hsla(var(--card) / 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 2px 20px hsla(220, 20%, 10%, 0.1);
+}
+
+.header-progress-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: transparent;
+}
+
+.header-progress-bar {
+  height: 100%;
+  background: hsl(var(--primary));
+  border-radius: 0 9999px 9999px 0;
+  transition: width 0.1s linear;
+}
+
 /* ===== Fullscreen Menu ===== */
 
 .nav-overlay-wrapper {
