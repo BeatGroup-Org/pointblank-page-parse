@@ -29,7 +29,7 @@ const ProgrammaSection = () => {
         </div>
 
         <div className="text-center">
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8">
+          <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground px-8">
             Scopri il programma
           </Button>
         </div>
