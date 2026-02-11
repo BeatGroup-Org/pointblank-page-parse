@@ -1,4 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@600;700;800&display=swap');
+/* SF Pro Display */
+@font-face { font-family: 'SF Pro Display'; src: url('/fonts/SFUIDisplay-Ultralight.ttf') format('truetype'); font-weight: 100; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Pro Display'; src: url('/fonts/SFUIDisplay-Thin.ttf') format('truetype'); font-weight: 200; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Pro Display'; src: url('/fonts/SFUIDisplay-Light.ttf') format('truetype'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Pro Display'; src: url('/fonts/SFUIDisplay-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Pro Display'; src: url('/fonts/SFUIDisplay-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Pro Display'; src: url('/fonts/SFUIDisplay-Semibold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Pro Display'; src: url('/fonts/SFUIDisplay-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Pro Display'; src: url('/fonts/SFUIDisplay-Heavy.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Pro Display'; src: url('/fonts/SFUIDisplay-Black.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
+
+/* SF Pro Text */
+@font-face { font-family: 'SF Pro Text'; src: url('/fonts/SFUIText-Light.ttf') format('truetype'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Pro Text'; src: url('/fonts/SFUIText-LightItalic.ttf') format('truetype'); font-weight: 300; font-style: italic; font-display: swap; }
+@font-face { font-family: 'SF Pro Text'; src: url('/fonts/SFUIText-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Pro Text'; src: url('/fonts/SFUIText-RegularItalic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'SF Pro Text'; src: url('/fonts/SFUIText-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Pro Text'; src: url('/fonts/SFUIText-MediumItalic.ttf') format('truetype'); font-weight: 500; font-style: italic; font-display: swap; }
+@font-face { font-family: 'SF Pro Text'; src: url('/fonts/SFUIText-Semibold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Pro Text'; src: url('/fonts/SFUIText-SemiboldItalic.ttf') format('truetype'); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: 'SF Pro Text'; src: url('/fonts/SFUIText-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Pro Text'; src: url('/fonts/SFUIText-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: swap; }
+@font-face { font-family: 'SF Pro Text'; src: url('/fonts/SFUIText-Heavy.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'SF Pro Text'; src: url('/fonts/SFUIText-HeavyItalic.ttf') format('truetype'); font-weight: 800; font-style: italic; font-display: swap; }
 
 @tailwind base;
 @tailwind components;
@@ -53,12 +76,17 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'DM Sans', sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 700;
+  }
+
+  p, li, span, label, input, textarea, select, button {
+    font-family: 'SF Pro Text', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 }
 

@@ -12,6 +12,11 @@ export default {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      sans: ["'SF Pro Display'", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+      display: ["'SF Pro Display'", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+      body: ["'SF Pro Text'", "'SF Pro Display'", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
