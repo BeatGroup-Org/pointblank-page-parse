@@ -1,26 +1,23 @@
 
 
-## Restyling sezione "La musica è di tutti"
+## Fix navigazione: logo "Mousikè" e scroll-to-top tra pagine
 
-### Cosa cambia
+### Problema 1 — Logo "Mousikè"
+Il link del logo nell'header punta a `href="#"` invece che alla homepage. Va cambiato per navigare a `/` e scrollare in cima.
 
-La sezione 5 ("La musica è di tutti") passa dal layout `TextSection` centrato a un layout a due colonne **specchiato** rispetto a "Dentro le scuole, ogni anno":
-
-- **Titolo grande** allineato a **destra** (invece che a sinistra)
-- **Immagine placeholder** a **sinistra**, testo a **destra**
-- Stessa tipografia e spaziatura della sezione "Dentro le scuole"
-- Lo stacco foto 3 (`PhotoBreak`) sotto viene rimosso perche' l'immagine e' integrata nella sezione
+### Problema 2 — Scroll-to-top al cambio pagina
+Quando si naviga tra pagine (es. da Chi Siamo a Eventi), la nuova pagina non parte dall'alto. Serve un componente `ScrollToTop` che riporti la finestra in cima ad ogni cambio di route, con un effetto elegante e leggero.
 
 ### Dettaglio tecnico
 
-**File: `src/pages/ChiSiamo.tsx`**
+**File: `src/components/Header.tsx`**
+- Riga 162: cambiare il tag `<a href="#">` del logo in un elemento che usa `navigate("/")` con `window.scrollTo(0, 0)`, oppure un `<Link to="/">` con onClick che scrolla in cima.
 
-Sostituire le righe 160-180 (sezione 5 + stacco foto 3) con un blocco custom:
+**Nuovo file: `src/components/ScrollToTop.tsx`**
+- Componente che ascolta i cambi di `location.pathname` (da `react-router-dom`) e chiama `window.scrollTo({ top: 0, behavior: "instant" })` ad ogni cambio.
+- Comportamento "instant" (non "smooth") per evitare uno scroll visibile dalla posizione precedente: la pagina appare direttamente dall'alto.
+- In aggiunta, un effetto di **fade-in** leggero sul `<main>` al mount della pagina (opacity da 0 a 1 in ~300ms con CSS transition) per dare un senso di caricamento elegante senza pesantezza.
 
-- Nuovo `useFadeIn` ref (`musicaRef`)
-- Container con padding `py-20 md:py-28`, sfondo `bg-background`
-- Titolo `h2` con `text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight text-right` (allineato a destra)
-- Grid `grid md:grid-cols-2 gap-12 md:gap-16 items-start`:
-  - **Colonna sinistra**: placeholder immagine (`aspect-[4/5] bg-muted`)
-  - **Colonna destra**: testo descrittivo con paragrafi + separatore `<hr>` in basso (come nella sezione scuole)
+**File: `src/App.tsx`**
+- Aggiungere `<ScrollToTop />` dentro `<BrowserRouter>`, prima di `<Routes>`.
 
