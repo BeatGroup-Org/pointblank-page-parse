@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useFadeIn } from "@/hooks/useFadeIn";
-import chiSiamoPhoto1 from "@/assets/chi-siamo-photo-1.jpg";
+import chiSiamoPhoto1 from "@/assets/chi-siamo-photo-1.png";
 
 const TextSection = ({
   title,
