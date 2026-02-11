@@ -1,26 +1,28 @@
 
 
-## Restyling sezione apertura "Chi Siamo"
+## Restyling sezione "Dentro le scuole, ogni anno"
 
 ### Cosa cambia
 
-La prima sezione della pagina "Chi siamo" passa da un layout a colonna singola (titolo sopra, testo sotto) a un layout a **due colonne** ispirato allo screenshot di riferimento:
+La sezione 3 ("Dentro le scuole, ogni anno") passa dal layout `TextSection` centrato a un layout a **due colonne** identico alla sezione di apertura e allo stile dello screenshot di riferimento (Artist Spotlight):
 
-- **Colonna sinistra**: titolo grande, bold, in nero, molto prominente (dimensione extra-large)
-- **Colonna destra**: testo descrittivo, dimensione normale, con buon respiro tra i paragrafi
-
-Su mobile le due colonne si impilano verticalmente (titolo sopra, testo sotto).
+- **Titolo grande** in alto a sinistra, bold, uppercase, multi-riga
+- Sotto il titolo: sottotitolo (nome del progetto) + testo descrittivo a sinistra
+- **Immagine placeholder** a destra (per ora `PhotoBreak` o placeholder, dato che non c'e' ancora una foto reale)
+- Sfondo bianco (`bg-background`)
 
 ### Dettaglio tecnico
 
 **File: `src/pages/ChiSiamo.tsx`**
 
-Sostituire la sezione 1 (attualmente usa il componente `TextSection`) con un layout custom a due colonne:
+Sostituire le righe 124-146 (sezione 3 + stacco foto 2) con un unico blocco custom:
 
-- Container con `grid md:grid-cols-2 gap-12 md:gap-16`
-- Colonna sinistra: `<h1>` con dimensioni `text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none` per replicare il titolo grande e impattante dello screenshot
-- Colonna destra: paragrafi con lo stile attuale (`text-muted-foreground text-base md:text-lg leading-relaxed`)
-- Padding generoso (`py-20 md:py-28`), sfondo `bg-background`
+- Titolo `h2` con stile `text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none` (come la sezione apertura e lo screenshot)
+- Sotto: grid a due colonne (`grid md:grid-cols-2 gap-12 md:gap-16`)
+  - **Colonna sinistra**: sottotitolo `h3` con il nome del progetto ("Ma che musica maestro"), testo descrittivo in paragrafi, separatore `<hr>` sotto il testo (come nello screenshot)
+  - **Colonna destra**: placeholder immagine (box `bg-muted aspect-[4/5]` con testo "Foto in arrivo") -- sostituibile in futuro con foto reale
 - Animazione `useFadeIn` mantenuta
+- Padding `py-20 md:py-28`, container standard
 
-Le altre sezioni restano invariate.
+Lo stacco foto 2 (`<PhotoBreak />`) viene rimosso perche' l'immagine e' ora integrata nella sezione stessa.
+
