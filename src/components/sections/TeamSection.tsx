@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useFadeIn } from "@/hooks/useFadeIn";
-import { ArrowRight, Plus, X } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -53,6 +52,10 @@ const TeamSection = () => {
   const ref = useFadeIn();
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
+  const handleTileClick = (i: number) => {
+    setExpandedIndex(expandedIndex === i ? null : i);
+  };
+
   return (
     <section id="team" className="py-24 bg-background">
       <div ref={ref} className="fade-in-section container mx-auto px-6 max-w-7xl">
@@ -84,57 +87,48 @@ const TeamSection = () => {
           </div>
 
           <CarouselContent className="-ml-4">
-            {team.map((member, i) => (
-              <CarouselItem
-                key={member.name}
-                className="pl-4 basis-[85%] sm:basis-[50%] lg:basis-[40%]"
-              >
-                <div className="group rounded-lg overflow-hidden border border-border bg-card h-full flex flex-col">
-                  {/* Image placeholder */}
-                  <div className="h-[280px] bg-muted relative overflow-hidden">
+            {team.map((member, i) => {
+              const isExpanded = expandedIndex === i;
+              return (
+                <CarouselItem
+                  key={member.name}
+                  className={`pl-4 transition-[flex-basis] duration-500 ease-in-out cursor-pointer ${
+                    isExpanded
+                      ? "basis-[85%] sm:basis-[55%] lg:basis-[45%]"
+                      : "basis-[70%] sm:basis-[40%] lg:basis-[25%]"
+                  }`}
+                  onClick={() => handleTileClick(i)}
+                >
+                  <div className="relative h-[450px] rounded-lg overflow-hidden bg-muted">
+                    {/* Background image */}
                     <img
                       src="/placeholder.svg"
                       alt={member.name}
-                      className="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover opacity-40"
                     />
-                    <div className="absolute top-4 left-4 text-xs font-bold text-muted-foreground/60">
-                      {String(i + 1).padStart(2, "0")}
-                    </div>
-                  </div>
 
-                  {/* Info */}
-                  <div className="p-5 flex flex-col flex-1">
-                    <h3 className="font-bold text-lg">{member.name}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">{member.role}</p>
-
-                    {expandedIndex === i && (
+                    {/* Info overlay - appears on expand */}
+                    <div
+                      className={`absolute bottom-0 right-0 left-0 bg-white p-5 transition-all duration-500 ${
+                        isExpanded
+                          ? "translate-y-0 opacity-100"
+                          : "translate-y-full opacity-0"
+                      }`}
+                    >
+                      <h3 className="font-bold text-xl text-foreground">
+                        {member.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {member.role}
+                      </p>
                       <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
                         {member.description}
                       </p>
-                    )}
-
-                    <div className="mt-auto pt-4">
-                      <button
-                        onClick={() =>
-                          setExpandedIndex(expandedIndex === i ? null : i)
-                        }
-                        className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary hover:opacity-70 transition-opacity"
-                      >
-                        {expandedIndex === i ? (
-                          <>
-                            <X className="w-4 h-4" /> Chiudi
-                          </>
-                        ) : (
-                          <>
-                            <Plus className="w-4 h-4" /> Info
-                          </>
-                        )}
-                      </button>
                     </div>
                   </div>
-                </div>
-              </CarouselItem>
-            ))}
+                </CarouselItem>
+              );
+            })}
           </CarouselContent>
         </Carousel>
 
