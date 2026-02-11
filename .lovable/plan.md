@@ -1,31 +1,25 @@
 
-## Ristrutturazione Tile Team: Espansione al Click
+## Aggiornamento Sezione Team: Foto e Dati Reali
 
-### Comportamento attuale vs. richiesto
+### Cosa cambia
 
-**Attuale**: Ogni tile ha sempre visibile l'immagine sopra e il box info sotto, con un pulsante "Info" che mostra/nasconde solo la descrizione.
+Sostituzione dei 6 membri placeholder con i **3 membri reali** di Mousike, con foto e descrizioni fornite.
 
-**Richiesto (da screenshot)**: 
-- Stato normale: le tile mostrano **solo l'immagine** a tutta altezza, senza testo visibile
-- Al click su una tile, questa si **allarga** rispetto alle altre e mostra un **pannello bianco sovrapposto** in basso con nome, ruolo e descrizione
-- Le tile non selezionate restano piu strette, mostrando solo l'immagine
+### Dati aggiornati
 
-### Modifiche previste
+| Nome | Ruolo | Foto |
+|------|-------|------|
+| Orlando Vescio | Pianista e direttore artistico | URL Supabase fornito |
+| Chiara Vescio | Cantante e vocal coach | URL Supabase fornito |
+| Eugenio Nicolazzo | Interprete e performer | URL Supabase fornito |
+
+### Modifiche tecniche
 
 **File: `src/components/sections/TeamSection.tsx`**
 
-1. **Rimozione area info separata**: Eliminare la struttura attuale con immagine + box info sotto. Ogni tile sara un unico div con immagine di sfondo a tutta altezza (~450px)
-
-2. **Logica di espansione**: 
-   - Stato di default: tutte le tile hanno `basis-[25%]` su desktop, mostrando solo l'immagine
-   - Al click: la tile selezionata si espande a `basis-[45%]` e le altre si restringono
-   - Su mobile: `basis-[70%]` di default, `basis-[85%]` quando espansa
-
-3. **Pannello info overlay**:
-   - Quando una tile e selezionata, appare un pannello bianco posizionato `absolute` in basso a destra della tile
-   - Contiene: nome (font-bold grande), ruolo (testo piccolo grigio), e descrizione
-   - Transizione animata con `transition-all duration-500`
-
-4. **Rimozione pulsante Info/Chiudi**: Non serve piu un pulsante esplicito -- il click sull'intera tile apre/chiude il pannello
-
-5. **Transizioni fluide**: `transition-[flex-basis]` sulle tile per animare l'espansione/contrazione
+1. **Array `team`**: Sostituzione dei 6 membri fittizi con i 3 reali, aggiungendo un campo `image` con gli URL Supabase forniti e le descrizioni fornite
+2. **Tag `<img>`**: Sostituzione di `src="/placeholder.svg"` con `src={member.image}`, rimozione di `opacity-40` per mostrare le foto a piena visibilita
+3. **Ruoli aggiornati**:
+   - Orlando Vescio: "Pianista e Direttore Artistico"
+   - Chiara Vescio: "Cantante e Vocal Coach"
+   - Eugenio Nicolazzo: "Interprete e Performer"
