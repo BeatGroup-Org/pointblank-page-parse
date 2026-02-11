@@ -8,6 +8,7 @@ if (typeof window !== "undefined") {
 }
 
 const navLinks = [
+  { label: "Chi siamo", href: "/chi-siamo" },
   { label: "Programma", href: "#programma" },
   { label: "Corsi", href: "#corsi" },
   { label: "Eventi", href: "/eventi" },
