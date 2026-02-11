@@ -97,31 +97,6 @@ const ChiSiamo = () => {
           />
         </section>
 
-        {/* Sezione 2 – La scuola */}
-        <TextSection title="La nostra scuola" alt>
-          <p>
-            Nelle nostre aule si studia.
-            <br />
-            Si sbaglia, si riprova, si migliora.
-          </p>
-          <p>
-            C'è chi inizia da zero, chi arriva con un talento evidente, chi ha
-            bisogno solo di trovare fiducia.
-          </p>
-          <p>
-            La musica è uno strumento esigente.
-            <br />
-            Richiede costanza, disciplina, pazienza.
-            <br />
-            Ed è proprio questo che la rende formativa.
-          </p>
-          <p>
-            Non formiamo solo musicisti.
-            <br />
-            Formiamo persone capaci di mettersi in gioco.
-          </p>
-        </TextSection>
-
         {/* Sezione 3 – Il legame con le scuole */}
         <section className="bg-background">
           <div
