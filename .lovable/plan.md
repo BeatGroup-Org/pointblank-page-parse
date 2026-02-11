@@ -1,40 +1,44 @@
 
+## Menu Eventi + Sezione Eventi in Homepage
 
-## Audit Font — Rimozione font non-SF
+### 1. Link "Eventi" nel menu di navigazione
 
-### Problema
+**File: `src/components/Header.tsx`**
+- Aggiungere `{ label: "Eventi", href: "/eventi" }` all'array `navLinks`
+- Modificare il tag `<a>` nel menu per usare un semplice `window.location` o un link diretto per le voci che puntano a pagine (href che iniziano con `/`) invece di ancoraggi `#`
 
-Il sito usa **3 famiglie di font diverse**, ma solo SF Pro e' caricata. Le altre due (`Playfair Display` e `DM Sans`) non sono caricate tramite `@font-face` ne' da Google Fonts, quindi il browser usa un fallback generico (`serif` o `sans-serif`), creando inconsistenza visiva.
+### 2. Nuova sezione "Prossimi Eventi" in homepage
 
-### Occorrenze da correggere
+**Nuovo file: `src/components/sections/EventiPreviewSection.tsx`**
+- Importa l'`EventCard` e i dati eventi da un file condiviso (o li ridefinisce internamente prendendo solo i primi 3)
+- Mostra i primi 3 eventi in una griglia responsive (3 colonne desktop, 2 tablet, 1 mobile) con lo stesso stile delle card nella pagina `/eventi`
+- Sotto la griglia, un bottone CTA "Vedi tutti gli eventi" che linka a `/eventi`
+- Stile CTA: bottone con bordo, icona freccia, coerente col design del sito
 
-| File | Riga | Font errato | Contesto |
-|------|------|-------------|----------|
-| `src/components/Header.tsx` | 157 | Playfair Display | Logo "Mousike" |
-| `src/components/Footer.tsx` | 9 | Playfair Display | Logo "Mousike" nel footer |
-| `src/pages/Eventi.tsx` | 127 | Playfair Display | Titolo "I Prossimi Eventi" |
-| `src/components/sections/StatsSection.tsx` | 19 | Playfair Display | Numeri statistiche |
-| `src/index.css` | 267 | Playfair Display | Link nel menu fullscreen |
-| `src/components/sections/ProgrammaSection.tsx` | 25 | DM Sans | Titoli card programma |
-| `src/components/sections/ImpattoSection.tsx` | 28 | DM Sans | Titoli card impatto |
+### 3. Condivisione dati e componente EventCard
 
-### Soluzione
+**Nuovo file: `src/data/eventi.ts`**
+- Spostare l'array `eventi` e l'interfaccia `Evento` qui, in modo che sia la pagina `/eventi` sia la sezione homepage usino gli stessi dati
 
-Rimuovere tutti gli `style={{ fontFamily: ... }}` inline e la dichiarazione in CSS, lasciando che i font SF Pro definiti in `tailwind.config.ts` e `index.css` si applichino automaticamente:
+**Nuovo file: `src/components/EventCard.tsx`**
+- Spostare il componente `EventCard` qui per riutilizzarlo in entrambi i contesti
 
-- **Titoli grandi** (logo, titoli sezione, numeri stats, link menu): usano `SF Pro Display` tramite la regola base `h1-h4` e `body`
-- **Titoli card**: usano `SF Pro Display` (sono `h3`, gia' coperti dalla regola base)
-- **Link menu in CSS**: sostituire `'Playfair Display'` con `'SF Pro Display'`
+**Modifica: `src/pages/Eventi.tsx`**
+- Importare `eventi` e `EventCard` dai nuovi file condivisi invece di definirli internamente
 
-### File da modificare
+### 4. Inserimento in homepage
 
-1. **`src/components/Header.tsx`** — Rimuovere `style={{ fontFamily: "'Playfair Display', serif" }}` dalla riga 157
-2. **`src/components/Footer.tsx`** — Rimuovere `style={{ fontFamily: "'Playfair Display', serif" }}` dalla riga 9
-3. **`src/pages/Eventi.tsx`** — Rimuovere `style={{ fontFamily: "'Playfair Display', serif" }}` dalla riga 127
-4. **`src/components/sections/StatsSection.tsx`** — Rimuovere `style={{ fontFamily: "'Playfair Display', serif" }}` dalla riga 19
-5. **`src/components/sections/ProgrammaSection.tsx`** — Rimuovere `style={{ fontFamily: "'DM Sans', sans-serif" }}` dalla riga 25
-6. **`src/components/sections/ImpattoSection.tsx`** — Rimuovere `style={{ fontFamily: "'DM Sans', sans-serif" }}` dalla riga 28
-7. **`src/index.css`** riga 267 — Cambiare `font-family: 'Playfair Display', 'SF Pro Display', serif;` in `font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;`
+**File: `src/pages/Index.tsx`**
+- Importare `EventiPreviewSection`
+- Inserirlo dopo `CorsiSection` e prima di `ProduzioniSection`
 
-Nessuna altra anomalia riscontrata nel resto del codice.
+### Riepilogo file
 
+| File | Azione |
+|------|--------|
+| `src/data/eventi.ts` | Nuovo — dati e interfaccia condivisi |
+| `src/components/EventCard.tsx` | Nuovo — componente card riutilizzabile |
+| `src/components/sections/EventiPreviewSection.tsx` | Nuovo — sezione homepage con 3 card + CTA |
+| `src/pages/Eventi.tsx` | Modifica — importa da file condivisi |
+| `src/pages/Index.tsx` | Modifica — aggiunge EventiPreviewSection dopo CorsiSection |
+| `src/components/Header.tsx` | Modifica — aggiunge "Eventi" a navLinks |
