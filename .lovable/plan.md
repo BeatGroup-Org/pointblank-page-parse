@@ -1,54 +1,40 @@
 
 
-## Pagina "I Prossimi Eventi"
+## Audit Font — Rimozione font non-SF
 
-### Cosa viene creato
+### Problema
 
-Una nuova pagina `/eventi` che mostra una griglia di card evento, ispirata al design degli screenshot (sfondo bianco, card scure con immagine, titolo, data, ora e un bottone di collegamento).
+Il sito usa **3 famiglie di font diverse**, ma solo SF Pro e' caricata. Le altre due (`Playfair Display` e `DM Sans`) non sono caricate tramite `@font-face` ne' da Google Fonts, quindi il browser usa un fallback generico (`serif` o `sans-serif`), creando inconsistenza visiva.
 
-### Layout della pagina
+### Occorrenze da correggere
 
-- **Header**: lo stesso header a pillola gia presente nel sito
-- **Sezione hero**: titolo grande "I Prossimi Eventi" in alto a sinistra (stile bold, serif) + breve descrizione a destra
-- **Griglia card**: 3 colonne su desktop, 2 su tablet, 1 su mobile
-- **Footer**: lo stesso footer del sito
+| File | Riga | Font errato | Contesto |
+|------|------|-------------|----------|
+| `src/components/Header.tsx` | 157 | Playfair Display | Logo "Mousike" |
+| `src/components/Footer.tsx` | 9 | Playfair Display | Logo "Mousike" nel footer |
+| `src/pages/Eventi.tsx` | 127 | Playfair Display | Titolo "I Prossimi Eventi" |
+| `src/components/sections/StatsSection.tsx` | 19 | Playfair Display | Numeri statistiche |
+| `src/index.css` | 267 | Playfair Display | Link nel menu fullscreen |
+| `src/components/sections/ProgrammaSection.tsx` | 25 | DM Sans | Titoli card programma |
+| `src/components/sections/ImpattoSection.tsx` | 28 | DM Sans | Titoli card impatto |
 
-### Struttura di ogni card evento
+### Soluzione
 
-```text
-+-------------------------------+
-| [Immagine evento]             |
-|   [Badge location]            |
-+-------------------------------+
-| Titolo Evento (bold, bianco)  |
-|                               |
-| date            time          |
-| 12 Feb 2026     18:30 (CET)  |
-|                               |
-| [->] bottone link             |
-+-------------------------------+
-```
+Rimuovere tutti gli `style={{ fontFamily: ... }}` inline e la dichiarazione in CSS, lasciando che i font SF Pro definiti in `tailwind.config.ts` e `index.css` si applichino automaticamente:
 
-- Sfondo card scuro (quasi nero) con bordi arrotondati
-- Immagine in alto con aspect ratio ~16:10 e bordi arrotondati interni
-- Badge in alto a sinistra sull'immagine con il nome della location
-- Sotto: titolo in bianco, poi riga con "date" e "time" come label grigie e valori in bianco
-- In basso a sinistra: icona freccia in un quadratino bianco (link all'evento)
+- **Titoli grandi** (logo, titoli sezione, numeri stats, link menu): usano `SF Pro Display` tramite la regola base `h1-h4` e `body`
+- **Titoli card**: usano `SF Pro Display` (sono `h3`, gia' coperti dalla regola base)
+- **Link menu in CSS**: sostituire `'Playfair Display'` con `'SF Pro Display'`
 
-### Dati statici
+### File da modificare
 
-5-6 eventi di esempio con titoli come "Open Day", "Workshop Produzione", "Masterclass DJ", ecc. I dati (titolo, data, ora, location, immagine placeholder) sono definiti in un array nel componente.
+1. **`src/components/Header.tsx`** — Rimuovere `style={{ fontFamily: "'Playfair Display', serif" }}` dalla riga 157
+2. **`src/components/Footer.tsx`** — Rimuovere `style={{ fontFamily: "'Playfair Display', serif" }}` dalla riga 9
+3. **`src/pages/Eventi.tsx`** — Rimuovere `style={{ fontFamily: "'Playfair Display', serif" }}` dalla riga 127
+4. **`src/components/sections/StatsSection.tsx`** — Rimuovere `style={{ fontFamily: "'Playfair Display', serif" }}` dalla riga 19
+5. **`src/components/sections/ProgrammaSection.tsx`** — Rimuovere `style={{ fontFamily: "'DM Sans', sans-serif" }}` dalla riga 25
+6. **`src/components/sections/ImpattoSection.tsx`** — Rimuovere `style={{ fontFamily: "'DM Sans', sans-serif" }}` dalla riga 28
+7. **`src/index.css`** riga 267 — Cambiare `font-family: 'Playfair Display', 'SF Pro Display', serif;` in `font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;`
 
-### File coinvolti
-
-**1. Nuovo: `src/pages/Eventi.tsx`**
-- Componente pagina con Header, sezione hero, griglia card e Footer
-- Array di eventi statici con: id, titolo, data, ora, location, immagine (placeholder scuro)
-- Ogni card come componente interno `EventCard`
-
-**2. Modifica: `src/App.tsx`**
-- Aggiunta rotta `/eventi` che punta alla nuova pagina
-
-**3. Modifica: `src/index.css`**
-- Pochi stili aggiuntivi per le card evento (sfondo scuro, hover effect leggero)
+Nessuna altra anomalia riscontrata nel resto del codice.
 
