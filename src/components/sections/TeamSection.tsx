@@ -11,40 +11,25 @@ import {
 
 const team = [
   {
-    name: "Marco Ferraro",
-    role: "Direttore artistico",
+    name: "Orlando Vescio",
+    role: "Pianista e Direttore Artistico",
+    image: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Orlando%20Vescio.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9PcmxhbmRvIFZlc2Npby5qcGciLCJpYXQiOjE3NzA4MjgxMTIsImV4cCI6MjYzNDgyODExMn0.NdKiVjsZF0HmxQirAnGYownaNZtbRhqIl2a-PhgDaO8",
     description:
-      "Musicista e direttore d'orchestra con oltre 20 anni di esperienza nella formazione musicale e nella direzione artistica di eventi culturali.",
+      "Pianista e direttore artistico, è uno dei riferimenti storici di Mousikè. Da anni accompagna studenti e produzioni con un'idea chiara di musica come percorso di crescita e responsabilità. La sua esperienza didattica e il lavoro sul palco si intrecciano in un approccio rigoroso ma sempre attento alla persona.",
   },
   {
-    name: "Laura Greco",
-    role: "Docente di pianoforte",
+    name: "Chiara Vescio",
+    role: "Cantante e Vocal Coach",
+    image: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Chiara%20Vescio.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9DaGlhcmEgVmVzY2lvLmpwZyIsImlhdCI6MTc3MDgyNzk1NywiZXhwIjoyNjM0ODI3OTU3fQ.PdErH2n-lWy9hRHfUIm0CfDcV7BMr779iI4FAJoRHSI",
     description:
-      "Diplomata al Conservatorio con lode, ha tenuto concerti in tutta Europa e si dedica all'insegnamento con passione e metodo innovativo.",
+      "Cantante e vocal coach, unisce attività artistica e insegnamento. In scena porta intensità e cura del dettaglio; in aula lavora sulla tecnica, sull'ascolto e sulla consapevolezza espressiva. Il suo lavoro è orientato a far emergere l'identità vocale di ciascun allievo, senza forzature.",
   },
   {
-    name: "Antonio Scali",
-    role: "Docente di chitarra e musica pop",
+    name: "Eugenio Nicolazzo",
+    role: "Interprete e Performer",
+    image: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Eugenio%20Nicolazzo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9FdWdlbmlvIE5pY29sYXp6by5qcGciLCJpYXQiOjE3NzA4Mjc5ODQsImV4cCI6MjYzNDgyNzk4NH0.2eyMv2YM1cnMgqwT2_q8cYuYGUfxEnpl-SOvsbiOZ_g",
     description:
-      "Chitarrista professionista con collaborazioni in ambito pop e rock. Specializzato nell'insegnamento della musica moderna e contemporanea.",
-  },
-  {
-    name: "Francesca Morelli",
-    role: "Musicoterapeuta",
-    description:
-      "Specializzata in musicoterapia e teatroterapia, lavora con bambini e adulti utilizzando la musica come strumento di benessere e crescita personale.",
-  },
-  {
-    name: "Giuseppe Catanzaro",
-    role: "Docente di strumenti popolari",
-    description:
-      "Esperto di tradizioni musicali calabresi, insegna lira calabrese, tamburello e altri strumenti della tradizione popolare del Sud Italia.",
-  },
-  {
-    name: "Chiara De Luca",
-    role: "Docente di canto e teatro",
-    description:
-      "Cantante lirica e attrice teatrale, unisce le due discipline per offrire un percorso formativo completo nell'espressione artistica vocale e scenica.",
+      "Interprete e performer, collabora alle principali produzioni musicali di Mousikè. La sua presenza scenica e l'esperienza nel musical contribuiscono a dare solidità ai progetti artistici della scuola. Con gli allievi condivide un lavoro concreto su interpretazione, ritmo e presenza.",
   },
 ];
 
@@ -102,9 +87,9 @@ const TeamSection = () => {
                   <div className="relative h-[450px] rounded-lg overflow-hidden bg-muted">
                     {/* Background image */}
                     <img
-                      src="/placeholder.svg"
+                      src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover opacity-40"
+                      className="w-full h-full object-cover"
                     />
 
                     {/* Info overlay - appears on expand */}
