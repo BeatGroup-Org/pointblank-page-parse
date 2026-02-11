@@ -1,29 +1,26 @@
 
 
-## Video di sfondo nella Hero Section
+## Nuova sezione Video Promo prima del Programma Educativo
 
 ### Cosa cambia
 
-Sostituzione dell'immagine placeholder con un **video promo in loop** come sfondo della Hero Section.
+Viene creato un nuovo componente `VideoPromoSection` e inserito nella homepage tra `StatsSection` e `ProgrammaSection`.
 
-### Ottimizzazioni per performance e caricamento rapido
+### Dettagli
 
-- `preload="auto"` per iniziare il download subito
-- `muted` (obbligatorio per autoplay nei browser moderni)
-- `autoPlay`, `loop`, `playsInline` per partenza immediata e compatibilita mobile
-- Nessun attributo `controls` per nascondere i controlli video
-- `poster` non necessario perche il video parte subito
-- Il tag `<img>` placeholder viene rimosso e sostituito dal `<video>`
+**Nuovo file: `src/components/sections/VideoPromoSection.tsx`**
 
-### Modifiche tecniche
+- Un tag `<video>` a piena larghezza con `autoPlay`, `loop`, `muted`, `playsInline` e `preload="metadata"` (usa `metadata` invece di `auto` per non scaricare tutto il video subito, riducendo il peso iniziale)
+- Nessun testo, nessun overlay: solo il video
+- Classe `w-full` per adattarsi al contenitore, senza padding extra
 
-**File: `src/components/sections/HeroSection.tsx`**
+**File modificato: `src/pages/Index.tsx`**
 
-1. Sostituire il tag `<img>` dentro il div di sfondo con un tag `<video>` con questi attributi:
-   - `src`: URL Supabase del video promo
-   - `autoPlay`, `loop`, `muted`, `playsInline`: per autoplay immediato e loop continuo
-   - `preload="auto"`: caricamento anticipato
-   - `className="w-full h-full object-cover opacity-30"`: stesse classi dell'immagine attuale per coprire tutto lo sfondo con overlay scuro
+- Import di `VideoPromoSection`
+- Inserimento tra `<StatsSection />` e `<ProgrammaSection />`
 
-Nessun altro file viene modificato. Il layout, i testi e i bottoni della Hero restano invariati.
+### Note tecniche
+
+- `preload="metadata"` carica solo i metadati del video inizialmente, avviando il download completo solo quando il video entra in viewport (il browser gestisce questo automaticamente con autoplay)
+- `muted` e `playsInline` garantiscono compatibilita con tutti i browser e dispositivi mobile
 
