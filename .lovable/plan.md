@@ -1,41 +1,54 @@
 
 
-## Header a Pillola con Barra di Scorrimento
+## Pagina "I Prossimi Eventi"
 
-### Cosa cambia
+### Cosa viene creato
 
-L'header attuale (barra piena da bordo a bordo) diventa una **pillola centrata** con angoli arrotondati e una **barra di progresso** sottile che indica quanto si e' scrollata la pagina.
+Una nuova pagina `/eventi` che mostra una griglia di card evento, ispirata al design degli screenshot (sfondo bianco, card scure con immagine, titolo, data, ora e un bottone di collegamento).
 
-### Dettagli visivi
+### Layout della pagina
 
-- **Forma a pillola**: l'header ha `border-radius` arrotondato, un leggero margine dai bordi, e un aspetto "flottante"
-- **Barra di scorrimento**: una sottile linea colorata nella parte bassa della pillola che si riempie da sinistra a destra man mano che si scrolla la pagina (0% in cima, 100% in fondo)
-- Quando si e' in cima alla pagina, la pillola e' trasparente; quando si scrolla, diventa con sfondo sfumato e backdrop-blur
-- Il menu fullscreen rimane invariato
+- **Header**: lo stesso header a pillola gia presente nel sito
+- **Sezione hero**: titolo grande "I Prossimi Eventi" in alto a sinistra (stile bold, serif) + breve descrizione a destra
+- **Griglia card**: 3 colonne su desktop, 2 su tablet, 1 su mobile
+- **Footer**: lo stesso footer del sito
 
-### Modifiche tecniche
-
-**1. `src/components/Header.tsx`**
-
-- Aggiungere stato `scrollProgress` (0-1) calcolato nel listener scroll esistente
-- Modificare le classi dell'header: aggiungere margin top/orizzontale, border-radius pieno (`rounded-full`), max-width contenuto e centratura
-- Aggiungere un `div` in basso all'header come barra di progresso, con `width` in percentuale legata a `scrollProgress`
-- Il bottone Menu e il logo restano nelle stesse posizioni
-
-**2. `src/index.css`**
-
-- Aggiungere stile per la barra di progresso (altezza 2-3px, colore accent, transizione smooth, border-radius per integrarsi nella pillola)
-
-### Struttura risultante
+### Struttura di ogni card evento
 
 ```text
-+--------------------------------------------------+
-|  Mousike               [====progress====]   Menu  |
-+--------------------------------------------------+
-         ^                                    ^
-     rounded-full                        rounded-full
-     margini laterali + top
++-------------------------------+
+| [Immagine evento]             |
+|   [Badge location]            |
++-------------------------------+
+| Titolo Evento (bold, bianco)  |
+|                               |
+| date            time          |
+| 12 Feb 2026     18:30 (CET)  |
+|                               |
+| [->] bottone link             |
++-------------------------------+
 ```
 
-La barra di progresso sara' posizionata in basso dentro la pillola, sottile e discreta.
+- Sfondo card scuro (quasi nero) con bordi arrotondati
+- Immagine in alto con aspect ratio ~16:10 e bordi arrotondati interni
+- Badge in alto a sinistra sull'immagine con il nome della location
+- Sotto: titolo in bianco, poi riga con "date" e "time" come label grigie e valori in bianco
+- In basso a sinistra: icona freccia in un quadratino bianco (link all'evento)
+
+### Dati statici
+
+5-6 eventi di esempio con titoli come "Open Day", "Workshop Produzione", "Masterclass DJ", ecc. I dati (titolo, data, ora, location, immagine placeholder) sono definiti in un array nel componente.
+
+### File coinvolti
+
+**1. Nuovo: `src/pages/Eventi.tsx`**
+- Componente pagina con Header, sezione hero, griglia card e Footer
+- Array di eventi statici con: id, titolo, data, ora, location, immagine (placeholder scuro)
+- Ogni card come componente interno `EventCard`
+
+**2. Modifica: `src/App.tsx`**
+- Aggiunta rotta `/eventi` che punta alla nuova pagina
+
+**3. Modifica: `src/index.css`**
+- Pochi stili aggiuntivi per le card evento (sfondo scuro, hover effect leggero)
 
