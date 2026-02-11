@@ -180,7 +180,7 @@ const ChiSiamo = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="space-y-4">
+              <div className="space-y-4 text-right">
                 <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
                   <p>
                     Negli anni abbiamo lavorato con ragazzi con disabilità, con giovani
