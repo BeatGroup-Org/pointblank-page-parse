@@ -1,19 +1,20 @@
 
 
-## Aggiungere la sezione Team nella pagina Chi Siamo (condivisa con la Homepage)
+## Allineare le foto ai titoli delle sezioni
 
 ### Cosa cambia
 
-La sezione Team viene aggiunta nella pagina "Chi Siamo" subito dopo la CTA finale e prima del Footer. Per evitare duplicazione di codice, il componente `TeamSection` gia' esistente viene semplicemente importato e riutilizzato — lo stesso identico componente usato in homepage.
+Le due foto verticali ("Ma che musica maestro" e "La musica e' di tutti") vengono spostate verso l'alto con un **margine negativo**, in modo che il loro bordo superiore sia quasi allineato ai titoli delle rispettive sezioni. Tutto il resto della pagina rimane invariato.
 
-Questo significa che ogni modifica futura al componente `TeamSection.tsx` si riflettera' automaticamente sia in homepage che in Chi Siamo.
+Questo fa si' che le sezioni finiscano prima verticalmente, riducendo lo spazio percepito senza toccare padding, font o layout.
 
 ### Dettaglio tecnico
 
 **File: `src/pages/ChiSiamo.tsx`**
 
-1. Aggiungere l'import di `TeamSection` da `@/components/sections/TeamSection`
-2. Inserire `<TeamSection />` dopo la sezione CTA finale (riga 240) e prima di `</main>`
+1. **Sezione "Dentro le scuole"** (riga 137): al contenitore della foto `<div className="w-full aspect-[4/5] overflow-hidden">` aggiungere `md:-mt-32` per tirare la foto verso l'alto su desktop, allineandola circa al titolo. Su mobile resta invariata.
 
-Nessuna modifica necessaria a `TeamSection.tsx` ne' alla homepage: il componente e' gia' autonomo e riutilizzabile.
+2. **Sezione "La musica e' di tutti"** (riga 176): stesso intervento sul contenitore della foto — aggiungere `md:-mt-32` per allinearla al titolo su desktop.
+
+Nessuna altra modifica. Il margine negativo funziona perche' le sezioni usano `items-start` nel grid, quindi la foto sale senza influenzare la colonna di testo.
 
