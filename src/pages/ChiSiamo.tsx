@@ -199,26 +199,25 @@ const ChiSiamo = () => {
                   </p>
                 </div>
                 <hr className="border-border mt-6" />
+                <h3 className="text-xl md:text-2xl font-bold mb-4 mt-8">Oggi</h3>
+                <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
+                  <p>
+                    Oggi Mousikè è una scuola, certo.
+                    <br />
+                    Ma è anche un luogo della città.
+                  </p>
+                  <p>Un posto in cui si cresce, si studia, si condivide.</p>
+                  <p>
+                    Continuiamo a fare quello che abbiamo sempre fatto:
+                    <br />
+                    lavorare con serietà, con passione, con la convinzione che la musica
+                    possa davvero costruire il futuro di chi la vive.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Sezione 6 – Oggi */}
-        <TextSection title="Oggi" alt>
-          <p>
-            Oggi Mousikè è una scuola, certo.
-            <br />
-            Ma è anche un luogo della città.
-          </p>
-          <p>Un posto in cui si cresce, si studia, si condivide.</p>
-          <p>
-            Continuiamo a fare quello che abbiamo sempre fatto:
-            <br />
-            lavorare con serietà, con passione, con la convinzione che la musica
-            possa davvero costruire il futuro di chi la vive.
-          </p>
-        </TextSection>
 
         {/* CTA finale */}
         <section className="py-24 bg-background">
