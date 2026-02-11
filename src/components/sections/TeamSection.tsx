@@ -42,7 +42,16 @@ const TeamSection = () => {
   };
 
   return (
-    <section id="team" className="py-24 bg-black">
+    <section id="team" className="relative py-24 overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src="https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Sfondo%20Logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9TZm9uZG8gTG9nby5qcGciLCJpYXQiOjE3NzA4Mjg2ODYsImV4cCI6MjYzNDgyODY4Nn0.8V-slvODQxYswjVPJQ3HcYZnxj3yVvENkKJXHTjmfWQ"
+          alt="Sfondo sezione team"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
       <div ref={ref} className="fade-in-section container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
