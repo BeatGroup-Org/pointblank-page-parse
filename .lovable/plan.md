@@ -1,34 +1,45 @@
 
 
-## Foto in bianco e nero per le card dei Percorsi Formativi
+## Aggiornamento Eventi Reali
 
-### Cosa cambia
+### Dati da inserire
 
-Ogni card del carosello ricevera un'immagine di sfondo in bianco e nero, tematica rispetto al corso. L'immagine sostituira il gradient colorato come sfondo principale, mantenendo l'overlay scuro per la leggibilita del testo.
+Sostituire tutti i 6 eventi placeholder con i 7 eventi reali forniti:
 
-### Immagini scelte (da Unsplash, gratuite)
+| # | Titolo | Data | Luogo | Immagine tematica |
+|---|--------|------|-------|-------------------|
+| 1 | Masterclass di Batteria con Dario Panza | 13-14 Mar 2026 | Lamezia Terme | Batteria/drummer |
+| 2 | Masterclass di Pianoforte e Composizione con Jacopo Carlini | 10-11 Apr 2026 | Lamezia Terme | Pianoforte |
+| 3 | Concerto di Jacopo Carlini con Chiara Vescio | 10-11 Apr 2026 | Lamezia Terme | Concerto dal vivo |
+| 4 | Musical "Alice nel Paese delle Meraviglie" | Maggio 2026 | Teatro Costabile, Lamezia Terme | Teatro/musical |
+| 5 | Concerti "Ma che Musica Maestro" | Fine Maggio 2026 | Lamezia Terme | Orchestra scolastica |
+| 6 | Saggio di Fine Anno — Musica Pop | Giugno 2026 | Lamezia Terme | Concerto pop |
+| 7 | Saggio di Fine Anno — Musica Classica | Giugno 2026 | Lamezia Terme | Orchestra classica |
 
-| Corso | Foto | Motivazione |
-|-------|------|-------------|
-| Musica classica | Violino / orchestra classica | Strumenti ad arco, atmosfera classica |
-| Musica pop | Microfono da studio / cantante | Ambiente pop/studio di registrazione |
-| Strumenti popolari calabresi | Chitarra acustica / strumenti folk | Richiamo alla musica tradizionale |
-| Musicoterapia e teatroterapia | Mani su tamburo / cerchio terapeutico | Aspetto terapeutico e sensoriale |
-| Certificazioni Trinity | Pianoforte / spartiti musicali | Rigore accademico, esame formale |
+### Modifiche all'interfaccia `Evento`
 
-### Modifiche tecniche
+- Rendere il campo `ora` opzionale (`ora?: string`) dato che molti eventi reali non hanno un orario specifico
+- Aggiungere campo opzionale `descrizione?: string` per la breve descrizione di ogni evento
 
-**File: `src/components/sections/CorsiSection.tsx`**
+### File da modificare
 
-1. Aggiungere un campo `image` a ogni oggetto nell'array `corsi` con URL Unsplash (con parametro `&grayscale` per il bianco e nero)
-2. Sostituire il `<div>` con gradient colorato con un tag `<img>` che:
-   - Usa `object-cover` per riempire la card
-   - Applica il filtro `grayscale` via CSS (`className="grayscale"`)
-   - Mantiene l'effetto zoom on hover (`group-hover:scale-105`)
-3. Mantenere l'overlay scuro (`bg-gradient-to-t from-black/70`) sopra l'immagine per garantire leggibilita del testo
-4. Rimuovere il campo `gradient` dall'array dato che non servira piu
+**1. `src/data/eventi.ts`**
+- Aggiornare l'interfaccia `Evento`: `ora` diventa opzionale, aggiungere `descrizione`
+- Sostituire l'array con i 7 eventi reali, ciascuno con immagine Unsplash tematica
 
-### Risultato visivo
+**2. `src/components/EventCard.tsx`**
+- Mostrare il blocco "time" solo se `evento.ora` e' presente
+- Mostrare la descrizione sotto il titolo se presente
 
-Le card avranno lo stesso layout attuale (numerazione, titolo, link "Scopri di piu") ma con una foto in bianco e nero sullo sfondo invece del gradient colorato, con effetto zoom al passaggio del mouse.
+**3. `src/components/sections/EventiPreviewSection.tsx`**
+- Nessuna modifica necessaria (mostra gia i primi 3 eventi automaticamente)
+
+**4. `src/pages/Eventi.tsx`**
+- Nessuna modifica necessaria (mostra gia tutti gli eventi automaticamente)
+
+### Risultato
+
+- Homepage: mostra i primi 3 eventi reali (Masterclass Panza, Masterclass Carlini, Concerto Carlini)
+- Pagina /eventi: mostra tutti e 7 gli eventi reali
+- Card senza orario non mostrano il campo "time"
 
