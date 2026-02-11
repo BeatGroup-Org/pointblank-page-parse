@@ -45,6 +45,7 @@ const ChiSiamo = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const introRef = useFadeIn();
   const ctaRef = useFadeIn();
 
   return (
@@ -52,24 +53,38 @@ const ChiSiamo = () => {
       <Header />
       <main>
         {/* Sezione 1 – Apertura */}
-        <TextSection title="Chi siamo">
-          <p>
-            Mousikè è nata da una convinzione semplice: che la musica possa
-            cambiare il modo in cui una persona cresce.
-          </p>
-          <p>
-            Non parliamo solo di imparare uno strumento.
-            <br />
-            Parliamo di imparare ad ascoltare, a stare in gruppo, a rispettare i
-            tempi, a prendersi la responsabilità di quello che si suona.
-          </p>
-          <p>
-            Da anni, a Lamezia Terme, accompagniamo bambini, ragazzi e adulti in
-            questo percorso.
-            <br />
-            Lo facciamo ogni giorno, in aula, in prova, sul palco.
-          </p>
-        </TextSection>
+        <section className="bg-background">
+          <div
+            ref={introRef}
+            className="fade-in-section py-20 md:py-28 container mx-auto px-6"
+          >
+            <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+              <div>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight">
+                  Chi<br />siamo
+                </h1>
+              </div>
+              <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
+                <p>
+                  Mousikè è nata da una convinzione semplice: che la musica possa
+                  cambiare il modo in cui una persona cresce.
+                </p>
+                <p>
+                  Non parliamo solo di imparare uno strumento.
+                  <br />
+                  Parliamo di imparare ad ascoltare, a stare in gruppo, a rispettare i
+                  tempi, a prendersi la responsabilità di quello che si suona.
+                </p>
+                <p>
+                  Da anni, a Lamezia Terme, accompagniamo bambini, ragazzi e adulti in
+                  questo percorso.
+                  <br />
+                  Lo facciamo ogni giorno, in aula, in prova, sul palco.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Stacco foto 1 */}
         <section className="w-full">
