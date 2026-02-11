@@ -154,7 +154,7 @@ const Header = () => {
         }`}
       >
         <div className="flex items-center justify-between py-3 px-6">
-          <a href="#" className="text-2xl font-bold tracking-tight z-[60]" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <a href="#" className="text-2xl font-bold tracking-tight z-[60]">
             Mousikè
           </a>
 

@@ -124,7 +124,6 @@ const Eventi = () => (
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <h1
             className="text-4xl md:text-6xl font-bold leading-tight"
-            style={{ fontFamily: "'Playfair Display', serif" }}
           >
             I Prossimi Eventi
           </h1>

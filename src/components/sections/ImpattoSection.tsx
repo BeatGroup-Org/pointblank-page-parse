@@ -25,7 +25,7 @@ const ImpattoSection = () => {
                   <Icon size={22} className="text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>{b.title}</h3>
+                  <h3 className="font-semibold text-lg mb-1">{b.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
                 </div>
               </div>

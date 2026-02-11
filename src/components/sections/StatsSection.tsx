@@ -16,7 +16,7 @@ const StatsSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
                 {s.value}
               </div>
               <p className="text-sm text-muted-foreground leading-snug">{s.label}</p>
