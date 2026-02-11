@@ -11,23 +11,23 @@ import {
 const corsi = [
   {
     title: "Musica classica",
-    gradient: "from-amber-800 via-amber-900 to-amber-950",
+    image: "https://images.unsplash.com/photo-1612225330812-01a9c73fcbdc?w=800&q=80",
   },
   {
     title: "Musica pop",
-    gradient: "from-indigo-700 via-indigo-800 to-indigo-950",
+    image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800&q=80",
   },
   {
     title: "Strumenti popolari calabresi",
-    gradient: "from-emerald-700 via-emerald-800 to-emerald-950",
+    image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&q=80",
   },
   {
     title: "Musicoterapia e teatroterapia",
-    gradient: "from-rose-700 via-rose-800 to-rose-950",
+    image: "https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?w=800&q=80",
   },
   {
     title: "Certificazioni Trinity",
-    gradient: "from-sky-700 via-sky-800 to-sky-950",
+    image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=800&q=80",
   },
 ];
 
@@ -64,8 +64,10 @@ const CorsiSection = () => {
               >
                 <div className="group relative h-[420px] rounded-lg overflow-hidden cursor-pointer">
                   {/* Background placeholder */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${corso.gradient} transition-transform duration-500 group-hover:scale-105`}
+                  <img
+                    src={corso.image}
+                    alt={corso.title}
+                    className="absolute inset-0 w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-105"
                   />
 
                   {/* Overlay */}
