@@ -46,6 +46,7 @@ const ChiSiamo = () => {
   }, []);
 
   const introRef = useFadeIn();
+  const scuoleRef = useFadeIn();
   const ctaRef = useFadeIn();
 
   return (
@@ -122,28 +123,46 @@ const ChiSiamo = () => {
         </TextSection>
 
         {/* Sezione 3 – Il legame con le scuole */}
-        <TextSection title="Dentro le scuole, ogni anno">
-          <p>
-            Con il progetto "Ma che musica maestro" entriamo negli istituti
-            pubblici della città e lavoriamo con centinaia di studenti.
-          </p>
-          <p>
-            Non è un laboratorio occasionale.
-            <br />
-            È un percorso che dura mesi, che coinvolge insegnanti, famiglie,
-            classi intere.
-          </p>
-          <p>
-            Alla fine c'è sempre un momento pubblico, uno spettacolo, una
-            restituzione.
-            <br />
-            Ma il lavoro vero succede prima: nelle prove, nelle relazioni, nella
-            crescita di ciascuno.
-          </p>
-        </TextSection>
-
-        {/* Stacco foto 2 */}
-        <PhotoBreak />
+        <section className="bg-background">
+          <div
+            ref={scuoleRef}
+            className="fade-in-section py-20 md:py-28 container mx-auto px-6"
+          >
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight mb-12 md:mb-16">
+              Dentro le<br />scuole, ogni<br />anno
+            </h2>
+            <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+              <div className="space-y-4">
+                <h3 className="text-xl md:text-2xl font-bold mb-4">Ma che musica maestro</h3>
+                <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
+                  <p>
+                    Con il progetto "Ma che musica maestro" entriamo negli istituti
+                    pubblici della città e lavoriamo con centinaia di studenti.
+                  </p>
+                  <p>
+                    Non è un laboratorio occasionale.
+                    <br />
+                    È un percorso che dura mesi, che coinvolge insegnanti, famiglie,
+                    classi intere.
+                  </p>
+                  <p>
+                    Alla fine c'è sempre un momento pubblico, uno spettacolo, una
+                    restituzione.
+                    <br />
+                    Ma il lavoro vero succede prima: nelle prove, nelle relazioni, nella
+                    crescita di ciascuno.
+                  </p>
+                </div>
+                <hr className="border-border mt-6" />
+              </div>
+              <div className="w-full aspect-[4/5] bg-muted flex items-center justify-center">
+                <span className="text-muted-foreground/50 text-sm tracking-wide uppercase">
+                  Foto in arrivo
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Sezione 4 – Il palco */}
         <TextSection title="Il palco come punto d'incontro" alt>
