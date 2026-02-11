@@ -1,42 +1,41 @@
 
 
-## Menu Animato Fullscreen con GSAP
+## Header a Pillola con Barra di Scorrimento
 
-### Obiettivo
-Sostituire il menu attuale con un menu fullscreen animato ispirato al codice fornito, con pannelli che scorrono, link animati e forme decorative di sfondo.
+### Cosa cambia
 
-### Dipendenza da aggiungere
-- **gsap** (con CustomEase plugin incluso nel pacchetto base)
+L'header attuale (barra piena da bordo a bordo) diventa una **pillola centrata** con angoli arrotondati e una **barra di progresso** sottile che indica quanto si e' scrollata la pagina.
 
-### Modifiche
+### Dettagli visivi
 
-**1. `src/components/Header.tsx` - Riscrittura completa**
+- **Forma a pillola**: l'header ha `border-radius` arrotondato, un leggero margine dai bordi, e un aspetto "flottante"
+- **Barra di scorrimento**: una sottile linea colorata nella parte bassa della pillola che si riempie da sinistra a destra man mano che si scrolla la pagina (0% in cima, 100% in fondo)
+- Quando si e' in cima alla pagina, la pillola e' trasparente; quando si scrolla, diventa con sfondo sfumato e backdrop-blur
+- Il menu fullscreen rimane invariato
 
-- Header fisso con logo "Mousike" a sinistra e bottone "Menu/Close" a destra (icona + animata che ruota a 315 gradi all'apertura)
-- Al click si apre un overlay fullscreen con:
-  - Overlay scuro cliccabile per chiudere
-  - 3 pannelli di sfondo che scorrono da destra con stagger
-  - Link di navigazione (Programma, Corsi, Produzioni, Impatto, Team, Contatti) che entrano dal basso con rotazione
-  - Forme SVG decorative che si animano al hover su ogni link
-- Chiusura con ESC, click overlay, o bottone
-- Mantiene il comportamento scroll (header con sfondo quando si scrolla)
+### Modifiche tecniche
 
-**2. `src/index.css` - Aggiunta stili per il menu**
+**1. `src/components/Header.tsx`**
 
-Aggiunta di classi CSS dedicate al menu fullscreen:
-- `.nav-overlay-wrapper`: contenitore fullscreen nascosto di default
-- `.overlay`: sfondo scuro semi-trasparente
-- `.menu-content`: pannello menu che scorre da destra
-- `.backdrop-layer`: pannelli di sfondo animati con colori scuri
-- `.menu-list`: lista dei link con font grande e overflow hidden per le animazioni
-- `.nav-link`: link con hover background
-- `.ambient-background-shapes` e `.bg-shape`: forme SVG decorative posizionate in modo assoluto
-- `.nav-close-btn`: bottone con testo "Menu"/"Close" sovrapposto e icona +
-- Responsive: su mobile i link sono piu piccoli
+- Aggiungere stato `scrollProgress` (0-1) calcolato nel listener scroll esistente
+- Modificare le classi dell'header: aggiungere margin top/orizzontale, border-radius pieno (`rounded-full`), max-width contenuto e centratura
+- Aggiungere un `div` in basso all'header come barra di progresso, con `width` in percentuale legata a `scrollProgress`
+- Il bottone Menu e il logo restano nelle stesse posizioni
 
-### Comportamento Animazioni (GSAP)
-- **Apertura**: overlay fade in, 3 pannelli scorrono da destra con stagger, link entrano dal basso con leggera rotazione
-- **Chiusura**: menu scorre fuori a destra, overlay scompare
-- **Hover link**: forme SVG di sfondo si animano con scale e fade (back.out easing)
-- **Bottone**: testo "Menu" scorre su per mostrare "Close", icona ruota di 315 gradi
+**2. `src/index.css`**
+
+- Aggiungere stile per la barra di progresso (altezza 2-3px, colore accent, transizione smooth, border-radius per integrarsi nella pillola)
+
+### Struttura risultante
+
+```text
++--------------------------------------------------+
+|  Mousike               [====progress====]   Menu  |
++--------------------------------------------------+
+         ^                                    ^
+     rounded-full                        rounded-full
+     margini laterali + top
+```
+
+La barra di progresso sara' posizionata in basso dentro la pillola, sottile e discreta.
 
