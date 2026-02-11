@@ -22,7 +22,7 @@ const ProgrammaSection = () => {
             { title: "Produzione finale", desc: "Ogni percorso si conclude con una restituzione pubblica in teatri e spazi cittadini." },
           ].map((item) => (
             <div key={item.title} className="bg-card rounded-lg p-6 border border-border">
-              <h3 className="font-semibold text-lg mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>{item.title}</h3>
+              <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
             </div>
           ))}

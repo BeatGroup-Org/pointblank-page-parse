@@ -264,7 +264,7 @@
 }
 
 .nav-link-text {
-  font-family: 'Playfair Display', 'SF Pro Display', serif;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   color: hsl(0, 0%, 95%);

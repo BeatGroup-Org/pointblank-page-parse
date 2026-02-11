@@ -6,7 +6,7 @@ const Footer = () => (
       <div className="grid md:grid-cols-3 gap-12">
         {/* Info */}
         <div>
-          <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>Mousikè</h3>
+          <h3 className="text-2xl font-bold mb-4">Mousikè</h3>
           <p className="text-card/70 text-sm leading-relaxed">
             Centro culturale ed educativo a Lamezia Terme. Formazione musicale, inclusione sociale e produzioni artistiche.
           </p>
