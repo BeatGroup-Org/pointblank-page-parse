@@ -134,7 +134,7 @@ const ChiSiamo = () => {
                 </div>
                 <hr className="border-border mt-6" />
               </div>
-              <div className="w-full aspect-[4/5] overflow-hidden">
+              <div className="w-full aspect-[4/5] overflow-hidden md:-mt-32">
                 <img
                   src={musicaMaestroImg}
                   alt="Ma che musica maestro – studenti durante il progetto"
@@ -173,7 +173,7 @@ const ChiSiamo = () => {
               La musica<br />è di tutti
             </h2>
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
-              <div className="w-full aspect-[4/5] overflow-hidden">
+              <div className="w-full aspect-[4/5] overflow-hidden md:-mt-32">
                 <img
                   src={musicaTuttiImg}
                   alt="La musica è di tutti – inclusione attraverso la musica"
