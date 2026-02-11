@@ -1,51 +1,26 @@
 
 
-## Pagina "Chi Siamo"
+## Restyling sezione apertura "Chi Siamo"
 
-### Panoramica
+### Cosa cambia
 
-Creare una nuova pagina `/chi-siamo` con layout arioso, fondo chiaro, tono autentico. Struttura a sezioni alternate (testo / foto a tutta larghezza), coerente con lo stile della homepage.
+La prima sezione della pagina "Chi siamo" passa da un layout a colonna singola (titolo sopra, testo sotto) a un layout a **due colonne** ispirato allo screenshot di riferimento:
 
-### Struttura della pagina
+- **Colonna sinistra**: titolo grande, bold, in nero, molto prominente (dimensione extra-large)
+- **Colonna destra**: testo descrittivo, dimensione normale, con buon respiro tra i paragrafi
 
-| # | Tipo | Contenuto |
-|---|------|-----------|
-| 1 | Header | Navigazione fissa (componente esistente) |
-| 2 | Sezione testo | **Chi siamo** -- testo di apertura |
-| 3 | Stacco foto | Immagine ampia (lezione/prova) -- placeholder per ora |
-| 4 | Sezione testo | **La nostra scuola** |
-| 5 | Sezione testo | **Dentro le scuole, ogni anno** |
-| 6 | Stacco foto | Immagine ampia (laboratorio/produzione scolastica) -- placeholder |
-| 7 | Sezione testo | **Il palco come punto d'incontro** |
-| 8 | Sezione testo | **La musica e' di tutti** |
-| 9 | Stacco foto | Immagine ampia (gruppo/coro/momento inclusivo) -- placeholder |
-| 10 | Sezione testo | **Oggi** |
-| 11 | CTA finale | Due bottoni centrati: "Vieni a conoscerci" e "Scopri i nostri percorsi" |
-| 12 | Footer | Componente esistente |
+Su mobile le due colonne si impilano verticalmente (titolo sopra, testo sotto).
 
 ### Dettaglio tecnico
 
-**1. Nuovo file: `src/pages/ChiSiamo.tsx`**
+**File: `src/pages/ChiSiamo.tsx`**
 
-- Importa `Header`, `Footer`, `Button`, `useFadeIn`
-- Ogni sezione testo usa `useFadeIn` per l'animazione di ingresso, con `py-20 md:py-28`, `container mx-auto px-6 max-w-3xl`
-- Testo reso con paragrafi separati (`<p>` distinti con `mb-4`), non blocchi unici, per rispettare il ritmo delle frasi brevi
-- Alternanza `bg-background` / `bg-secondary` per le sezioni testo
-- Stacchi foto: sezione full-width con immagine `aspect-[21/9]` o simile, `object-cover`, con `bg-muted` come fallback e immagini placeholder
-- CTA finale centrata con due `Button` pill, stile identico a quelli della homepage
+Sostituire la sezione 1 (attualmente usa il componente `TextSection`) con un layout custom a due colonne:
 
-**2. Modifica: `src/App.tsx`**
+- Container con `grid md:grid-cols-2 gap-12 md:gap-16`
+- Colonna sinistra: `<h1>` con dimensioni `text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none` per replicare il titolo grande e impattante dello screenshot
+- Colonna destra: paragrafi con lo stile attuale (`text-muted-foreground text-base md:text-lg leading-relaxed`)
+- Padding generoso (`py-20 md:py-28`), sfondo `bg-background`
+- Animazione `useFadeIn` mantenuta
 
-- Aggiungere rotta `/chi-siamo` con import lazy o diretto di `ChiSiamo`
-
-**3. Modifica: `src/components/Header.tsx`**
-
-- Aggiungere "Chi siamo" ai `navLinks` con `href: "/chi-siamo"`
-
-### Note di stile
-
-- Font e colori: ereditati dal tema globale (SF Pro Display/Text, palette warm)
-- Nessuna icona nelle sezioni testo -- solo tipografia pulita
-- Le immagini placeholder potranno essere sostituite successivamente con foto reali da Supabase Storage
-- Scroll to top automatico al caricamento della pagina
-
+Le altre sezioni restano invariate.
