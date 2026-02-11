@@ -159,9 +159,15 @@ const Header = () => {
         }`}
       >
         <div className="flex items-center justify-between py-3 px-6">
-          <a href="#" className="text-2xl font-bold tracking-tight z-[60]">
+          <button
+            onClick={() => {
+              navigate("/");
+              window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+            }}
+            className="text-2xl font-bold tracking-tight z-[60] bg-transparent border-none cursor-pointer"
+          >
             Mousikè
-          </a>
+          </button>
 
           <button className="nav-close-btn" onClick={toggleMenu}>
             <div className="menu-button-text">
