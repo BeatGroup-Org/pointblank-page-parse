@@ -42,11 +42,11 @@ const TeamSection = () => {
   };
 
   return (
-    <section id="team" className="py-24 bg-background">
+    <section id="team" className="py-24 bg-black">
       <div ref={ref} className="fade-in-section container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.95] tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.95] tracking-tight text-white">
             <span className="block">IL NOSTRO</span>
             <span className="block">TEAM</span>
           </h2>
