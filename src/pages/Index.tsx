@@ -5,6 +5,7 @@ import StatsSection from "@/components/sections/StatsSection";
 import VideoPromoSection from "@/components/sections/VideoPromoSection";
 import ProgrammaSection from "@/components/sections/ProgrammaSection";
 import CorsiSection from "@/components/sections/CorsiSection";
+import EventiPreviewSection from "@/components/sections/EventiPreviewSection";
 import ProduzioniSection from "@/components/sections/ProduzioniSection";
 import ImpattoSection from "@/components/sections/ImpattoSection";
 import TeamSection from "@/components/sections/TeamSection";
@@ -20,6 +21,7 @@ const Index = () => (
       <VideoPromoSection />
       <ProgrammaSection />
       <CorsiSection />
+      <EventiPreviewSection />
       <ProduzioniSection />
       <ImpattoSection />
       <TeamSection />
