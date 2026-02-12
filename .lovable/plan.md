@@ -1,17 +1,17 @@
 
 
-## Allineare il testo a destra nella sezione "La musica e' di tutti"
+## Sostituire la favicon con il Logo Rotondo Mousike'
 
 ### Cosa cambia
 
-Tutto il testo nella colonna destra della sezione "La musica e' di tutti" viene giustificato a destra (`text-right`), inclusi i paragrafi, il sottotitolo "Oggi" e il separatore. Il titolo grande e' gia' allineato a destra.
+L'icona del sito (favicon) viene sostituita con il logo rotondo Mousike' appena caricato. Quando condividi il link, vedrai il logo corretto invece di quello di Lovable.
 
 ### Dettaglio tecnico
 
-**File: `src/pages/ChiSiamo.tsx`**
+**File da copiare:**
+- `user-uploads://Logo_Rotondo_Mousikè.png` -> `public/favicon.png`
 
-1. **Riga 183** -- Al contenitore principale del testo `<div className="space-y-4">` aggiungere `text-right`
-2. **Riga 202** -- Al sottotitolo `<h3>` "Oggi" aggiungere `text-right` (se non ereditato)
-
-Un singolo `text-right` sul div padre (riga 183) dovrebbe propagarsi a tutti gli elementi figli, quindi potrebbe bastare solo quello.
+**File: `index.html`**
+- Sostituire il tag `<link rel="icon" ...>` attuale (che punta a Google Storage) con: `<link rel="icon" type="image/png" href="/favicon.png">`
+- Aggiungere `<link rel="apple-touch-icon" href="/favicon.png">` per dispositivi iOS
 
