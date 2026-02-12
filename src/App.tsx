@@ -8,6 +8,7 @@ import Eventi from "./pages/Eventi";
 import ChiSiamo from "./pages/ChiSiamo";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import ContactFab from "./components/ContactFab";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <ContactFab />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/eventi" element={<Eventi />} />
