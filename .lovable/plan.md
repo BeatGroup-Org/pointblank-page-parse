@@ -1,17 +1,28 @@
 
 
-## Sostituire la favicon con il Logo Rotondo Mousike'
+## Pallino contatti flottante con logo Mousike'
 
-### Cosa cambia
+### Cosa fa
 
-L'icona del sito (favicon) viene sostituita con il logo rotondo Mousike' appena caricato. Quando condividi il link, vedrai il logo corretto invece di quello di Lovable.
+Un pulsante circolare fisso in basso a destra, sempre visibile su tutte le pagine, che mostra il **logo rotondo Mousike'** (lo stesso usato come favicon). Cliccandolo si apre un pannello con i contatti della scuola. Un secondo clic lo chiude (mostrando una X).
+
+### Aspetto
+
+- **Pallino chiuso**: immagine `/favicon.png` (logo rotondo) su sfondo circolare con ombra e leggera animazione pulse
+- **Pallino aperto**: icona X per chiudere
+- **Pannello**: card con indirizzo (link Maps), telefono (`tel:`), email (`mailto:`), social
 
 ### Dettaglio tecnico
 
-**File da copiare:**
-- `user-uploads://Logo_Rotondo_Mousikè.png` -> `public/favicon.png`
+**Nuovo file: `src/components/ContactFab.tsx`**
 
-**File: `index.html`**
-- Sostituire il tag `<link rel="icon" ...>` attuale (che punta a Google Storage) con: `<link rel="icon" type="image/png" href="/favicon.png">`
-- Aggiungere `<link rel="apple-touch-icon" href="/favicon.png">` per dispositivi iOS
+- Pulsante fisso `fixed bottom-6 right-6 z-50`
+- Quando chiuso: mostra `<img src="/favicon.png">` invece di un'icona Lucide
+- Quando aperto: mostra icona `X` di Lucide e il pannello contatti
+- Pannello con animazione Tailwind (`animate-in fade-in slide-in-from-bottom`)
+- Contatti cliccabili: indirizzo, telefono, email, social
+
+**File: `src/App.tsx`**
+
+- Importare `<ContactFab />` e aggiungerlo dentro `<BrowserRouter>` ma fuori da `<Routes>`, cosi' appare su tutte le pagine
 
