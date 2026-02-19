@@ -1,28 +1,89 @@
 
 
-## Pallino contatti flottante con logo Mousike'
+## Pagina Dettaglio Evento + Categoria e Rassegna
 
-### Cosa fa
+Questo piano unifica la creazione della pagina dettaglio evento (gia' approvata) con l'aggiunta dei campi **categoria** e **rassegna** al modello dati.
 
-Un pulsante circolare fisso in basso a destra, sempre visibile su tutte le pagine, che mostra il **logo rotondo Mousike'** (lo stesso usato come favicon). Cliccandolo si apre un pannello con i contatti della scuola. Un secondo clic lo chiude (mostrando una X).
+---
 
-### Aspetto
+### Nuovi campi
 
-- **Pallino chiuso**: immagine `/favicon.png` (logo rotondo) su sfondo circolare con ombra e leggera animazione pulse
-- **Pallino aperto**: icona X per chiudere
-- **Pannello**: card con indirizzo (link Maps), telefono (`tel:`), email (`mailto:`), social
+- **Categoria**: il tipo di evento (es. "Masterclass", "Concerto", "Musical", "Saggio")
+- **Rassegna**: la rassegna o il ciclo a cui appartiene (es. "Stagione Concertistica 2025/26", "Ma che Musica Maestro")
+
+Entrambi sono opzionali e verranno mostrati come badge colorati sia nelle EventCard che nella pagina dettaglio.
+
+---
 
 ### Dettaglio tecnico
 
-**Nuovo file: `src/components/ContactFab.tsx`**
+**1. `src/data/eventi.ts`** -- Estendere interfaccia e dati
 
-- Pulsante fisso `fixed bottom-6 right-6 z-50`
-- Quando chiuso: mostra `<img src="/favicon.png">` invece di un'icona Lucide
-- Quando aperto: mostra icona `X` di Lucide e il pannello contatti
-- Pannello con animazione Tailwind (`animate-in fade-in slide-in-from-bottom`)
-- Contatti cliccabili: indirizzo, telefono, email, social
+Aggiungere all'interfaccia `Evento`:
 
-**File: `src/App.tsx`**
+```
+categoria?: string;       // es. "Masterclass", "Concerto", "Musical", "Saggio"
+rassegna?: string;        // es. "Stagione Concertistica 2025/26"
+```
 
-- Importare `<ContactFab />` e aggiungerlo dentro `<BrowserRouter>` ma fuori da `<Routes>`, cosi' appare su tutte le pagine
+Piu' tutti i campi per il dettaglio evento gia' previsti nel piano precedente:
+
+```
+dataISO?: string;
+oraFine?: string;
+indirizzo?: string;
+descrizioneEstesa?: string;
+ingresso?: "gratuito" | "a pagamento";
+prezzoInfo?: string;
+contattoNome?: string;
+contattoTelefono?: string;
+contattoEmail?: string;
+whatsappNumero?: string;
+gallery?: string[];
+```
+
+Popolare i dati di esempio con categoria e rassegna per ogni evento esistente.
+
+**2. `src/components/EventCard.tsx`** -- Mostrare i badge
+
+Aggiungere sotto il badge del luogo (o sopra il titolo) dei badge per categoria e rassegna, usando il componente Badge gia' presente nel progetto.
+
+**3. `src/pages/EventoDetail.tsx`** -- Nuova pagina dettaglio
+
+La pagina completa con:
+- Hero con immagine e titolo
+- Badge per categoria e rassegna sotto il titolo
+- Griglia info: data, ora, luogo, ingresso
+- Descrizione estesa
+- Contatti di riferimento
+- Pulsanti: "Prenota su WhatsApp" e "Aggiungi al calendario"
+- Gallery fotografica opzionale
+- Stile coerente con Chi Siamo (fade-in, colori, tipografia)
+
+**4. `src/lib/generateIcs.ts`** -- Utility per file .ics
+
+Funzione per generare e scaricare un file calendario standard.
+
+**5. `src/App.tsx`** -- Nuova rotta
+
+Aggiungere `<Route path="/eventi/:id" element={<EventoDetail />} />`
+
+**6. `src/components/EventCard.tsx`** -- Link al dettaglio
+
+Sostituire `href="#"` con un `<Link to={'/eventi/${evento.id}'}>`
+
+---
+
+### Esempio dati aggiornati
+
+```
+{
+  id: 1,
+  titolo: "Masterclass di Batteria con Dario Panza",
+  categoria: "Masterclass",
+  rassegna: "Stagione Concertistica 2025/26",
+  data: "13-14 Mar 2026",
+  ...
+}
+```
 
