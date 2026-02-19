@@ -1,4 +1,6 @@
 import { ArrowRight, Calendar, Clock, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Badge } from "@/components/ui/badge";
 import type { Evento } from "@/data/eventi";
 
 const EventCard = ({ evento }: { evento: Evento }) => (
@@ -11,10 +13,22 @@ const EventCard = ({ evento }: { evento: Evento }) => (
         className="w-full aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-105"
         loading="lazy"
       />
-      <span className="absolute top-3 left-3 flex items-center gap-1.5 bg-background/90 backdrop-blur-sm text-foreground text-xs font-medium px-3 py-1.5 rounded-full">
-        <MapPin size={12} />
-        {evento.luogo}
-      </span>
+      <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
+        <span className="flex items-center gap-1.5 bg-background/90 backdrop-blur-sm text-foreground text-xs font-medium px-3 py-1.5 rounded-full">
+          <MapPin size={12} />
+          {evento.luogo}
+        </span>
+        {evento.categoria && (
+          <Badge className="bg-primary/90 text-primary-foreground border-0 text-xs rounded-full">
+            {evento.categoria}
+          </Badge>
+        )}
+      </div>
+      {evento.rassegna && (
+        <span className="absolute bottom-3 left-3 bg-foreground/60 backdrop-blur-sm text-white text-[10px] font-medium px-2.5 py-1 rounded-full">
+          {evento.rassegna}
+        </span>
+      )}
     </div>
 
     {/* Content */}
@@ -49,13 +63,13 @@ const EventCard = ({ evento }: { evento: Evento }) => (
           )}
         </div>
 
-        <a
-          href="#"
+        <Link
+          to={`/eventi/${evento.id}`}
           className="event-link-btn"
           aria-label={`Dettagli: ${evento.titolo}`}
         >
           <ArrowRight size={18} />
-        </a>
+        </Link>
       </div>
     </div>
   </div>
