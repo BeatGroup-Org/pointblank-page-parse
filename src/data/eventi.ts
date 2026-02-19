@@ -2,10 +2,23 @@ export interface Evento {
   id: number;
   titolo: string;
   data: string;
+  dataISO?: string;
   ora?: string;
+  oraFine?: string;
   luogo: string;
+  indirizzo?: string;
   immagine: string;
   descrizione?: string;
+  descrizioneEstesa?: string;
+  categoria?: string;
+  rassegna?: string;
+  ingresso?: "gratuito" | "a pagamento";
+  prezzoInfo?: string;
+  contattoNome?: string;
+  contattoTelefono?: string;
+  contattoEmail?: string;
+  whatsappNumero?: string;
+  gallery?: string[];
 }
 
 export const eventi: Evento[] = [
@@ -13,17 +26,43 @@ export const eventi: Evento[] = [
     id: 1,
     titolo: "Masterclass di Batteria con Dario Panza",
     data: "13–14 Mar 2026",
+    dataISO: "2026-03-13",
+    ora: "10:00",
+    oraFine: "18:00",
     luogo: "Lamezia Terme",
+    indirizzo: "Via Example 1, Lamezia Terme (CZ)",
+    categoria: "Masterclass",
+    rassegna: "Stagione Concertistica 2025/26",
+    ingresso: "a pagamento",
+    prezzoInfo: "Contributo 20€",
     descrizione:
       "Batterista di fama nazionale, Dario Panza guiderà una masterclass dedicata al ritmo, alla tecnica e all'espressività nella batteria moderna.",
+    descrizioneEstesa:
+      "Un weekend intensivo con Dario Panza, batterista di fama nazionale. Due giorni dedicati al ritmo, alla tecnica e all'espressività nella batteria moderna.\n\nLa masterclass è aperta a batteristi di tutti i livelli e prevede sessioni pratiche, ascolto guidato e momenti di confronto. Ogni partecipante avrà la possibilità di suonare e ricevere feedback diretto dal maestro.\n\nAl termine della masterclass è previsto un momento di jam session aperto al pubblico.",
+    contattoNome: "Segreteria Mousikè",
+    contattoTelefono: "+39 0968 000000",
+    contattoEmail: "info@mousike.it",
+    whatsappNumero: "390968000000",
     immagine:
       "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=600&h=400&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1524230659092-07f99a75c013?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&h=600&fit=crop",
+    ],
   },
   {
     id: 2,
     titolo: "Masterclass di Pianoforte e Composizione con Jacopo Carlini",
     data: "10–11 Apr 2026",
+    dataISO: "2026-04-10",
+    ora: "10:00",
+    oraFine: "18:00",
     luogo: "Lamezia Terme",
+    categoria: "Masterclass",
+    rassegna: "Stagione Concertistica 2025/26",
+    ingresso: "a pagamento",
+    prezzoInfo: "Contributo 20€",
     descrizione:
       "Un doppio appuntamento con il pianista e compositore Jacopo Carlini: una masterclass formativa seguita da un'esibizione dal vivo.",
     immagine:
@@ -33,7 +72,12 @@ export const eventi: Evento[] = [
     id: 3,
     titolo: "Concerto di Jacopo Carlini con Chiara Vescio",
     data: "10–11 Apr 2026",
+    dataISO: "2026-04-10",
+    ora: "21:00",
     luogo: "Lamezia Terme",
+    categoria: "Concerto",
+    rassegna: "Stagione Concertistica 2025/26",
+    ingresso: "gratuito",
     descrizione:
       "Un'esibizione dal vivo con il pianista Jacopo Carlini e la vocalist Chiara Vescio.",
     immagine:
@@ -44,6 +88,9 @@ export const eventi: Evento[] = [
     titolo: 'Musical "Alice nel Paese delle Meraviglie"',
     data: "Maggio 2026",
     luogo: "Teatro Costabile, Lamezia Terme",
+    categoria: "Musical",
+    rassegna: "Produzioni Mousikè",
+    ingresso: "a pagamento",
     descrizione:
       "Un grande spettacolo musicale che coinvolge allievi e insegnanti in una produzione ricca di musica, danza e scenografie.",
     immagine:
@@ -54,6 +101,9 @@ export const eventi: Evento[] = [
     titolo: 'Concerti "Ma che Musica Maestro"',
     data: "Fine Maggio 2026",
     luogo: "Lamezia Terme",
+    categoria: "Concerto",
+    rassegna: "Ma che Musica Maestro",
+    ingresso: "gratuito",
     descrizione:
       "Serie di concerti dedicati ai laboratori dell'I.C. Perri Pitagora Don Milani con oltre 300 alunni.",
     immagine:
@@ -64,6 +114,9 @@ export const eventi: Evento[] = [
     titolo: "Saggio di Fine Anno — Musica Pop",
     data: "Giugno 2026",
     luogo: "Lamezia Terme",
+    categoria: "Saggio",
+    rassegna: "Produzioni Mousikè",
+    ingresso: "gratuito",
     descrizione:
       "Grande appuntamento per celebrare la conclusione dell'anno accademico con circa 100 musicisti che si esibiranno.",
     immagine:
@@ -74,6 +127,9 @@ export const eventi: Evento[] = [
     titolo: "Saggio di Fine Anno — Musica Classica",
     data: "Giugno 2026",
     luogo: "Lamezia Terme",
+    categoria: "Saggio",
+    rassegna: "Produzioni Mousikè",
+    ingresso: "gratuito",
     descrizione:
       "Grande appuntamento per celebrare la conclusione dell'anno accademico con circa 100 musicisti che si esibiranno.",
     immagine:
