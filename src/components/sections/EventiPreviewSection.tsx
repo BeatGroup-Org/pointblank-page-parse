@@ -8,8 +8,8 @@ const EventiPreviewSection = () => (
     <div className="container mx-auto px-6">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
-        <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-          Prossimi Eventi
+        <h2 className="text-3xl md:text-5xl font-bold leading-tight uppercase">
+          PROSSIMI EVENTI
         </h2>
         <p className="text-muted-foreground max-w-md text-base">
           Open day, workshop, masterclass e concerti dal vivo.

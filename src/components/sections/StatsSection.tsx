@@ -34,8 +34,8 @@ const StatsSection = () => {
           <p className="text-xs tracking-[0.3em] text-muted-foreground uppercase mb-2">
             Cosa facciamo
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Il nostro impegno
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground uppercase">
+            IL NOSTRO IMPEGNO
           </h2>
         </div>
 
