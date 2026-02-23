@@ -41,7 +41,7 @@ const ScuolaGallerySection = () => {
   };
 
   return (
-    <section ref={ref} className="fade-section py-24 bg-background">
+    <section ref={ref} className="fade-section pt-12 pb-24 bg-background">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">

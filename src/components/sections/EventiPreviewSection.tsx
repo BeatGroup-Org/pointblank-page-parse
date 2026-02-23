@@ -4,7 +4,7 @@ import { eventi } from "@/data/eventi";
 import EventCard from "@/components/EventCard";
 
 const EventiPreviewSection = () => (
-  <section className="py-24 bg-background">
+  <section className="pt-24 pb-12 bg-background">
     <div className="container mx-auto px-6">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
@@ -27,7 +27,7 @@ const EventiPreviewSection = () => (
       <div className="flex justify-center">
         <Link
           to="/eventi"
-          className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-3.5 rounded-full font-medium hover:bg-white/10 transition-colors duration-300"
+          className="inline-flex items-center gap-2 border border-white/50 bg-white/10 text-white px-8 py-3.5 rounded-full font-medium hover:bg-white/20 transition-colors duration-300"
         >
           Vedi tutti gli eventi
           <ArrowRight size={18} />
