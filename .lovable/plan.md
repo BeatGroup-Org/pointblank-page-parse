@@ -1,30 +1,28 @@
 
 
-## Titoli homepage tutti in maiuscolo
+## Sostituire le immagini placeholder con le foto reali della scuola
 
 ### Cosa cambia
 
-Tutti i titoli `<h2>` e `<h3>` delle sezioni homepage vengono convertiti in maiuscolo per uniformare lo stile visivo. Alcune sezioni lo hanno gia (Corsi, Team, Scuola Gallery), le altre vengono allineate.
-
-### Sezioni da aggiornare
-
-| Sezione | Titolo attuale | Titolo aggiornato |
-|---------|---------------|-------------------|
-| StatsSection | "Il nostro impegno" | "IL NOSTRO IMPEGNO" + classe `uppercase` |
-| EventiPreviewSection | "Prossimi Eventi" | "PROSSIMI EVENTI" + classe `uppercase` |
-| PartnerSection | "Rete di collaborazioni" | "RETE DI COLLABORAZIONI" + classe `uppercase` |
-| ProduzioniSection | "Produciamo cultura" | "PRODUCIAMO CULTURA" + classe `uppercase` |
-| ImpattoSection | "Impatto oltre la musica" | "IMPATTO OLTRE LA MUSICA" + classe `uppercase` |
-| CtaSection | "Vuoi iniziare un percorso musicale?" / "Sei una scuola o un ente?" | Stessi testi + classe `uppercase` |
-
-### Sezioni gia conformi (nessuna modifica)
-
-- **HeroSection**: h1 del sito, resta com'e
-- **CorsiSection**: gia in maiuscolo ("I NOSTRI PERCORSI")
-- **TeamSection**: gia in maiuscolo ("IL NOSTRO TEAM")
-- **ScuolaGallerySection**: gia in maiuscolo ("LA NOSTRA SCUOLA")
+Le 8 immagini Unsplash placeholder nella gallery "La Nostra Scuola" vengono sostituite con le 8 foto reali fornite, ospitate su Supabase Storage.
 
 ### Dettaglio tecnico
 
-Per ogni sezione da aggiornare si aggiunge la classe `uppercase` al tag `<h2>` (o `<h3>` per CtaSection) e si converte il testo nel markup in maiuscolo per coerenza. Nessun nuovo file, nessuna nuova dipendenza.
+**File modificato: `src/components/sections/ScuolaGallerySection.tsx`**
+
+- Sostituire l'array `images` (righe 13-22) con i nuovi URL delle foto reali:
+  1. Ingresso
+  2. Chitarre
+  3. Lezione Chitarra
+  4. Lezione Piano
+  5. PianoF
+  6. Lezioni di Batteria
+  7. Lezioni di Canto
+  8. Ingresso 2
+
+- Rimuovere la logica `.replace("w=800&h=600", "w=1600&h=1200")` nella lightbox (riga 112), dato che le nuove immagini non usano parametri Unsplash -- si usa direttamente l'URL originale a piena risoluzione
+
+- Aggiornare gli alt text con descrizioni piu specifiche (es. "Ingresso della scuola", "Lezione di chitarra", ecc.)
+
+Nessun nuovo file o dipendenza necessaria.
 
