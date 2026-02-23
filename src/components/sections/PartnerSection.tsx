@@ -14,7 +14,7 @@ const PartnerSection = () => {
   return (
     <section className="py-24 bg-secondary">
       <div ref={ref} className="fade-in-section container mx-auto px-6 max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Rete di collaborazioni</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center uppercase">RETE DI COLLABORAZIONI</h2>
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12 leading-relaxed">
           Collaboriamo stabilmente con scuole, enti pubblici e associazioni del territorio per costruire un impatto duraturo.
         </p>

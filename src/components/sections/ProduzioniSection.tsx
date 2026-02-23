@@ -7,7 +7,7 @@ const ProduzioniSection = () => {
   return (
     <section id="produzioni" className="py-24 bg-background">
       <div ref={ref} className="fade-in-section container mx-auto px-6 max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Produciamo cultura</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center uppercase">PRODUCIAMO CULTURA</h2>
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12 leading-relaxed">
           Musical, concerti e collaborazioni artistiche rappresentano la restituzione pubblica del percorso educativo.
           Ogni produzione è il risultato del lavoro di studenti, docenti e professionisti insieme.

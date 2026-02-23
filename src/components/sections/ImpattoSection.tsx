@@ -14,7 +14,7 @@ const ImpattoSection = () => {
   return (
     <section id="impatto" className="py-24 bg-secondary">
       <div ref={ref} className="fade-in-section container mx-auto px-6 max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Impatto oltre la musica</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center uppercase">IMPATTO OLTRE LA MUSICA</h2>
 
         <div className="grid sm:grid-cols-2 gap-8">
           {blocks.map((b) => {
