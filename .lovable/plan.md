@@ -1,19 +1,17 @@
 
-## Fix CTA: colori invertiti tra le due card
 
-### Problema
-Entrambe le card CTA hanno lo stesso stile; il testo del secondo bottone non e' visibile.
+## Aggiornare l'immagine di sfondo della Hero
 
-### Soluzione
-Differenziare le due card con colori bianco e arancione invertiti:
+### Cosa cambia
 
-**Card 1 (Percorso musicale):** sfondo arancione, testo bianco, bottone bianco con testo arancione
-**Card 2 (Scuola/Ente):** sfondo bianco, testo scuro, bottone arancione con testo bianco (stile attuale)
+In `src/components/sections/HeroSection.tsx`, sostituire l'URL dell'immagine di sfondo attuale ("Sfondo Logo.jpg") con la nuova foto "Hero2.JPEG" fornita.
 
 ### Dettaglio tecnico
 
-**File: `src/components/sections/CtaSection.tsx`**
+**File: `src/components/sections/HeroSection.tsx`** (riga 8)
 
-- Card 1: `bg-primary` con `text-primary-foreground`, bottone `bg-white text-primary hover:bg-white/90`
-- Card 2: `bg-card border border-border`, bottone rimane `bg-primary text-primary-foreground` (invariato)
-- Paragrafo card 1: `text-primary-foreground/80` per leggibilita' su arancione
+- Sostituire il valore `src` del tag `img` con il nuovo URL Supabase di Hero2.JPEG
+- Aggiornare l'attributo `alt` in "Hero Mousike"
+
+Nessun altro file coinvolto.
+
