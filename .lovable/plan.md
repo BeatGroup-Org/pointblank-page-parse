@@ -1,10 +1,19 @@
 
+## Inserire foto reali nella sezione "Produciamo Cultura"
 
-## Ingrandire i loghi del carosello
+### Cosa cambia
 
-Modifica minima in `src/components/sections/PartnerSection.tsx`, riga 29:
+In `src/components/sections/ProduzioniSection.tsx`, sostituire i 3 placeholder con le foto dei musical fornite:
 
-- Cambiare la classe dell'altezza dei loghi da `h-16` (64px) a `h-24` (96px)
+- Foto 1: Musical.jpg
+- Foto 2: Musical 2.jpg
+- Foto 3: Musical 3.jpg
 
-Questo rendera' i loghi circa il 50% piu' grandi, mantenendo le proporzioni grazie a `w-auto` e `object-contain`.
+### Dettaglio tecnico
 
+**File: `src/components/sections/ProduzioniSection.tsx`**
+
+- Creare un array con i 3 URL Supabase e relativi alt text
+- Sostituire il ciclo `[1, 2, 3].map(...)` con un map sull'array delle produzioni
+- Rimuovere `opacity-50` dal tag img (le foto reali non devono essere sbiadite)
+- Aggiungere `hover:scale-105 transition-transform duration-500` per coerenza con le altre sezioni del sito
