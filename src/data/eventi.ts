@@ -42,16 +42,12 @@ export const eventi: Evento[] = [
   {
     id: 1,
     titolo: "Masterclass di Batteria con Dario Panza",
-    data: "13–14 Mar 2026",
+    data: "13–14 Marzo 2026",
     dataISO: "2026-03-13",
-    ora: "10:00",
-    oraFine: "18:00",
-    luogo: "Lamezia Terme",
+    luogo: "Civico Trame – Lamezia Terme",
     indirizzo: "Via Duca d'Aosta, 23, 88046 Lamezia Terme CZ",
     categoria: "Masterclass",
     rassegna: "Stagione Concertistica 2025/26",
-    ingresso: "a pagamento",
-    prezzoInfo: "Contributo 20€",
     descrizione:
       "Batterista di fama nazionale, Dario Panza guiderà una masterclass dedicata al ritmo, alla tecnica e all'espressività nella batteria moderna.",
     descrizioneEstesa:
