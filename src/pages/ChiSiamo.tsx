@@ -107,10 +107,10 @@ const ChiSiamo = () => {
             ref={scuoleRef}
             className="fade-in-section py-20 md:py-28 container mx-auto px-6">
 
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight mb-12 md:mb-16">DENTRO LE
-SCUOLE. OGNI
-ANNO. DA OLTRE
- 15 ANNI<br />scuole, ogni<br />anno
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight mb-12 md:mb-16">DENTRO LE SCUOLE. 
+OGNI ANNO. 
+DA OLTRE 
+15 ANNI.<br />scuole, ogni<br />anno
             </h2>
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
               <div className="space-y-4">
@@ -138,7 +138,7 @@ ANNO. DA OLTRE
               </div>
               <div className="w-full aspect-[4/5] overflow-hidden md:-mt-32">
                 <img src={musicaMaestroImg} alt="Ma che musica maestro – studenti durante il progetto"
-                  className="w-full h-full object-cover" />
+                className="w-full h-full object-cover" />
 
               </div>
             </div>
