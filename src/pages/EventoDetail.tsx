@@ -26,7 +26,7 @@ const EventoDetail = () => {
   const descRef = useFadeIn();
   const contattiRef = useFadeIn();
   const ctaRef = useFadeIn();
-  const galleryRef = useFadeIn();
+  
 
   const whatsappUrl = evento.whatsappNumero
     ? `https://wa.me/${evento.whatsappNumero}?text=${encodeURIComponent(
@@ -221,33 +221,6 @@ const EventoDetail = () => {
           </div>
         </section>
 
-        {/* Gallery */}
-        {evento.gallery && evento.gallery.length > 0 && (
-          <section className="bg-background">
-            <div
-              ref={galleryRef}
-              className="fade-in-section py-16 md:py-24 container mx-auto px-6"
-            >
-              <h2 className="text-2xl md:text-3xl font-bold mb-8 max-w-3xl">Galleria</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {evento.gallery.map((img, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setLightboxIdx(idx)}
-                    className="overflow-hidden rounded-xl aspect-[4/3] focus:outline-none focus:ring-2 focus:ring-primary"
-                  >
-                    <img
-                      src={img}
-                      alt={`${evento.titolo} - foto ${idx + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                      loading="lazy"
-                    />
-                  </button>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* Lightbox */}
         {lightboxIdx !== null && (
@@ -263,8 +236,8 @@ const EventoDetail = () => {
               <X size={28} />
             </button>
             <img
-              src={lightboxIdx === -1 ? (evento.locandina || evento.immagine) : evento.gallery?.[lightboxIdx] || ''}
-              alt={lightboxIdx === -1 ? `Locandina - ${evento.titolo}` : `${evento.titolo} - foto ${lightboxIdx + 1}`}
+              src={evento.locandina || evento.immagine}
+              alt={`Locandina - ${evento.titolo}`}
               className="max-w-full max-h-[85vh] object-contain rounded-lg"
               onClick={(e) => e.stopPropagation()}
             />
