@@ -96,7 +96,7 @@ const TeamSection = () => {
                         {member.role}
                       </p>
                       <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                        {member.description}
+                        {member.shortDescription}
                       </p>
                     </div>
                   </div>
