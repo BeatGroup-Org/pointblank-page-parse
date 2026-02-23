@@ -44,9 +44,9 @@ export const eventi: Evento[] = [
     contattoEmail: "info@mousike.it",
     whatsappNumero: "393339568927",
     immagine:
-      "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=600&h=400&fit=crop",
+      "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Eventi/Dario%20Panza%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9FdmVudGkvRGFyaW8gUGFuemEgKDEpLnBuZyIsImlhdCI6MTc3MTg0MzQzNCwiZXhwIjoyNjM1ODQzNDM0fQ.aiDjah7zqfQQ9zoVEQNdSQqZ9xHQKTyz_fsGrAlbCTE",
     gallery: [
-      "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=800&h=600&fit=crop",
+      "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Eventi/Dario%20Panza%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9FdmVudGkvRGFyaW8gUGFuemEgKDEpLnBuZyIsImlhdCI6MTc3MTg0MzQzNCwiZXhwIjoyNjM1ODQzNDM0fQ.aiDjah7zqfQQ9zoVEQNdSQqZ9xHQKTyz_fsGrAlbCTE",
       "https://images.unsplash.com/photo-1524230659092-07f99a75c013?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&h=600&fit=crop",
     ],
