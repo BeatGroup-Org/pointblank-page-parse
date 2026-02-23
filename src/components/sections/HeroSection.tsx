@@ -7,7 +7,7 @@ const HeroSection = () => (
       <img
         src="https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Hero2.JPEG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9IZXJvMi5KUEVHIiwiaWF0IjoxNzcxODQ3MDE3LCJleHAiOjI2MzU4NDcwMTd9.hvbn-KVIy3CSNHb5hLcNU3izH2zp5LlOEBg0r29csng"
         alt="Hero Mousike"
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover blur-[2px] scale-105"
       />
       <div className="absolute inset-0 bg-black/50" />
     </div>
