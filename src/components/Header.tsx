@@ -14,7 +14,7 @@ const navLinks = [
   { label: "Eventi", href: "/eventi" },
   { label: "Produzioni", href: "#produzioni" },
   { label: "Impatto", href: "#impatto" },
-  { label: "Team", href: "#team" },
+  { label: "Team", href: "/staff" },
   { label: "Contatti", href: "#contatti" },
 ];
 

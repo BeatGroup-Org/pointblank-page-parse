@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Eventi from "./pages/Eventi";
 import EventoDetail from "./pages/EventoDetail";
 import ChiSiamo from "./pages/ChiSiamo";
+import Staff from "./pages/Staff";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import ContactFab from "./components/ContactFab";
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/eventi" element={<Eventi />} />
           <Route path="/eventi/:id" element={<EventoDetail />} />
           <Route path="/chi-siamo" element={<ChiSiamo />} />
+          <Route path="/staff" element={<Staff />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
