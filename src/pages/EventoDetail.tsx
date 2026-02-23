@@ -86,6 +86,22 @@ const EventoDetail = () => {
           </div>
         </section>
 
+        {/* Locandina */}
+        <section className="bg-background">
+          <div className="fade-in-section py-12 md:py-16 container mx-auto px-6 flex justify-center">
+            <button
+              onClick={() => setLightboxIdx(-1)}
+              className="focus:outline-none focus:ring-2 focus:ring-primary rounded-xl overflow-hidden shadow-lg max-w-md w-full"
+            >
+              <img
+                src={evento.immagine}
+                alt={`Locandina - ${evento.titolo}`}
+                className="w-full h-auto object-contain"
+              />
+            </button>
+          </div>
+        </section>
+
         {/* Info Grid */}
         <section className="bg-background">
           <div
@@ -225,7 +241,7 @@ const EventoDetail = () => {
         )}
 
         {/* Lightbox */}
-        {lightboxIdx !== null && evento.gallery && (
+        {lightboxIdx !== null && (
           <div
             className="fixed inset-0 z-[60] bg-foreground/90 flex items-center justify-center p-4"
             onClick={() => setLightboxIdx(null)}
@@ -238,8 +254,8 @@ const EventoDetail = () => {
               <X size={28} />
             </button>
             <img
-              src={evento.gallery[lightboxIdx]}
-              alt={`${evento.titolo} - foto ${lightboxIdx + 1}`}
+              src={lightboxIdx === -1 ? evento.immagine : evento.gallery?.[lightboxIdx] || ''}
+              alt={lightboxIdx === -1 ? `Locandina - ${evento.titolo}` : `${evento.titolo} - foto ${lightboxIdx + 1}`}
               className="max-w-full max-h-[85vh] object-contain rounded-lg"
               onClick={(e) => e.stopPropagation()}
             />
