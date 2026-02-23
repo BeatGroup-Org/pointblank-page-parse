@@ -25,7 +25,7 @@ const HeroSection = () => (
         <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground text-base px-8 py-6">
           Scopri il programma educativo
         </Button>
-        <Button size="lg" variant="outline" className="rounded-full bg-white text-primary border-white hover:bg-transparent hover:text-primary text-base px-8 py-6">
+        <Button size="lg" variant="outline" className="rounded-full bg-white text-primary border-white hover:bg-transparent hover:text-white text-base px-8 py-6">
           Prenota una prova
         </Button>
       </div>
