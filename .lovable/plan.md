@@ -1,36 +1,46 @@
 
 
-## Aggiornamento contatti reali su tutto il sito
+## Aggiornamento completo Staff
 
 ### Cosa cambia
 
-Sostituire tutti i dati placeholder con i contatti reali della scuola in ogni punto del sito dove compaiono.
+1. L'interfaccia `TeamMember` viene estesa con un campo `shortDescription` (descrizione di anteprima per la homepage) separato dalla `description` completa (per la pagina Staff)
+2. L'array `team` passa da 3 a 9 membri, con tutti i dati forniti (nuove foto, ruoli aggiornati, descrizioni complete)
+3. La `TeamSection` in homepage usa `shortDescription` nel pannello espandibile
+4. La pagina `/staff` usa `description` (testo lungo) e supporta paragrafi multipli
 
-### Dati reali
+### Dettaglio tecnico
 
-- **Facebook**: https://www.facebook.com/scuoladimusicalamezia
-- **Instagram**: https://www.instagram.com/scuoladimusicamousike/
-- **Indirizzo**: Via Duca d'Aosta, 23, 88046 Lamezia Terme CZ
-- **Telefono/WhatsApp**: +39 333 956 8927
-- **Email**: lasciata in sospeso (mantengo il placeholder `info@mousike.it` per ora)
-- **YouTube**: nessun link fornito, rimuovo il link o lo lascio con `#`
+**1. `src/data/team.ts`** -- Nuova interfaccia e 9 membri
 
-### File da modificare
+```typescript
+export interface TeamMember {
+  name: string;
+  role: string;
+  image: string;
+  shortDescription: string;  // anteprima per homepage
+  description: string;       // testo completo per pagina staff
+}
+```
 
-**1. `src/components/Footer.tsx`**
-- Indirizzo: "Via Duca d'Aosta, 23, 88046 Lamezia Terme CZ"
-- Telefono: "+39 333 956 8927"
-- Social: link reali a Facebook e Instagram, rimuovo YouTube (o lo lascio disabilitato)
+I 9 membri nell'ordine fornito:
+1. Orlando Vescio -- Pianoforte, Fisarmonica | Presidente e Direttore Artistico
+2. Chiara Vescio -- Canto Pop Rock | Direttrice Artistica
+3. Eugenio Nicolazzo -- Canto Pop e Musical
+4. Valentina Monteleone -- Pianoforte
+5. Vittorio Lanzo -- Chitarra Classica, Acustica ed Elettrica
+6. Domenico Lico -- Batteria
+7. Deborah Stranges -- Violino
+8. Marco Losardo -- Canto Pop Rock
+9. Bianca Bertucci -- Basso Elettrico
 
-**2. `src/components/ContactFab.tsx`**
-- Indirizzo + link Google Maps aggiornato
-- Telefono: `tel:+393339568927` e testo "+39 333 956 8927"
-- Social: link reali a Facebook e Instagram, rimuovo YouTube
+Tutte le foto aggiornate con i nuovi URL Supabase forniti.
 
-**3. `src/data/eventi.ts`**
-- `indirizzo`: "Via Duca d'Aosta, 23, 88046 Lamezia Terme CZ"
-- `contattoTelefono`: "+39 333 956 8927"
-- `whatsappNumero`: "393339568927"
+**2. `src/components/sections/TeamSection.tsx`** -- Usare `shortDescription`
 
-Nessun nuovo file, solo aggiornamento dati in 3 file esistenti.
+Cambiare `member.description` in `member.shortDescription` nel pannello overlay del carousel (riga 99).
+
+**3. `src/pages/Staff.tsx`** -- Nessuna modifica strutturale
+
+La pagina funziona gia' con l'array `team` e mostra `member.description`. Funzionera' automaticamente con i 9 membri e le descrizioni lunghe.
 
