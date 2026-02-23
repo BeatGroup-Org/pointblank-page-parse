@@ -11,14 +11,14 @@ import {
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const images = [
-  "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1524650359799-842906ca1c06?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1525201548942-d8732f6617a0?w=800&h=600&fit=crop",
+  { src: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Carosello%20Scuola/1.%20Ingresso.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9DYXJvc2VsbG8gU2N1b2xhLzEuIEluZ3Jlc3NvLkpQRyIsImlhdCI6MTc3MTg0OTIwMiwiZXhwIjoyNjM1ODQ5MjAyfQ.c6pGdeMno80e2UxExCBlWNl66u9Dy489o04wZEzYJMQ", alt: "Ingresso della scuola" },
+  { src: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Carosello%20Scuola/2.%20Chitarre.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9DYXJvc2VsbG8gU2N1b2xhLzIuIENoaXRhcnJlLkpQRyIsImlhdCI6MTc3MTg0OTIxNSwiZXhwIjoyNjM1ODQ5MjE1fQ.tAzrWKIvvfCu7qBAhw7uAWc96FEqlTU_sBkzqYvZUEM", alt: "Chitarre in esposizione" },
+  { src: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Carosello%20Scuola/3.%20Lezione%20Chitarra.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9DYXJvc2VsbG8gU2N1b2xhLzMuIExlemlvbmUgQ2hpdGFycmEuSlBHIiwiaWF0IjoxNzcxODQ5MjI3LCJleHAiOjI2MzU4NDkyMjd9.MJartVspjX3P5JDr6uY-R31HW6qCvfaIvlRPdUlwtOw", alt: "Lezione di chitarra" },
+  { src: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Carosello%20Scuola/4.%20Lezione%20piano.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9DYXJvc2VsbG8gU2N1b2xhLzQuIExlemlvbmUgcGlhbm8uSlBHIiwiaWF0IjoxNzcxODQ5MjQwLCJleHAiOjI2MzU4NDkyNDB9.1zCJ3aXJKxTw5nVFvNErm3y7IZTDKTQaU05z3E4c4Sw", alt: "Lezione di pianoforte" },
+  { src: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Carosello%20Scuola/5.%20PianoF.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9DYXJvc2VsbG8gU2N1b2xhLzUuIFBpYW5vRi5KUEciLCJpYXQiOjE3NzE4NDkyNTYsImV4cCI6MjYzNTg0OTI1Nn0.XYpuaf2S68SANI843rg0ftfXz1Wfq43G4zbV7GpzWZ0", alt: "Pianoforte a coda" },
+  { src: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Carosello%20Scuola/6.%20Lezioni%20di%20Batteria.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9DYXJvc2VsbG8gU2N1b2xhLzYuIExlemlvbmkgZGkgQmF0dGVyaWEuSlBHIiwiaWF0IjoxNzcxODQ5MjY3LCJleHAiOjI2MzU4NDkyNjd9.tqhmazNV6almNY6E6v8k8cH5JTgYfHHcZmIb2uhc9Ns", alt: "Lezione di batteria" },
+  { src: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Carosello%20Scuola/7.%20Lezioni%20di%20canto%20.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9DYXJvc2VsbG8gU2N1b2xhLzcuIExlemlvbmkgZGkgY2FudG8gLkpQRyIsImlhdCI6MTc3MTg0OTI3NywiZXhwIjoyNjM1ODQ5Mjc3fQ.V81zvVRa7kAu4NupjUSzQnN6spgDgnZ5iUQOD5KjJf8", alt: "Lezione di canto" },
+  { src: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Carosello%20Scuola/8.%20Ingresso%202.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9DYXJvc2VsbG8gU2N1b2xhLzguIEluZ3Jlc3NvIDIuSlBHIiwiaWF0IjoxNzcxODQ5MjkwLCJleHAiOjI2MzU4NDkyOTB9.mb9EtqjZdy4RmvI-MVyxHVfcpI0uKukUVrClW_KtIsA", alt: "Secondo ingresso della scuola" },
 ];
 
 const ScuolaGallerySection = () => {
@@ -74,8 +74,8 @@ const ScuolaGallerySection = () => {
                   onClick={() => openLightbox(i)}
                 >
                   <img
-                    src={src}
-                    alt={`La nostra scuola - foto ${i + 1}`}
+                    src={src.src}
+                    alt={src.alt}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
@@ -109,8 +109,8 @@ const ScuolaGallerySection = () => {
               </button>
 
               <img
-                src={images[selectedIndex].replace("w=800&h=600", "w=1600&h=1200")}
-                alt={`La nostra scuola - foto ${selectedIndex + 1}`}
+                src={images[selectedIndex].src}
+                alt={images[selectedIndex].alt}
                 className="max-w-full max-h-[85vh] object-contain rounded-lg"
               />
 
