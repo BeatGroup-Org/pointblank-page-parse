@@ -1,34 +1,26 @@
 
 
-## Gallery "La Nostra Scuola" con scorrimento continuo (marquee)
+## Aggiungere frecce di navigazione e lightbox alla gallery "La Nostra Scuola"
 
 ### Cosa cambia
 
-La sezione attuale con griglia statica viene sostituita da una gallery a scorrimento continuo (loop infinito), con immagini piu grandi e ben visibili. Il titolo viene messo in maiuscolo, coerente con le altre sezioni (es. "I NOSTRI PERCORSI", "IL NOSTRO TEAM").
-
-### Layout
-
-- **Titolo**: "LA NOSTRA SCUOLA" in maiuscolo, font bold/black, stile coerente con CorsiSection e TeamSection
-- **Sottotitolo**: breve descrizione a destra (layout flex come ora)
-- **Gallery**: striscia orizzontale di immagini che scorre in loop continuo (marquee), con pausa al hover
-- **Immagini**: piu grandi (es. 400x300 o 16:10), bordi arrotondati, leggero overlay hover
-- Riutilizza l'animazione `marquee` gia presente in `src/index.css` (usata anche da PartnerSection)
+1. La gallery passa dal marquee automatico a un **Embla Carousel** con frecce di navigazione (come la sezione Corsi), mantenendo le immagini grandi e il layout orizzontale.
+2. Cliccando su un'immagine si apre un **lightbox/dialog a schermo intero** con zoom dell'immagine, navigazione tra le foto e chiusura con X o click fuori.
 
 ### Dettaglio tecnico
 
 **File modificato: `src/components/sections/ScuolaGallerySection.tsx`**
 
-- Titolo con classi `uppercase font-black tracking-tight` su piu righe ("LA NOSTRA" / "SCUOLA")
-- Sostituire la griglia con un contenitore `overflow-hidden` e un `flex` con `animate-marquee`
-- Duplicare l'array immagini (`[...images, ...images]`) per ottenere il loop continuo
-- Immagini con dimensioni piu grandi: larghezza ~400px, aspect ratio 4:3 o simile
-- Aggiungere una velocita di scorrimento adeguata (piu lenta dei loghi partner, dato che le immagini sono piu grandi)
+- Sostituire il marquee con `Carousel`, `CarouselContent`, `CarouselItem`, `CarouselPrevious`, `CarouselNext` (da `@/components/ui/carousel`, come in CorsiSection)
+- Frecce posizionate in alto a destra sopra le immagini (stesso pattern di CorsiSection)
+- Ogni `CarouselItem` con larghezza simile a prima (~400px, usando `basis-[85%] sm:basis-[45%] lg:basis-[30%]`)
+- Aggiungere un `Dialog` (da `@/components/ui/dialog`) come lightbox:
+  - Click su immagine apre il dialog con l'immagine a dimensione piena
+  - Stato React per tracciare quale immagine e' selezionata (`selectedIndex`)
+  - Frecce sinistra/destra dentro il dialog per navigare tra le foto
+  - Pulsante X per chiudere
+  - Sfondo scuro semitrasparente
+- Rimuovere la classe `animate-marquee-slow` (non piu necessaria)
 
-**File modificato: `src/index.css`**
-
-- Aggiungere una variante `animate-marquee-slow` con durata piu lunga (es. 30-40s) per le immagini grandi, oppure riutilizzare quella esistente se la velocita risulta adeguata
-
-### Risultato
-
-Una striscia fotografica che scorre orizzontalmente in loop infinito, si ferma al passaggio del mouse, con immagini grandi e ben visibili. Titolo in maiuscolo coerente con il resto del sito.
+**Nessun nuovo file o dipendenza richiesta** - si riutilizzano Carousel e Dialog gia presenti nel progetto.
 
