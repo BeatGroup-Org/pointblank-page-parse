@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import StatsSection from "@/components/sections/StatsSection";
-import VideoPromoSection from "@/components/sections/VideoPromoSection";
+
 import CorsiSection from "@/components/sections/CorsiSection";
 import EventiPreviewSection from "@/components/sections/EventiPreviewSection";
 import ProduzioniSection from "@/components/sections/ProduzioniSection";
@@ -19,7 +19,7 @@ const Index = () => (
       <StatsSection />
       <PartnerSection />
       <EventiPreviewSection />
-      <VideoPromoSection />
+      
       <CorsiSection />
       <ProduzioniSection />
       <ImpattoSection />
