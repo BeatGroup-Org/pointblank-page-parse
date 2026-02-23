@@ -26,7 +26,7 @@ const PartnerSection = () => {
                 key={`${p.nome}-${i}`}
                 src={p.logo}
                 alt={p.nome}
-                className="h-16 w-auto object-contain shrink-0 opacity-80 hover:opacity-100 transition-opacity"
+                className="h-24 w-auto object-contain shrink-0 opacity-80 hover:opacity-100 transition-opacity"
               />
             ))}
           </div>
