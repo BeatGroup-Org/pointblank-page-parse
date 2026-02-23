@@ -26,7 +26,7 @@ const HeroSection = () => (
           Scopri il programma educativo
         </Button>
         <Button size="lg" variant="outline" className="rounded-full bg-white text-primary border-white hover:bg-transparent hover:text-white text-base px-8 py-6">
-          Prenota una prova
+          Prenota una lezione di prova
         </Button>
       </div>
     </div>
