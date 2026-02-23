@@ -1,3 +1,6 @@
+import darioPanzaHero from "@/assets/eventi/dario-panza-hero.png";
+import darioPanzaLocandina from "@/assets/eventi/dario-panza-locandina.png";
+
 export interface FasciaOraria {
   orario: string;
   titolo: string;
@@ -92,10 +95,8 @@ export const eventi: Evento[] = [
     contattoTelefono: "+39 333 956 8927",
     contattoEmail: "info@mousike.it",
     whatsappNumero: "393339568927",
-    immagine:
-      "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Eventi/Dario%20Panza%20Hero.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9FdmVudGkvRGFyaW8gUGFuemEgSGVyby5wbmciLCJpYXQiOjE3NzE4NDQwODEsImV4cCI6MjYzNTg0NDA4MX0.WD4KknNmy5ZWZdI17sQAkbAuX9OIvGQam-pPwprtVVg",
-    locandina:
-      "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Eventi/Dario%20Panza%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9FdmVudGkvRGFyaW8gUGFuemEgKDEpLnBuZyIsImlhdCI6MTc3MTg0MzQzNCwiZXhwIjoyNjM1ODQzNDM0fQ.aiDjah7zqfQQ9zoVEQNdSQqZ9xHQKTyz_fsGrAlbCTE",
+    immagine: darioPanzaHero,
+    locandina: darioPanzaLocandina,
   },
   {
     id: 2,
