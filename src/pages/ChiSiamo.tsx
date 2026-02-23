@@ -11,37 +11,37 @@ import musicaTuttiImg from "@/assets/chi-siamo-musica-tutti.jpg";
 const TextSection = ({
   title,
   children,
-  alt = false,
-}: {
-  title: string;
-  children: React.ReactNode;
-  alt?: boolean;
-}) => {
+  alt = false
+
+
+
+
+}: {title: string;children: React.ReactNode;alt?: boolean;}) => {
   const ref = useFadeIn();
   return (
     <section className={alt ? "bg-secondary" : "bg-background"}>
       <div
         ref={ref}
-        className="fade-in-section py-20 md:py-28 container mx-auto px-6 max-w-3xl"
-      >
+        className="fade-in-section py-20 md:py-28 container mx-auto px-6 max-w-3xl">
+
         <h2 className="text-3xl md:text-4xl font-bold mb-8">{title}</h2>
         <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
           {children}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
-const PhotoBreak = () => (
-  <section className="w-full bg-muted">
+const PhotoBreak = () =>
+<section className="w-full bg-muted">
     <div className="w-full aspect-[21/9] bg-muted flex items-center justify-center">
       <span className="text-muted-foreground/50 text-sm tracking-wide uppercase">
         Foto in arrivo
       </span>
     </div>
-  </section>
-);
+  </section>;
+
 
 const ChiSiamo = () => {
   useEffect(() => {
@@ -61,8 +61,8 @@ const ChiSiamo = () => {
         <section className="bg-background">
           <div
             ref={introRef}
-            className="fade-in-section py-20 md:py-28 container mx-auto px-6"
-          >
+            className="fade-in-section py-20 md:py-28 container mx-auto px-6">
+
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
               <div>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight">
@@ -97,18 +97,20 @@ const ChiSiamo = () => {
             src={chiSiamoPhoto1}
             alt="Lezione di musica a Mousikè"
             className="w-full aspect-[21/9] object-cover"
-            loading="lazy"
-          />
+            loading="lazy" />
+
         </section>
 
         {/* Sezione 3 – Il legame con le scuole */}
         <section className="bg-background">
           <div
             ref={scuoleRef}
-            className="fade-in-section py-20 md:py-28 container mx-auto px-6"
-          >
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight mb-12 md:mb-16">
-              Dentro le<br />scuole, ogni<br />anno
+            className="fade-in-section py-20 md:py-28 container mx-auto px-6">
+
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight mb-12 md:mb-16">DENTRO LE
+SCUOLE. OGNI
+ANNO. DA OLTRE
+ 15 ANNI<br />scuole, ogni<br />anno
             </h2>
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
               <div className="space-y-4">
@@ -135,11 +137,9 @@ const ChiSiamo = () => {
                 <hr className="border-border mt-6" />
               </div>
               <div className="w-full aspect-[4/5] overflow-hidden md:-mt-32">
-                <img
-                  src={musicaMaestroImg}
-                  alt="Ma che musica maestro – studenti durante il progetto"
-                  className="w-full h-full object-cover"
-                />
+                <img src={musicaMaestroImg} alt="Ma che musica maestro – studenti durante il progetto"
+                  className="w-full h-full object-cover" />
+
               </div>
             </div>
           </div>
@@ -167,8 +167,8 @@ const ChiSiamo = () => {
         <section className="bg-background">
           <div
             ref={musicaRef}
-            className="fade-in-section py-20 md:py-28 container mx-auto px-6"
-          >
+            className="fade-in-section py-20 md:py-28 container mx-auto px-6">
+
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight mb-12 md:mb-16 text-right">
               La musica<br />è di tutti
             </h2>
@@ -177,8 +177,8 @@ const ChiSiamo = () => {
                 <img
                   src={musicaTuttiImg}
                   alt="La musica è di tutti – inclusione attraverso la musica"
-                  className="w-full h-full object-cover"
-                />
+                  className="w-full h-full object-cover" />
+
               </div>
               <div className="space-y-4 text-right">
                 <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
@@ -223,16 +223,16 @@ const ChiSiamo = () => {
         <section className="py-24 bg-background">
           <div
             ref={ctaRef}
-            className="fade-in-section container mx-auto px-6 max-w-3xl text-center"
-          >
+            className="fade-in-section container mx-auto px-6 max-w-3xl text-center">
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground px-8">
                 Vieni a conoscerci
               </Button>
               <Button
                 variant="outline"
-                className="rounded-full border-primary text-primary hover:bg-primary/10 px-8"
-              >
+                className="rounded-full border-primary text-primary hover:bg-primary/10 px-8">
+
                 Scopri i nostri percorsi
               </Button>
             </div>
@@ -241,8 +241,8 @@ const ChiSiamo = () => {
         <TeamSection />
       </main>
       <Footer />
-    </>
-  );
+    </>);
+
 };
 
 export default ChiSiamo;
