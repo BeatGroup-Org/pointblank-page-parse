@@ -26,11 +26,11 @@ const ContactFab = () => {
               +39 333 956 8927
             </a>
             <a
-              href="mailto:info@mousike.it"
+              href="mailto:mousike.aps@gmail.com"
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail size={16} className="shrink-0" />
-              info@mousike.it
+              mousike.aps@gmail.com
             </a>
           </div>
           <div className="flex gap-3 mt-4 pt-3 border-t border-border">

@@ -22,8 +22,8 @@ const Footer = () => (
             <a href="tel:+393339568927" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone size={16} /> +39 333 956 8927
             </a>
-            <a href="mailto:info@mousike.it" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <Mail size={16} /> info@mousike.it
+            <a href="mailto:mousike.aps@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Mail size={16} /> mousike.aps@gmail.com
             </a>
           </div>
         </div>
