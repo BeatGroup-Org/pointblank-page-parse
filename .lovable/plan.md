@@ -1,89 +1,101 @@
 
 
-## Pagina Dettaglio Evento + Categoria e Rassegna
+## Pagina Staff / Maestri
 
-Questo piano unifica la creazione della pagina dettaglio evento (gia' approvata) con l'aggiunta dei campi **categoria** e **rassegna** al modello dati.
+### Cosa fa
 
----
+Crea una nuova pagina dedicata `/staff` che presenta ogni membro del team in modo approfondito, con sezioni orizzontali alternate (foto a sinistra + testo a destra, poi foto a destra + testo a sinistra, ecc.).
 
-### Nuovi campi
+I dati dei membri sono gli stessi gia' definiti in `TeamSection.tsx`. Verranno estratti in un file dati condiviso cosi' che sia la homepage (carousel anteprima) sia la pagina staff usino la stessa fonte.
 
-- **Categoria**: il tipo di evento (es. "Masterclass", "Concerto", "Musical", "Saggio")
-- **Rassegna**: la rassegna o il ciclo a cui appartiene (es. "Stagione Concertistica 2025/26", "Ma che Musica Maestro")
+### Layout
 
-Entrambi sono opzionali e verranno mostrati come badge colorati sia nelle EventCard che nella pagina dettaglio.
+Ogni membro occupa una sezione a tutto schermo con layout a due colonne che si alternano:
 
----
+```text
++--------------------------------------------------+
+|  [Header]                                        |
++--------------------------------------------------+
+|                                                  |
+|  I NOSTRI MAESTRI          (titolo grande)        |
+|                                                  |
++--------------------------------------------------+
+|                                                  |
+|  [FOTO]          |  Nome                         |
+|  aspect 4/5      |  Ruolo (badge/sottotitolo)    |
+|                  |  Descrizione lunga             |
+|                  |  ...                           |
+|                                                  |
++--------------------------------------------------+
+|                                                  |
+|                  |  Nome                [FOTO]    |
+|  Descrizione     |  Ruolo              aspect 4/5 |
+|  lunga ...       |                               |
+|                  |                               |
+|                                                  |
++--------------------------------------------------+
+|                  ...ecc...                        |
++--------------------------------------------------+
+|  [Footer]                                        |
++--------------------------------------------------+
+```
+
+Su mobile le colonne si impilano verticalmente (foto sopra, testo sotto).
+
+### Stile
+
+- Riprende lo stile "Chi Siamo": sfondo chiaro, titoli grandi `font-black uppercase`, padding generoso, animazioni `useFadeIn`
+- Le immagini verticali hanno `aspect-[4/5]` con `object-cover`, come gia' usato nella pagina Chi Siamo
+- L'alternanza foto/testo usa lo stesso pattern della sezione "Dentro le scuole" (foto SX) e "La musica e' di tutti" (foto DX) gia' presenti in Chi Siamo
+- Su desktop, le immagini avranno un leggero margine negativo superiore (`md:-mt-16`) per dare dinamismo, come gia' fatto in Chi Siamo
 
 ### Dettaglio tecnico
 
-**1. `src/data/eventi.ts`** -- Estendere interfaccia e dati
+**1. Nuovo file: `src/data/team.ts`**
 
-Aggiungere all'interfaccia `Evento`:
+Estrarre l'array `team` da `TeamSection.tsx` in un file dati dedicato con interfaccia tipizzata:
 
-```
-categoria?: string;       // es. "Masterclass", "Concerto", "Musical", "Saggio"
-rassegna?: string;        // es. "Stagione Concertistica 2025/26"
-```
+```typescript
+export interface TeamMember {
+  name: string;
+  role: string;
+  image: string;
+  description: string;
+}
 
-Piu' tutti i campi per il dettaglio evento gia' previsti nel piano precedente:
-
-```
-dataISO?: string;
-oraFine?: string;
-indirizzo?: string;
-descrizioneEstesa?: string;
-ingresso?: "gratuito" | "a pagamento";
-prezzoInfo?: string;
-contattoNome?: string;
-contattoTelefono?: string;
-contattoEmail?: string;
-whatsappNumero?: string;
-gallery?: string[];
+export const team: TeamMember[] = [
+  { name: "Orlando Vescio", role: "...", image: "...", description: "..." },
+  { name: "Chiara Vescio", ... },
+  { name: "Eugenio Nicolazzo", ... },
+];
 ```
 
-Popolare i dati di esempio con categoria e rassegna per ogni evento esistente.
+**2. Aggiornare: `src/components/sections/TeamSection.tsx`**
 
-**2. `src/components/EventCard.tsx`** -- Mostrare i badge
+- Rimuovere l'array `team` locale
+- Importare `team` da `@/data/team`
+- Il bottone "Scopri il team" diventera' un `Link` a `/staff`
 
-Aggiungere sotto il badge del luogo (o sopra il titolo) dei badge per categoria e rassegna, usando il componente Badge gia' presente nel progetto.
-
-**3. `src/pages/EventoDetail.tsx`** -- Nuova pagina dettaglio
+**3. Nuovo file: `src/pages/Staff.tsx`**
 
 La pagina completa con:
-- Hero con immagine e titolo
-- Badge per categoria e rassegna sotto il titolo
-- Griglia info: data, ora, luogo, ingresso
-- Descrizione estesa
-- Contatti di riferimento
-- Pulsanti: "Prenota su WhatsApp" e "Aggiungi al calendario"
-- Gallery fotografica opzionale
-- Stile coerente con Chi Siamo (fade-in, colori, tipografia)
+- Header e Footer
+- Sezione apertura con titolo grande ("I Nostri Maestri")
+- Per ogni membro: sezione con griglia a 2 colonne alternata
+  - Indice pari: foto a sinistra, testo a destra
+  - Indice dispari: testo a sinistra, foto a destra
+- Ogni sezione usa `useFadeIn` per l'animazione di entrata
+- Su mobile: colonna singola, foto sopra testo sotto
+- Separatore visivo tra le sezioni (linea sottile o cambio sfondo alternato `bg-background` / `bg-secondary`)
 
-**4. `src/lib/generateIcs.ts`** -- Utility per file .ics
+**4. Aggiornare: `src/App.tsx`**
 
-Funzione per generare e scaricare un file calendario standard.
-
-**5. `src/App.tsx`** -- Nuova rotta
-
-Aggiungere `<Route path="/eventi/:id" element={<EventoDetail />} />`
-
-**6. `src/components/EventCard.tsx`** -- Link al dettaglio
-
-Sostituire `href="#"` con un `<Link to={'/eventi/${evento.id}'}>`
-
----
-
-### Esempio dati aggiornati
-
+Aggiungere la rotta:
 ```
-{
-  id: 1,
-  titolo: "Masterclass di Batteria con Dario Panza",
-  categoria: "Masterclass",
-  rassegna: "Stagione Concertistica 2025/26",
-  data: "13-14 Mar 2026",
-  ...
-}
+<Route path="/staff" element={<Staff />} />
 ```
+
+**5. Aggiornare: `src/components/Header.tsx`**
+
+Aggiungere "Staff" ai `navLinks` oppure aggiornare il link "Team" per puntare a `/staff`.
 
