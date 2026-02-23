@@ -1,40 +1,47 @@
 
 
-## Locandina evento visibile per intero
+## Locandina sticky a lato della pagina
+
+### Problema attuale
+
+La locandina non si vede perche' ha la classe `fade-in-section` (che parte con `opacity: 0`) ma non ha il ref `useFadeIn()` collegato, quindi non diventa mai visibile.
 
 ### Cosa cambia
 
-Aggiungere una sezione dedicata alla locandina nella pagina del singolo evento, subito dopo l'hero, che mostra l'immagine completa in formato verticale (tipo A4) senza tagli.
-
-L'hero in alto resta com'e' (fa da copertina visiva), ma sotto viene aggiunta una sezione "Locandina" con l'immagine intera, cliccabile per aprirla nel lightbox a schermo pieno.
+Invece di una sezione a tutta larghezza sotto l'hero, la locandina viene spostata in una **sidebar sticky** a destra che accompagna l'utente mentre scorre la pagina. Su mobile, la locandina appare sopra il contenuto in formato compatto.
 
 ### Dettaglio tecnico
 
 **File: `src/pages/EventoDetail.tsx`**
 
-Aggiungere una nuova sezione tra l'hero (riga 87) e la Info Grid (riga 89):
+1. Aggiungere un nuovo ref `const locandinaRef = useFadeIn();`
+
+2. Rimuovere la sezione "Locandina" standalone (righe 89-103)
+
+3. Avvolgere le sezioni Info Grid, Descrizione, Contatti e CTA in un layout a due colonne:
 
 ```
-{/* Locandina */}
-<section className="bg-background">
-  <div className="fade-in-section py-12 md:py-16 container mx-auto px-6 flex justify-center">
-    <button
-      onClick={() => setLightboxIdx(-1)}
-      className="focus:outline-none focus:ring-2 focus:ring-primary rounded-xl overflow-hidden shadow-lg max-w-md w-full"
-    >
-      <img
-        src={evento.immagine}
-        alt={`Locandina - ${evento.titolo}`}
-        className="w-full h-auto object-contain"
-      />
-    </button>
+<div className="container mx-auto px-6 py-12 md:py-16">
+  <div className="flex flex-col lg:flex-row gap-10">
+    {/* Contenuto principale */}
+    <div className="flex-1 min-w-0">
+      ... info, descrizione, contatti, CTA ...
+    </div>
+
+    {/* Sidebar locandina sticky */}
+    <div className="lg:w-80 xl:w-96 shrink-0">
+      <div ref={locandinaRef} className="fade-in-section lg:sticky lg:top-24">
+        <button onClick={() => setLightboxIdx(-1)} ...>
+          <img src={evento.immagine} ... />
+        </button>
+      </div>
+    </div>
   </div>
-</section>
+</div>
 ```
 
-Modificare il lightbox (riga 228+) per gestire anche `lightboxIdx === -1` come caso speciale che mostra `evento.immagine` invece di `evento.gallery[idx]`:
-
-- Se `lightboxIdx === -1`: mostra `evento.immagine`
-- Se `lightboxIdx >= 0`: mostra `evento.gallery[lightboxIdx]` (comportamento attuale)
+4. Su mobile (sotto `lg`): la locandina appare prima del contenuto in formato ridotto e centrato
+5. Su desktop (`lg` in su): la locandina sta a destra con `position: sticky` e `top: 6rem`, seguendo lo scroll
+6. Il lightbox (click per ingrandire) resta funzionante come gia' implementato
 
 Nessun nuovo file. Solo modifiche a `EventoDetail.tsx`.
