@@ -93,7 +93,7 @@ export const eventi: Evento[] = [
     ctaLabel: "Info costi e prenotazioni",
     contattoNome: "Segreteria Mousikè",
     contattoTelefono: "+39 333 956 8927",
-    contattoEmail: "info@mousike.it",
+    contattoEmail: "mousike.aps@gmail.com",
     whatsappNumero: "393339568927",
     immagine: darioPanzaHero,
     locandina: darioPanzaLocandina,
