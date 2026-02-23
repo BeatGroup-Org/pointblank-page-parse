@@ -8,10 +8,10 @@ const CtaSection = () => {
     <section className="py-24 bg-background">
       <div ref={ref} className="fade-in-section container mx-auto px-6 max-w-4xl">
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-card border border-border rounded-lg p-10 text-center">
+          <div className="bg-primary rounded-lg p-10 text-center text-primary-foreground">
             <h3 className="text-2xl font-bold mb-3">Vuoi iniziare un percorso musicale?</h3>
-            <p className="text-muted-foreground mb-6 text-sm">Scopri i nostri corsi e prenota una lezione di prova gratuita.</p>
-            <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground px-8">
+            <p className="text-primary-foreground/80 mb-6 text-sm">Scopri i nostri corsi e prenota una lezione di prova gratuita.</p>
+            <Button className="rounded-full bg-white text-primary hover:bg-white/90 px-8">
               Prenota una prova
             </Button>
           </div>
