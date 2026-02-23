@@ -1,14 +1,22 @@
 
 
-## Aggiornare il colore del testo hover della seconda CTA
+## Rimuovere la sezione Video Promo dalla homepage
 
 ### Cosa cambia
 
-Nel bottone "Prenota una prova", il testo al passaggio del mouse diventa bianco invece che arancione.
+La sezione Video Promo viene rimossa dalla homepage.
 
 ### Dettaglio tecnico
 
-**File: `src/components/sections/HeroSection.tsx`** (riga 28)
+**File: `src/pages/Index.tsx`**
 
-Sostituire `hover:text-primary` con `hover:text-white` nelle classi del secondo Button.
+- Rimuovere l'import di `VideoPromoSection`
+- Rimuovere `<VideoPromoSection />` dal JSX
+
+La sequenza aggiornata sarà:
+Hero > Stats > Partner > Eventi > Corsi > Produzioni > Impatto > Team > CTA
+
+**File: `src/components/sections/VideoPromoSection.tsx`**
+
+- Il file può essere eliminato in quanto non più utilizzato.
 
