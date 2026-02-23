@@ -92,18 +92,20 @@ const EventoDetail = () => {
           <div className="container mx-auto px-6 py-12 md:py-16">
             <div className="flex flex-col lg:flex-row gap-10">
               {/* Mobile: Locandina sopra il contenuto */}
-              <div className="lg:hidden flex justify-center">
-                <button
-                  onClick={() => setLightboxIdx(-1)}
-                  className="focus:outline-none focus:ring-2 focus:ring-primary rounded-xl overflow-hidden shadow-lg max-w-xs w-full"
-                >
-                  <img
-                    src={evento.immagine}
-                    alt={`Locandina - ${evento.titolo}`}
-                    className="w-full h-auto object-contain"
-                  />
-                </button>
-              </div>
+              {evento.locandina && (
+                <div className="lg:hidden flex justify-center">
+                  <button
+                    onClick={() => setLightboxIdx(-1)}
+                    className="focus:outline-none focus:ring-2 focus:ring-primary rounded-xl overflow-hidden shadow-lg max-w-xs w-full"
+                  >
+                    <img
+                      src={evento.locandina}
+                      alt={`Locandina - ${evento.titolo}`}
+                      className="w-full h-auto object-contain"
+                    />
+                  </button>
+                </div>
+              )}
 
               {/* Contenuto principale */}
               <div className="flex-1 min-w-0 space-y-12 md:space-y-16">
@@ -199,20 +201,22 @@ const EventoDetail = () => {
               </div>
 
               {/* Sidebar locandina sticky - solo desktop */}
-              <div className="hidden lg:block lg:w-80 xl:w-96 shrink-0">
-                <div ref={locandinaRef} className="fade-in-section lg:sticky lg:top-24">
-                  <button
-                    onClick={() => setLightboxIdx(-1)}
-                    className="focus:outline-none focus:ring-2 focus:ring-primary rounded-xl overflow-hidden shadow-lg w-full"
-                  >
-                    <img
-                      src={evento.immagine}
-                      alt={`Locandina - ${evento.titolo}`}
-                      className="w-full h-auto object-contain"
-                    />
-                  </button>
+              {evento.locandina && (
+                <div className="hidden lg:block lg:w-80 xl:w-96 shrink-0">
+                  <div ref={locandinaRef} className="fade-in-section lg:sticky lg:top-24">
+                    <button
+                      onClick={() => setLightboxIdx(-1)}
+                      className="focus:outline-none focus:ring-2 focus:ring-primary rounded-xl overflow-hidden shadow-lg w-full"
+                    >
+                      <img
+                        src={evento.locandina}
+                        alt={`Locandina - ${evento.titolo}`}
+                        className="w-full h-auto object-contain"
+                      />
+                    </button>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </section>
@@ -259,7 +263,7 @@ const EventoDetail = () => {
               <X size={28} />
             </button>
             <img
-              src={lightboxIdx === -1 ? evento.immagine : evento.gallery?.[lightboxIdx] || ''}
+              src={lightboxIdx === -1 ? (evento.locandina || evento.immagine) : evento.gallery?.[lightboxIdx] || ''}
               alt={lightboxIdx === -1 ? `Locandina - ${evento.titolo}` : `${evento.titolo} - foto ${lightboxIdx + 1}`}
               className="max-w-full max-h-[85vh] object-contain rounded-lg"
               onClick={(e) => e.stopPropagation()}
