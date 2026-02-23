@@ -130,9 +130,16 @@ const EventoDetail = () => {
 
                 {/* Sezione 1: Intro / Presentazione */}
                 <div ref={introRef} className="fade-in-section">
-                  <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed whitespace-pre-line">
-                    {evento.introduzione || evento.descrizioneEstesa || evento.descrizione}
-                  </div>
+                  <div
+                    className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed whitespace-pre-line"
+                    dangerouslySetInnerHTML={{
+                      __html: (evento.introduzione || evento.descrizioneEstesa || evento.descrizione || "")
+                        .replace(/Annalisa/g, "<strong class='text-foreground'>Annalisa</strong>")
+                        .replace(/Willie Peyote/g, "<strong class='text-foreground'>Willie Peyote</strong>")
+                        .replace(/Ernia/g, "<strong class='text-foreground'>Ernia</strong>")
+                        .replace(/Serena Brancale/g, "<strong class='text-foreground'>Serena Brancale</strong>"),
+                    }}
+                  />
                 </div>
 
                 {/* Sezione 2: Programma dettagliato */}
