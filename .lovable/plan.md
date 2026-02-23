@@ -1,28 +1,20 @@
 
 
-## Sostituire le immagini placeholder con le foto reali della scuola
+## Ridurre spaziatura tra Eventi e La Nostra Scuola + sistemare contrasto CTA eventi
 
-### Cosa cambia
+### Problema 1: Troppo spazio tra le sezioni
+Entrambe le sezioni hanno `py-24` (96px sopra e sotto), creando quasi 200px di spazio tra le due. Si riduce il padding inferiore della sezione Eventi.
 
-Le 8 immagini Unsplash placeholder nella gallery "La Nostra Scuola" vengono sostituite con le 8 foto reali fornite, ospitate su Supabase Storage.
+### Problema 2: CTA "Vedi tutti gli eventi" senza contrasto
+Il bottone usa `border-white/20 text-white` su sfondo scuro (`bg-background`), risultando praticamente invisibile. Va reso visibile con bordo e testo a contrasto pieno.
 
-### Dettaglio tecnico
+### Modifiche tecniche
 
-**File modificato: `src/components/sections/ScuolaGallerySection.tsx`**
+**`src/components/sections/EventiPreviewSection.tsx`**
+- Riga 7: cambiare `py-24` in `pt-24 pb-12` per ridurre lo spazio sotto la sezione eventi
+- Riga 30: cambiare la classe del Link CTA da `border-white/20 text-white` a `border-white/40 text-white` per aumentare il contrasto del bordo, oppure usare uno stile piu visibile come `bg-white/10 border border-white/50 text-white`
 
-- Sostituire l'array `images` (righe 13-22) con i nuovi URL delle foto reali:
-  1. Ingresso
-  2. Chitarre
-  3. Lezione Chitarra
-  4. Lezione Piano
-  5. PianoF
-  6. Lezioni di Batteria
-  7. Lezioni di Canto
-  8. Ingresso 2
+**`src/components/sections/ScuolaGallerySection.tsx`**
+- Riga 44: cambiare `py-24` in `pt-12 pb-24` per ridurre lo spazio sopra la sezione scuola
 
-- Rimuovere la logica `.replace("w=800&h=600", "w=1600&h=1200")` nella lightbox (riga 112), dato che le nuove immagini non usano parametri Unsplash -- si usa direttamente l'URL originale a piena risoluzione
-
-- Aggiornare gli alt text con descrizioni piu specifiche (es. "Ingresso della scuola", "Lezione di chitarra", ecc.)
-
-Nessun nuovo file o dipendenza necessaria.
-
+Queste due modifiche insieme dimezzano lo spazio tra le sezioni da ~192px a ~96px.
