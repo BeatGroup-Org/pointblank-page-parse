@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { X, MapPin, Phone, Mail, Facebook, Instagram, Youtube } from "lucide-react";
-
+import { X, MapPin, Phone, Mail, Facebook, Instagram } from "lucide-react";
 const ContactFab = () => {
   const [open, setOpen] = useState(false);
 
@@ -11,20 +10,20 @@ const ContactFab = () => {
           <h4 className="font-bold text-foreground text-lg mb-3">Contattaci</h4>
           <div className="space-y-3 text-sm">
             <a
-              href="https://maps.google.com/?q=Via+Example+123+Lamezia+Terme"
+              href="https://maps.google.com/?q=Via+Duca+d'Aosta+23+88046+Lamezia+Terme+CZ"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <MapPin size={16} className="shrink-0" />
-              Via Example 123, Lamezia Terme (CZ)
+              Via Duca d'Aosta, 23, 88046 Lamezia Terme CZ
             </a>
             <a
-              href="tel:+390968000000"
+              href="tel:+393339568927"
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Phone size={16} className="shrink-0" />
-              +39 0968 000000
+              +39 333 956 8927
             </a>
             <a
               href="mailto:info@mousike.it"
@@ -35,9 +34,8 @@ const ContactFab = () => {
             </a>
           </div>
           <div className="flex gap-3 mt-4 pt-3 border-t border-border">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Facebook size={18} /></a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram size={18} /></a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Youtube size={18} /></a>
+            <a href="https://www.facebook.com/scuoladimusicalamezia" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Facebook size={18} /></a>
+            <a href="https://www.instagram.com/scuoladimusicamousike/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Instagram size={18} /></a>
           </div>
         </div>
       )}

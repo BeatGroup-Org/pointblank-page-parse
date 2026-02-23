@@ -30,7 +30,7 @@ export const eventi: Evento[] = [
     ora: "10:00",
     oraFine: "18:00",
     luogo: "Lamezia Terme",
-    indirizzo: "Via Example 1, Lamezia Terme (CZ)",
+    indirizzo: "Via Duca d'Aosta, 23, 88046 Lamezia Terme CZ",
     categoria: "Masterclass",
     rassegna: "Stagione Concertistica 2025/26",
     ingresso: "a pagamento",
@@ -40,9 +40,9 @@ export const eventi: Evento[] = [
     descrizioneEstesa:
       "Un weekend intensivo con Dario Panza, batterista di fama nazionale. Due giorni dedicati al ritmo, alla tecnica e all'espressività nella batteria moderna.\n\nLa masterclass è aperta a batteristi di tutti i livelli e prevede sessioni pratiche, ascolto guidato e momenti di confronto. Ogni partecipante avrà la possibilità di suonare e ricevere feedback diretto dal maestro.\n\nAl termine della masterclass è previsto un momento di jam session aperto al pubblico.",
     contattoNome: "Segreteria Mousikè",
-    contattoTelefono: "+39 0968 000000",
+    contattoTelefono: "+39 333 956 8927",
     contattoEmail: "info@mousike.it",
-    whatsappNumero: "390968000000",
+    whatsappNumero: "393339568927",
     immagine:
       "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=600&h=400&fit=crop",
     gallery: [

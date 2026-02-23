@@ -16,9 +16,15 @@ const Footer = () => (
         <div>
           <h4 className="font-semibold mb-4 text-lg">Contatti</h4>
           <div className="space-y-3 text-sm text-card/70">
-            <div className="flex items-center gap-2"><MapPin size={16} /> Via Example 123, Lamezia Terme (CZ)</div>
-            <div className="flex items-center gap-2"><Phone size={16} /> +39 0968 000000</div>
-            <div className="flex items-center gap-2"><Mail size={16} /> info@mousike.it</div>
+            <a href="https://maps.google.com/?q=Via+Duca+d'Aosta+23+88046+Lamezia+Terme+CZ" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <MapPin size={16} /> Via Duca d'Aosta, 23, 88046 Lamezia Terme CZ
+            </a>
+            <a href="tel:+393339568927" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Phone size={16} /> +39 333 956 8927
+            </a>
+            <a href="mailto:info@mousike.it" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Mail size={16} /> info@mousike.it
+            </a>
           </div>
         </div>
 
@@ -36,9 +42,8 @@ const Footer = () => (
       <div className="border-t border-card/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-card/50">
         <p>© {new Date().getFullYear()} Mousikè. Tutti i diritti riservati.</p>
         <div className="flex gap-4 mt-4 md:mt-0">
-          {["Facebook", "Instagram", "YouTube"].map((s) => (
-            <a key={s} href="#" className="hover:text-primary transition-colors">{s}</a>
-          ))}
+          <a href="https://www.facebook.com/scuoladimusicalamezia" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Facebook</a>
+          <a href="https://www.instagram.com/scuoladimusicamousike/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
         </div>
       </div>
     </div>
