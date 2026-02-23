@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { eventi } from "@/data/eventi";
-import { generateIcsDownload } from "@/lib/generateIcs";
+import { openGoogleCalendar } from "@/lib/generateIcs";
 
 const EventoDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -37,7 +37,7 @@ const EventoDetail = () => {
 
   const handleCalendar = () => {
     if (!evento.dataISO) return;
-    generateIcsDownload({
+    openGoogleCalendar({
       titolo: evento.titolo,
       dataISO: evento.dataISO,
       ora: evento.ora,
@@ -203,7 +203,7 @@ const EventoDetail = () => {
                         onClick={handleCalendar}
                       >
                         <Calendar size={18} />
-                        Aggiungi al calendario
+                        Aggiungi a Google Calendar
                       </Button>
                     )}
                   </div>
