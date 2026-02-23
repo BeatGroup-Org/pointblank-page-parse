@@ -1,17 +1,19 @@
 
-
-## Aggiornare l'immagine di sfondo della Hero
+## Migliorare la visibilita della seconda CTA nella Hero
 
 ### Cosa cambia
 
-In `src/components/sections/HeroSection.tsx`, sostituire l'URL dell'immagine di sfondo attuale ("Sfondo Logo.jpg") con la nuova foto "Hero2.JPEG" fornita.
+In `src/components/sections/HeroSection.tsx`, aggiornare lo stile del bottone "Prenota una prova":
+
+- **Stato normale**: sfondo bianco, testo arancione (colore primary)
+- **Hover**: sfondo trasparente, testo arancione, bordo bianco
 
 ### Dettaglio tecnico
 
-**File: `src/components/sections/HeroSection.tsx`** (riga 8)
+**File: `src/components/sections/HeroSection.tsx`** (riga ~27)
 
-- Sostituire il valore `src` del tag `img` con il nuovo URL Supabase di Hero2.JPEG
-- Aggiornare l'attributo `alt` in "Hero Mousike"
+Sostituire le classi del secondo Button da:
+`border-white text-white hover:bg-white/10`
 
-Nessun altro file coinvolto.
-
+Con:
+`bg-white text-primary border-white hover:bg-transparent hover:text-primary`
