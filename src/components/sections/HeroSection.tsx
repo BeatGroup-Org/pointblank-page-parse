@@ -5,8 +5,8 @@ const HeroSection = () => (
     {/* Background placeholder */}
     <div className="absolute inset-0">
       <img
-        src="https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Sfondo%20Logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9TZm9uZG8gTG9nby5qcGciLCJpYXQiOjE3NzA4Mjg2ODYsImV4cCI6MjYzNDgyODY4Nn0.8V-slvODQxYswjVPJQ3HcYZnxj3yVvENkKJXHTjmfWQ"
-        alt="Sfondo Hero Mousikè"
+        src="https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Hero2.JPEG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9IZXJvMi5KUEVHIiwiaWF0IjoxNzcxODQ3MDE3LCJleHAiOjI2MzU4NDcwMTd9.hvbn-KVIy3CSNHb5hLcNU3izH2zp5LlOEBg0r29csng"
+        alt="Hero Mousike"
         className="w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black/50" />
