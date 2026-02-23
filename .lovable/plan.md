@@ -1,26 +1,30 @@
 
 
-## Aggiungere frecce di navigazione e lightbox alla gallery "La Nostra Scuola"
+## Titoli homepage tutti in maiuscolo
 
 ### Cosa cambia
 
-1. La gallery passa dal marquee automatico a un **Embla Carousel** con frecce di navigazione (come la sezione Corsi), mantenendo le immagini grandi e il layout orizzontale.
-2. Cliccando su un'immagine si apre un **lightbox/dialog a schermo intero** con zoom dell'immagine, navigazione tra le foto e chiusura con X o click fuori.
+Tutti i titoli `<h2>` e `<h3>` delle sezioni homepage vengono convertiti in maiuscolo per uniformare lo stile visivo. Alcune sezioni lo hanno gia (Corsi, Team, Scuola Gallery), le altre vengono allineate.
+
+### Sezioni da aggiornare
+
+| Sezione | Titolo attuale | Titolo aggiornato |
+|---------|---------------|-------------------|
+| StatsSection | "Il nostro impegno" | "IL NOSTRO IMPEGNO" + classe `uppercase` |
+| EventiPreviewSection | "Prossimi Eventi" | "PROSSIMI EVENTI" + classe `uppercase` |
+| PartnerSection | "Rete di collaborazioni" | "RETE DI COLLABORAZIONI" + classe `uppercase` |
+| ProduzioniSection | "Produciamo cultura" | "PRODUCIAMO CULTURA" + classe `uppercase` |
+| ImpattoSection | "Impatto oltre la musica" | "IMPATTO OLTRE LA MUSICA" + classe `uppercase` |
+| CtaSection | "Vuoi iniziare un percorso musicale?" / "Sei una scuola o un ente?" | Stessi testi + classe `uppercase` |
+
+### Sezioni gia conformi (nessuna modifica)
+
+- **HeroSection**: h1 del sito, resta com'e
+- **CorsiSection**: gia in maiuscolo ("I NOSTRI PERCORSI")
+- **TeamSection**: gia in maiuscolo ("IL NOSTRO TEAM")
+- **ScuolaGallerySection**: gia in maiuscolo ("LA NOSTRA SCUOLA")
 
 ### Dettaglio tecnico
 
-**File modificato: `src/components/sections/ScuolaGallerySection.tsx`**
-
-- Sostituire il marquee con `Carousel`, `CarouselContent`, `CarouselItem`, `CarouselPrevious`, `CarouselNext` (da `@/components/ui/carousel`, come in CorsiSection)
-- Frecce posizionate in alto a destra sopra le immagini (stesso pattern di CorsiSection)
-- Ogni `CarouselItem` con larghezza simile a prima (~400px, usando `basis-[85%] sm:basis-[45%] lg:basis-[30%]`)
-- Aggiungere un `Dialog` (da `@/components/ui/dialog`) come lightbox:
-  - Click su immagine apre il dialog con l'immagine a dimensione piena
-  - Stato React per tracciare quale immagine e' selezionata (`selectedIndex`)
-  - Frecce sinistra/destra dentro il dialog per navigare tra le foto
-  - Pulsante X per chiudere
-  - Sfondo scuro semitrasparente
-- Rimuovere la classe `animate-marquee-slow` (non piu necessaria)
-
-**Nessun nuovo file o dipendenza richiesta** - si riutilizzano Carousel e Dialog gia presenti nel progetto.
+Per ogni sezione da aggiornare si aggiunge la classe `uppercase` al tag `<h2>` (o `<h3>` per CtaSection) e si converte il testo nel markup in maiuscolo per coerenza. Nessun nuovo file, nessuna nuova dipendenza.
 
