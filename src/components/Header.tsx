@@ -9,13 +9,9 @@ if (typeof window !== "undefined") {
 
 const navLinks = [
   { label: "Chi siamo", href: "/chi-siamo" },
-  { label: "Programma", href: "#programma" },
   { label: "Formazione Musicale", href: "/formazione" },
   { label: "Eventi", href: "/eventi" },
-  { label: "Produzioni", href: "#produzioni" },
-  { label: "Impatto", href: "#impatto" },
   { label: "Team", href: "/staff" },
-  { label: "Contatti", href: "#contatti" },
 ];
 
 const Header = () => {
@@ -238,15 +234,6 @@ const Header = () => {
                 <path className="shape-element" d="M100 100 Q150 50, 200 100 Q250 150, 200 200 Q150 250, 100 200 Q50 150, 100 100" fill="rgba(99,102,241,0.12)" />
                 <path className="shape-element" d="M250 200 Q300 150, 350 200 Q400 250, 350 300 Q300 350, 250 300 Q200 250, 250 200" fill="rgba(236,72,153,0.1)" />
               </svg>
-              <svg className="bg-shape bg-shape-5" viewBox="0 0 400 400" fill="none">
-                <line className="shape-element" x1="0" y1="100" x2="300" y2="400" stroke="rgba(99,102,241,0.15)" strokeWidth="30" />
-                <line className="shape-element" x1="100" y1="0" x2="400" y2="300" stroke="rgba(139,92,246,0.12)" strokeWidth="25" />
-                <line className="shape-element" x1="200" y1="0" x2="400" y2="200" stroke="rgba(236,72,153,0.1)" strokeWidth="20" />
-              </svg>
-              <svg className="bg-shape bg-shape-6" viewBox="0 0 400 400" fill="none">
-                <circle className="shape-element" cx="200" cy="200" r="100" fill="rgba(99,102,241,0.1)" />
-                <circle className="shape-element" cx="200" cy="200" r="60" fill="rgba(139,92,246,0.08)" />
-              </svg>
             </div>
           </div>
 
@@ -260,13 +247,7 @@ const Header = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       closeMenu();
-                      if (link.href.startsWith("/")) {
-                        navigate(link.href);
-                      } else if (location.pathname !== "/") {
-                        navigate("/" + link.href);
-                      } else {
-                        document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
-                      }
+                      navigate(link.href);
                     }}
                   >
                     <p className="nav-link-text">{link.label}</p>
