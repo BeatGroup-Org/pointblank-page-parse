@@ -1,30 +1,30 @@
 
 
-## Adeguamento stile pagina Amministrazione Trasparente
+## Aggiornamento menu navigazione
 
-### Cosa cambia
+### Modifiche a `src/components/Header.tsx`
 
-La pagina attuale usa uno stile generico (titoli `text-4xl font-bold`, layout centrato `max-w-3xl`). Va allineata allo stile di Chi Siamo che usa titoli grandi, bold/black, uppercase e un layout piu ampio.
+**1. Aggiungere "Amministrazione Trasparente" ai link del menu**
 
-### Modifiche a `src/pages/AmministrazioneTrasparente.tsx`
+Aggiungere una nuova voce all'array `navLinks`:
+```
+{ label: "Amministrazione Trasparente", href: "/amministrazione-trasparente" }
+```
 
-1. **Struttura generale**: rimuovere il wrapper `<div>` e usare `<> <Header/> <main>...</main> <Footer/> </>` come in Chi Siamo
+**2. Aggiungere una quinta SVG decorativa** (`bg-shape-5`) nella sezione `ambient-background-shapes` per coprire il nuovo quinto link.
 
-2. **Hero/Apertura**: adottare lo stesso layout a due colonne di Chi Siamo:
-   - Colonna sinistra: titolo grande `text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight`
-   - Colonna destra: testo descrittivo con `text-muted-foreground text-base md:text-lg leading-relaxed`
-   - Sfondo `bg-background` (non `bg-secondary`), padding `py-20 md:py-28`
+**3. Aggiungere blocco contatti in basso nel menu**
 
-3. **Sezione "Contributi Pubblici"**: 
-   - Titolo h2 aggiornato a `text-3xl md:text-4xl font-bold` (gia coerente, ma verificare)
-   - Sfondo alternato `bg-secondary` per contrasto
-   - Container piu ampio (rimuovere `max-w-3xl`, usare il container standard come Chi Siamo)
+Sotto la `ul.menu-list`, inserire un piccolo blocco con attributo `data-menu-fade` (per l'animazione di entrata) contenente:
+- Indirizzo (link a Google Maps)
+- Telefono (link tel:)
+- Email (link mailto:)
+- Social (Facebook / Instagram)
 
-4. **Sezione "Riferimenti Normativi"**:
-   - Sfondo `bg-background`
-   - Stesso stile tipografico
+Il blocco sara stilizzato con testo piccolo (`text-xs` o `text-sm`), colore attenuato, e posizionato in basso nel `menu-content-wrapper`.
 
-5. **Font e dimensioni**: assicurarsi che tutti i testi usino le stesse classi di Chi Siamo (`text-base md:text-lg leading-relaxed` per i paragrafi)
+### Dettagli tecnici
+- Il `menu-content-wrapper` usera `flex flex-col justify-between h-full` per spingere i contatti in basso
+- I contatti appariranno con l'animazione `data-menu-fade` gia esistente nel sistema GSAP
+- Icone da `lucide-react` (MapPin, Phone, Mail) per coerenza col resto del sito
 
-### Risultato
-La pagina avra lo stesso "respiro" visivo di Chi Siamo, con il titolo grande uppercase a sinistra e il testo a destra nell'hero, e sezioni con sfondo alternato coerenti col resto del sito.
