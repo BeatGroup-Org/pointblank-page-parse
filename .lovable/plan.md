@@ -1,18 +1,23 @@
 
+## Allineare la sezione Corsi in homepage con la pagina Formazione
 
-## Navigazione al maestro specifico dalla pagina Formazione
+### Problema
+La sezione "I Nostri Percorsi Formativi" in homepage mostra corsi generici (Musica classica, Musica pop, Strumenti popolari calabresi, ecc.) che non corrispondono ai corsi reali della pagina `/formazione` (Canto Pop, Pianoforte, Chitarra, Batteria, Basso, Violino, Musical).
 
 ### Cosa cambia
-Cliccando su un docente nella pagina Formazione, l'utente verra portato direttamente alla sezione di quel maestro nella pagina Staff, invece che all'inizio della pagina.
 
-### Come funziona
+**`src/components/sections/CorsiSection.tsx`** -- Aggiornare l'array `corsi` per riflettere i 7 percorsi reali:
 
-1. **`src/pages/Staff.tsx`** -- Aggiungere un `id` ad ogni sezione maestro basato sul nome (es. `id="orlando-vescio"`). Modificare lo `scrollTo(0,0)` nell'useEffect per controllare se c'e un hash nell'URL e, in caso, scrollare all'elemento corrispondente.
+| Vecchio | Nuovo |
+|---------|-------|
+| Musica classica | Canto Pop |
+| Musica pop | Pianoforte |
+| Strumenti popolari calabresi | Chitarra Classica, Acustica ed Elettrica |
+| Musicoterapia e teatroterapia | Batteria |
+| Certificazioni Trinity | Basso |
+| *(nuovo)* | Violino |
+| *(nuovo)* | Musical |
 
-2. **`src/pages/Formazione.tsx`** -- Cambiare i link da `to="/staff"` a `to={/staff#slug}` dove lo slug e il nome del docente in lowercase con trattini (es. `/staff#orlando-vescio`).
-
-### Dettagli tecnici
-- Lo slug viene generato con: `name.toLowerCase().replace(/\s+/g, "-")`
-- Lo scroll all'elemento usa `document.getElementById(hash).scrollIntoView({ behavior: "smooth" })`
-- L'useEffect in Staff controlla `location.hash`: se presente scrolla all'elemento, altrimenti scrolla in cima come prima
-
+- Le immagini verranno aggiornate con foto Unsplash pertinenti allo strumento (chitarra, batteria, violino, ecc.)
+- I link "Scopri di piu" punteranno tutti a `/formazione`
+- Nessun altro file da modificare
