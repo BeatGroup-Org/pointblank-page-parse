@@ -1,23 +1,25 @@
 
-## Allineare la sezione Corsi in homepage con la pagina Formazione
 
-### Problema
-La sezione "I Nostri Percorsi Formativi" in homepage mostra corsi generici (Musica classica, Musica pop, Strumenti popolari calabresi, ecc.) che non corrispondono ai corsi reali della pagina `/formazione` (Canto Pop, Pianoforte, Chitarra, Batteria, Basso, Violino, Musical).
+## Deep linking dai corsi in homepage alla sezione corrispondente in /formazione
 
 ### Cosa cambia
 
-**`src/components/sections/CorsiSection.tsx`** -- Aggiornare l'array `corsi` per riflettere i 7 percorsi reali:
+1. **`src/pages/Formazione.tsx`** -- Aggiungere un `id` a ogni sezione corso (es. `id="canto-pop"`, `id="pianoforte"`, ecc.) generato dallo slug del nome corso. Aggiungere logica di scroll automatico all'hash nell'URL (come gia fatto per Staff).
 
-| Vecchio | Nuovo |
-|---------|-------|
-| Musica classica | Canto Pop |
-| Musica pop | Pianoforte |
-| Strumenti popolari calabresi | Chitarra Classica, Acustica ed Elettrica |
-| Musicoterapia e teatroterapia | Batteria |
-| Certificazioni Trinity | Basso |
-| *(nuovo)* | Violino |
-| *(nuovo)* | Musical |
+2. **`src/components/sections/CorsiSection.tsx`** -- Cambiare i link "Scopri di piu" da `/formazione` a `/formazione#slug` (es. `/formazione#canto-pop`). Rendere anche l'intera card cliccabile con lo stesso link, usando `Link` di react-router-dom.
 
-- Le immagini verranno aggiornate con foto Unsplash pertinenti allo strumento (chitarra, batteria, violino, ecc.)
-- I link "Scopri di piu" punteranno tutti a `/formazione`
-- Nessun altro file da modificare
+### Slug mapping
+- Canto Pop -> `#canto-pop`
+- Pianoforte -> `#pianoforte`
+- Chitarra -> `#chitarra` (match parziale con "Chitarra Classica, Acustica ed Elettrica")
+- Batteria -> `#batteria`
+- Basso -> `#basso`
+- Violino -> `#violino`
+- Musical -> `#musical`
+
+### Dettagli tecnici
+- Lo slug in Formazione viene generato con `corso.nome.toLowerCase().replace(/\s+/g, "-")` e applicato come `id` al wrapper del CorsoRow
+- In CorsiSection lo slug viene generato dal titolo con la stessa logica
+- Per il match Chitarra/Chitarra Classica: il link puntera a `/formazione#chitarra-classica,-acustica-ed-elettrica` oppure si normalizza lo slug. Piu semplice: aggiungere un campo `slug` esplicito ai dati dei corsi in entrambi i file per garantire corrispondenza
+- L'useEffect in Formazione usera `useLocation` per rilevare l'hash e scrollare con `scrollIntoView({ behavior: "smooth" })`
+
