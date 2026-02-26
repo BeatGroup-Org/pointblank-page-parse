@@ -1,27 +1,25 @@
 
 
-## Fix immagini "I Nostri Percorsi Formativi"
+## Riordino sezioni Homepage
 
-### Problema
-- "Basso" e "Violino" condividono la stessa identica URL immagine
-- Alcune immagini Unsplash potrebbero non caricarsi correttamente (URL non validi o rimossi)
+Aggiornamento del file `src/pages/Index.tsx` per riorganizzare le sezioni nell'ordine richiesto.
 
-### Soluzione
+### Nuovo ordine
 
-Modificare `src/components/sections/CorsiSection.tsx` aggiornando l'array `corsi` con URL Unsplash univoche e verificate per ogni strumento:
+1. Header
+2. HeroSection
+3. StatsSection — "Il Nostro Impegno"
+4. PartnerSection — "Rete di Collaborazioni"
+5. ProduzioniSection — "Produciamo Cultura"
+6. TeamSection — "Il Nostro Team"
+7. CorsiSection — "I Nostri Percorsi Formativi"
+8. CtaSection — CTA finale
+9. EventiPreviewSection — "Prossimi Eventi"
+10. ScuolaGallerySection — "La Nostra Scuola"
+11. ImpattoSection — "Impatto Oltre la Musica"
+12. Footer
 
-| Corso | Immagine attuale | Azione |
-|-------|-----------------|--------|
-| Canto Pop | `photo-1516280440614` | Verificare, eventualmente sostituire |
-| Pianoforte | `photo-1520523839897` | OK (foto pianoforte) |
-| Chitarra | `photo-1510915361894` | OK (foto chitarra) |
-| Batteria | `photo-1543443258` | Verificare, eventualmente sostituire |
-| Basso | `photo-1612225330812` | Sostituire con immagine specifica di basso elettrico |
-| Violino | `photo-1612225330812` (DUPLICATA) | Sostituire con immagine di violino |
-| Musical | `photo-1507676184212` | OK (foto teatro/musical) |
+### Dettagli tecnici
 
-Ogni URL verra sostituita con una foto Unsplash unica e tematicamente corretta, utilizzando il formato `https://images.unsplash.com/photo-XXXX?w=800&q=80` per coerenza.
-
-### File modificato
-- `src/components/sections/CorsiSection.tsx` -- solo l'array `corsi` (righe 12-20)
+Unico file modificato: `src/pages/Index.tsx`. Si riordineranno i componenti nel JSX senza altre modifiche. Tutti gli import restano invariati.
 
