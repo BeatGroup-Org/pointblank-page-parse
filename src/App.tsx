@@ -9,6 +9,7 @@ import EventoDetail from "./pages/EventoDetail";
 import ChiSiamo from "./pages/ChiSiamo";
 import Staff from "./pages/Staff";
 import Formazione from "./pages/Formazione";
+import AmministrazioneTrasparente from "./pages/AmministrazioneTrasparente";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import ContactFab from "./components/ContactFab";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/chi-siamo" element={<ChiSiamo />} />
           <Route path="/staff" element={<Staff />} />
           <Route path="/formazione" element={<Formazione />} />
+          <Route path="/amministrazione-trasparente" element={<AmministrazioneTrasparente />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
