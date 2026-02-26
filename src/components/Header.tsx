@@ -10,7 +10,7 @@ if (typeof window !== "undefined") {
 const navLinks = [
   { label: "Chi siamo", href: "/chi-siamo" },
   { label: "Programma", href: "#programma" },
-  { label: "Corsi", href: "#corsi" },
+  { label: "Formazione Musicale", href: "/formazione" },
   { label: "Eventi", href: "/eventi" },
   { label: "Produzioni", href: "#produzioni" },
   { label: "Impatto", href: "#impatto" },
