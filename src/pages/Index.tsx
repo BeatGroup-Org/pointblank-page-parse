@@ -10,7 +10,6 @@ import ProduzioniSection from "@/components/sections/ProduzioniSection";
 import ImpattoSection from "@/components/sections/ImpattoSection";
 import TeamSection from "@/components/sections/TeamSection";
 import PartnerSection from "@/components/sections/PartnerSection";
-import CtaSection from "@/components/sections/CtaSection";
 
 const Index = () => (
   <>
@@ -22,7 +21,6 @@ const Index = () => (
       <ProduzioniSection />
       <TeamSection />
       <CorsiSection />
-      <CtaSection />
       <EventiPreviewSection />
       <ScuolaGallerySection />
       <ImpattoSection />

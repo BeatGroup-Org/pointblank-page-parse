@@ -1,6 +1,7 @@
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -32,6 +33,9 @@ const CorsiSection = () => {
             <span className="block">PERCORSI</span>
             <span className="block">FORMATIVI</span>
           </h2>
+          <Button asChild className="rounded-full px-6" size="lg">
+            <Link to="/formazione">Prenota una prova <ArrowRight size={16} className="ml-2" /></Link>
+          </Button>
         </header>
 
         {/* Carousel */}
