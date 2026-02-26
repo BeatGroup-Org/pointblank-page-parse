@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useFadeIn } from "@/hooks/useFadeIn";
@@ -7,24 +9,35 @@ import { Music, Users, Clock, User } from "lucide-react";
 
 interface Corso {
   nome: string;
+  slug: string;
   docenti: string[];
   isMusical?: boolean;
 }
 
 const corsiData: Corso[] = [
-  { nome: "Canto Pop", docenti: ["Chiara Vescio", "Marco Losardo", "Eugenio Nicolazzo"] },
-  { nome: "Pianoforte", docenti: ["Orlando Vescio", "Valentina Monteleone"] },
-  { nome: "Chitarra Classica, Acustica ed Elettrica", docenti: ["Vittorio Lanzo"] },
-  { nome: "Batteria", docenti: ["Domenico Lico"] },
-  { nome: "Basso", docenti: ["Bianca Bertucci"] },
-  { nome: "Violino", docenti: ["Deborah Stranges"] },
-  { nome: "Musical", docenti: ["Eugenio Nicolazzo"], isMusical: true },
+  { nome: "Canto Pop", slug: "canto-pop", docenti: ["Chiara Vescio", "Marco Losardo", "Eugenio Nicolazzo"] },
+  { nome: "Pianoforte", slug: "pianoforte", docenti: ["Orlando Vescio", "Valentina Monteleone"] },
+  { nome: "Chitarra Classica, Acustica ed Elettrica", slug: "chitarra", docenti: ["Vittorio Lanzo"] },
+  { nome: "Batteria", slug: "batteria", docenti: ["Domenico Lico"] },
+  { nome: "Basso", slug: "basso", docenti: ["Bianca Bertucci"] },
+  { nome: "Violino", slug: "violino", docenti: ["Deborah Stranges"] },
+  { nome: "Musical", slug: "musical", docenti: ["Eugenio Nicolazzo"], isMusical: true },
 ];
 
 const findDocente = (name: string) => team.find((m) => m.name === name);
 
 const Formazione = () => {
   const heroRef = useFadeIn();
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace("#", "");
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 400);
+    }
+  }, [hash]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -66,7 +79,7 @@ const CorsoRow = ({ corso }: { corso: Corso }) => {
   const docenti = corso.docenti.map(findDocente).filter(Boolean);
 
   return (
-    <div ref={ref} className="fade-in-section">
+    <div id={corso.slug} ref={ref} className="fade-in-section scroll-mt-24">
       <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-16">
         {/* Left: corso info */}
         <div className="lg:w-1/3 flex-shrink-0">

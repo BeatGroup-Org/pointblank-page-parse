@@ -1,5 +1,6 @@
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   Carousel,
   CarouselContent,
@@ -9,34 +10,13 @@ import {
 } from "@/components/ui/carousel";
 
 const corsi = [
-  {
-    title: "Canto Pop",
-    image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800&q=80",
-  },
-  {
-    title: "Pianoforte",
-    image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=800&q=80",
-  },
-  {
-    title: "Chitarra",
-    image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&q=80",
-  },
-  {
-    title: "Batteria",
-    image: "https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?w=800&q=80",
-  },
-  {
-    title: "Basso",
-    image: "https://images.unsplash.com/photo-1612225330812-01a9c73fcbdc?w=800&q=80",
-  },
-  {
-    title: "Violino",
-    image: "https://images.unsplash.com/photo-1612225330812-01a9c73fcbdc?w=800&q=80",
-  },
-  {
-    title: "Musical",
-    image: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&q=80",
-  },
+  { title: "Canto Pop", slug: "canto-pop", image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800&q=80" },
+  { title: "Pianoforte", slug: "pianoforte", image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=800&q=80" },
+  { title: "Chitarra", slug: "chitarra", image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&q=80" },
+  { title: "Batteria", slug: "batteria", image: "https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?w=800&q=80" },
+  { title: "Basso", slug: "basso", image: "https://images.unsplash.com/photo-1612225330812-01a9c73fcbdc?w=800&q=80" },
+  { title: "Violino", slug: "violino", image: "https://images.unsplash.com/photo-1612225330812-01a9c73fcbdc?w=800&q=80" },
+  { title: "Musical", slug: "musical", image: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&q=80" },
 ];
 
 const CorsiSection = () => {
@@ -70,7 +50,7 @@ const CorsiSection = () => {
                 key={corso.title}
                 className="pl-4 basis-[85%] sm:basis-[45%] lg:basis-[35%]"
               >
-                <div className="group relative h-[420px] rounded-lg overflow-hidden cursor-pointer">
+                <Link to={`/formazione#${corso.slug}`} className="group relative h-[420px] rounded-lg overflow-hidden cursor-pointer block">
                   {/* Background placeholder */}
                   <img
                     src={corso.image}
@@ -89,15 +69,12 @@ const CorsiSection = () => {
                     <h3 className="text-xl md:text-2xl font-bold mb-4 leading-tight">
                       {corso.title}
                     </h3>
-                    <a
-                      href="/formazione"
-                      className="inline-flex items-center gap-2 text-sm font-medium opacity-80 hover:opacity-100 transition-opacity"
-                    >
+                    <span className="inline-flex items-center gap-2 text-sm font-medium opacity-80 group-hover:opacity-100 transition-opacity">
                       Scopri di più
                       <ArrowRight size={16} />
-                    </a>
+                    </span>
                   </div>
-                </div>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
