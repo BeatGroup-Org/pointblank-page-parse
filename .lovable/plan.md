@@ -1,38 +1,41 @@
 
 
-## Adeguare "Produciamo Cultura" allo stile di "Percorsi Formativi"
+## Unire "La Nostra Scuola" e "Prossimi Eventi" in un unico fascione
 
-Trasformare la sezione Produzioni da griglia statica 3 colonne a carosello orizzontale con lo stesso stile visivo della sezione Corsi.
+### Cosa cambia
 
-### Modifiche a `src/components/sections/ProduzioniSection.tsx`
+Le due sezioni separate (`ScuolaGallerySection` e `EventiPreviewSection`) verranno sostituite da un unico componente che le affianca su due colonne:
 
-**Layout**: Sostituire la griglia con un Embla Carousel (stesso componente usato in CorsiSection).
-
-**Titolo**: Da centrato piccolo a titolo grande allineato a sinistra, stile multi-riga:
+```text
++-------------------------------+-------------------------------+
+|     LA NOSTRA SCUOLA          |       PROSSIMI EVENTI         |
+|     (galleria foto,           |       (lista eventi,          |
+|      50% larghezza)           |        50% larghezza)         |
++-------------------------------+-------------------------------+
 ```
-PRODUCIAMO
-CULTURA
-```
 
-**Descrizione**: Spostata sotto il titolo, allineata a sinistra.
+### Struttura del nuovo componente
 
-**Card**: Ogni immagine diventa una card alta (`h-[420px]`) con:
-- Overlay gradient scuro dal basso
-- Numerazione progressiva (01, 02, 03)
-- Titolo della produzione in overlay
-- Effetto zoom on hover (`group-hover:scale-105`)
-- Immagini a colori (non grayscale, per differenziarle dai corsi)
+Creare `src/components/sections/ScuolaEventiSection.tsx` che combina i due contenuti:
 
-**Navigazione**: Frecce prev/next in alto a destra (come CorsiSection).
+- **Layout**: Una `section` con sfondo unico (`bg-background`) e un grid `grid-cols-1 lg:grid-cols-2` per affiancare le due meta
+- **Colonna SX -- La Nostra Scuola**: Titolo "LA NOSTRA SCUOLA", sottotitolo, griglia 2x2 (o 2x3) di miniature cliccabili con lightbox (recupera la logica attuale del lightbox)
+- **Colonna DX -- Prossimi Eventi**: Titolo "PROSSIMI EVENTI", sottotitolo, lista verticale dei primi 3 eventi (card compatte, impilate), bottone "Vedi tutti gli eventi"
+- Su mobile le due colonne si impilano verticalmente (prima Scuola, poi Eventi)
 
-**Rimozione**: Il bottone "Scopri le produzioni" viene rimosso (ogni card potra avere il proprio link in futuro).
+### File coinvolti
 
-**Sfondo sezione**: Cambia da `bg-background` a `bg-secondary` per coerenza visiva (o resta `bg-background` per contrasto -- da valutare con le sezioni adiacenti). Dato che PartnerSection precede e TeamSection segue, manterro `bg-background` per alternanza.
+| File | Azione |
+|------|--------|
+| `src/components/sections/ScuolaEventiSection.tsx` | Nuovo -- componente combinato |
+| `src/pages/Index.tsx` | Rimuovere import di `EventiPreviewSection` e `ScuolaGallerySection`, aggiungere import di `ScuolaEventiSection` al loro posto |
+
+I file originali `EventiPreviewSection.tsx` e `ScuolaGallerySection.tsx` restano nel progetto (usati altrove o come fallback) ma non verranno piu importati nella homepage.
 
 ### Dettagli tecnici
-- Import di `Carousel`, `CarouselContent`, `CarouselItem`, `CarouselPrevious`, `CarouselNext` da `@/components/ui/carousel`
-- Import di `ArrowRight` da `lucide-react` (opzionale, per coerenza)
-- Array produzioni con `title` aggiunto a ciascuna (es. "Musical 1", "Musical 2", "Musical 3")
-- Basis delle slide: `basis-[85%] sm:basis-[55%] lg:basis-[42%]` -- leggermente piu larghe rispetto ai corsi per foto piu grandi
-- Altezza card: `h-[480px]` (piu alta dei corsi per enfatizzare le foto)
+
+- La colonna SX mostra le 8 foto in una griglia 2 colonne con aspect-ratio quadrato, con click per aprire il lightbox (Dialog) -- stessa logica attuale
+- La colonna DX mostra `eventi.slice(0, 3)` come card compatte (immagine piccola a sinistra, testo a destra) per adattarsi allo spazio ridotto, con link "Vedi tutti" in fondo
+- Padding verticale uniforme `py-24`, gap tra colonne `gap-12`
+- Altezza minima delle due colonne allineata per un aspetto bilanciato
 
