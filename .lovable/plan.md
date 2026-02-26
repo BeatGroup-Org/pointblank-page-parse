@@ -1,25 +1,38 @@
 
 
-## Riordino sezioni Homepage
+## Adeguare "Produciamo Cultura" allo stile di "Percorsi Formativi"
 
-Aggiornamento del file `src/pages/Index.tsx` per riorganizzare le sezioni nell'ordine richiesto.
+Trasformare la sezione Produzioni da griglia statica 3 colonne a carosello orizzontale con lo stesso stile visivo della sezione Corsi.
 
-### Nuovo ordine
+### Modifiche a `src/components/sections/ProduzioniSection.tsx`
 
-1. Header
-2. HeroSection
-3. StatsSection — "Il Nostro Impegno"
-4. PartnerSection — "Rete di Collaborazioni"
-5. ProduzioniSection — "Produciamo Cultura"
-6. TeamSection — "Il Nostro Team"
-7. CorsiSection — "I Nostri Percorsi Formativi"
-8. CtaSection — CTA finale
-9. EventiPreviewSection — "Prossimi Eventi"
-10. ScuolaGallerySection — "La Nostra Scuola"
-11. ImpattoSection — "Impatto Oltre la Musica"
-12. Footer
+**Layout**: Sostituire la griglia con un Embla Carousel (stesso componente usato in CorsiSection).
+
+**Titolo**: Da centrato piccolo a titolo grande allineato a sinistra, stile multi-riga:
+```
+PRODUCIAMO
+CULTURA
+```
+
+**Descrizione**: Spostata sotto il titolo, allineata a sinistra.
+
+**Card**: Ogni immagine diventa una card alta (`h-[420px]`) con:
+- Overlay gradient scuro dal basso
+- Numerazione progressiva (01, 02, 03)
+- Titolo della produzione in overlay
+- Effetto zoom on hover (`group-hover:scale-105`)
+- Immagini a colori (non grayscale, per differenziarle dai corsi)
+
+**Navigazione**: Frecce prev/next in alto a destra (come CorsiSection).
+
+**Rimozione**: Il bottone "Scopri le produzioni" viene rimosso (ogni card potra avere il proprio link in futuro).
+
+**Sfondo sezione**: Cambia da `bg-background` a `bg-secondary` per coerenza visiva (o resta `bg-background` per contrasto -- da valutare con le sezioni adiacenti). Dato che PartnerSection precede e TeamSection segue, manterro `bg-background` per alternanza.
 
 ### Dettagli tecnici
-
-Unico file modificato: `src/pages/Index.tsx`. Si riordineranno i componenti nel JSX senza altre modifiche. Tutti gli import restano invariati.
+- Import di `Carousel`, `CarouselContent`, `CarouselItem`, `CarouselPrevious`, `CarouselNext` da `@/components/ui/carousel`
+- Import di `ArrowRight` da `lucide-react` (opzionale, per coerenza)
+- Array produzioni con `title` aggiunto a ciascuna (es. "Musical 1", "Musical 2", "Musical 3")
+- Basis delle slide: `basis-[85%] sm:basis-[55%] lg:basis-[42%]` -- leggermente piu larghe rispetto ai corsi per foto piu grandi
+- Altezza card: `h-[480px]` (piu alta dei corsi per enfatizzare le foto)
 
