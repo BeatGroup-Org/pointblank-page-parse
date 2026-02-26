@@ -10,24 +10,32 @@ import {
 
 const corsi = [
   {
-    title: "Musica classica",
-    image: "https://images.unsplash.com/photo-1612225330812-01a9c73fcbdc?w=800&q=80",
-  },
-  {
-    title: "Musica pop",
+    title: "Canto Pop",
     image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800&q=80",
   },
   {
-    title: "Strumenti popolari calabresi",
+    title: "Pianoforte",
+    image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=800&q=80",
+  },
+  {
+    title: "Chitarra",
     image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&q=80",
   },
   {
-    title: "Musicoterapia e teatroterapia",
+    title: "Batteria",
     image: "https://images.unsplash.com/photo-1543443258-92b04ad5ec6b?w=800&q=80",
   },
   {
-    title: "Certificazioni Trinity",
-    image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=800&q=80",
+    title: "Basso",
+    image: "https://images.unsplash.com/photo-1612225330812-01a9c73fcbdc?w=800&q=80",
+  },
+  {
+    title: "Violino",
+    image: "https://images.unsplash.com/photo-1612225330812-01a9c73fcbdc?w=800&q=80",
+  },
+  {
+    title: "Musical",
+    image: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&q=80",
   },
 ];
 
