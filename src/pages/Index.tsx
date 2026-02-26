@@ -4,7 +4,8 @@ import HeroSection from "@/components/sections/HeroSection";
 import StatsSection from "@/components/sections/StatsSection";
 
 import CorsiSection from "@/components/sections/CorsiSection";
-import ScuolaEventiSection from "@/components/sections/ScuolaEventiSection";
+import EventiPreviewSection from "@/components/sections/EventiPreviewSection";
+import ScuolaGallerySection from "@/components/sections/ScuolaGallerySection";
 import ProduzioniSection from "@/components/sections/ProduzioniSection";
 import ImpattoSection from "@/components/sections/ImpattoSection";
 import TeamSection from "@/components/sections/TeamSection";
@@ -21,8 +22,9 @@ const Index = () => (
       <ProduzioniSection />
       <TeamSection />
       <CorsiSection />
-      <ScuolaEventiSection />
       <CtaSection />
+      <EventiPreviewSection />
+      <ScuolaGallerySection />
       <ImpattoSection />
     </main>
     <Footer />
