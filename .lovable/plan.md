@@ -1,25 +1,32 @@
 
 
-## Deep linking dai corsi in homepage alla sezione corrispondente in /formazione
+## Pulizia del menu di navigazione
+
+### Problema
+Il menu contiene 8 voci, di cui 4 sono ancore a sezioni della homepage (`#programma`, `#produzioni`, `#impatto`, `#contatti`) e non pagine reali. L'utente vuole mantenere solo i link a pagine effettive.
 
 ### Cosa cambia
 
-1. **`src/pages/Formazione.tsx`** -- Aggiungere un `id` a ogni sezione corso (es. `id="canto-pop"`, `id="pianoforte"`, ecc.) generato dallo slug del nome corso. Aggiungere logica di scroll automatico all'hash nell'URL (come gia fatto per Staff).
+**`src/components/Header.tsx`** -- Ridurre l'array `navLinks` da 8 a 4 voci, mantenendo solo le pagine reali:
 
-2. **`src/components/sections/CorsiSection.tsx`** -- Cambiare i link "Scopri di piu" da `/formazione` a `/formazione#slug` (es. `/formazione#canto-pop`). Rendere anche l'intera card cliccabile con lo stesso link, usando `Link` di react-router-dom.
+| Voce attuale | Azione |
+|---|---|
+| Chi siamo (`/chi-siamo`) | Mantieni |
+| Programma (`#programma`) | Rimuovi |
+| Formazione Musicale (`/formazione`) | Mantieni |
+| Eventi (`/eventi`) | Mantieni |
+| Produzioni (`#produzioni`) | Rimuovi |
+| Impatto (`#impatto`) | Rimuovi |
+| Team (`/staff`) | Mantieni |
+| Contatti (`#contatti`) | Rimuovi |
 
-### Slug mapping
-- Canto Pop -> `#canto-pop`
-- Pianoforte -> `#pianoforte`
-- Chitarra -> `#chitarra` (match parziale con "Chitarra Classica, Acustica ed Elettrica")
-- Batteria -> `#batteria`
-- Basso -> `#basso`
-- Violino -> `#violino`
-- Musical -> `#musical`
+Risultato finale:
+```
+Chi siamo -> /chi-siamo
+Formazione Musicale -> /formazione
+Eventi -> /eventi
+Team -> /staff
+```
 
-### Dettagli tecnici
-- Lo slug in Formazione viene generato con `corso.nome.toLowerCase().replace(/\s+/g, "-")` e applicato come `id` al wrapper del CorsoRow
-- In CorsiSection lo slug viene generato dal titolo con la stessa logica
-- Per il match Chitarra/Chitarra Classica: il link puntera a `/formazione#chitarra-classica,-acustica-ed-elettrica` oppure si normalizza lo slug. Piu semplice: aggiungere un campo `slug` esplicito ai dati dei corsi in entrambi i file per garantire corrispondenza
-- L'useEffect in Formazione usera `useLocation` per rilevare l'hash e scrollare con `scrollIntoView({ behavior: "smooth" })`
+Ridurre anche le SVG decorative (`bg-shape`) da 6 a 4 per corrispondere al numero di voci. Semplificare la logica di click rimuovendo i casi hash (tutti i link saranno ora route).
 
