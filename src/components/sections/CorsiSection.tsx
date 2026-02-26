@@ -82,7 +82,7 @@ const CorsiSection = () => {
                       {corso.title}
                     </h3>
                     <a
-                      href="#"
+                      href="/formazione"
                       className="inline-flex items-center gap-2 text-sm font-medium opacity-80 hover:opacity-100 transition-opacity"
                     >
                       Scopri di più
