@@ -1,30 +1,27 @@
 
 
-## Aggiornamento menu navigazione
+## Fix immagini "I Nostri Percorsi Formativi"
 
-### Modifiche a `src/components/Header.tsx`
+### Problema
+- "Basso" e "Violino" condividono la stessa identica URL immagine
+- Alcune immagini Unsplash potrebbero non caricarsi correttamente (URL non validi o rimossi)
 
-**1. Aggiungere "Amministrazione Trasparente" ai link del menu**
+### Soluzione
 
-Aggiungere una nuova voce all'array `navLinks`:
-```
-{ label: "Amministrazione Trasparente", href: "/amministrazione-trasparente" }
-```
+Modificare `src/components/sections/CorsiSection.tsx` aggiornando l'array `corsi` con URL Unsplash univoche e verificate per ogni strumento:
 
-**2. Aggiungere una quinta SVG decorativa** (`bg-shape-5`) nella sezione `ambient-background-shapes` per coprire il nuovo quinto link.
+| Corso | Immagine attuale | Azione |
+|-------|-----------------|--------|
+| Canto Pop | `photo-1516280440614` | Verificare, eventualmente sostituire |
+| Pianoforte | `photo-1520523839897` | OK (foto pianoforte) |
+| Chitarra | `photo-1510915361894` | OK (foto chitarra) |
+| Batteria | `photo-1543443258` | Verificare, eventualmente sostituire |
+| Basso | `photo-1612225330812` | Sostituire con immagine specifica di basso elettrico |
+| Violino | `photo-1612225330812` (DUPLICATA) | Sostituire con immagine di violino |
+| Musical | `photo-1507676184212` | OK (foto teatro/musical) |
 
-**3. Aggiungere blocco contatti in basso nel menu**
+Ogni URL verra sostituita con una foto Unsplash unica e tematicamente corretta, utilizzando il formato `https://images.unsplash.com/photo-XXXX?w=800&q=80` per coerenza.
 
-Sotto la `ul.menu-list`, inserire un piccolo blocco con attributo `data-menu-fade` (per l'animazione di entrata) contenente:
-- Indirizzo (link a Google Maps)
-- Telefono (link tel:)
-- Email (link mailto:)
-- Social (Facebook / Instagram)
-
-Il blocco sara stilizzato con testo piccolo (`text-xs` o `text-sm`), colore attenuato, e posizionato in basso nel `menu-content-wrapper`.
-
-### Dettagli tecnici
-- Il `menu-content-wrapper` usera `flex flex-col justify-between h-full` per spingere i contatti in basso
-- I contatti appariranno con l'animazione `data-menu-fade` gia esistente nel sistema GSAP
-- Icone da `lucide-react` (MapPin, Phone, Mail) per coerenza col resto del sito
+### File modificato
+- `src/components/sections/CorsiSection.tsx` -- solo l'array `corsi` (righe 12-20)
 
