@@ -32,9 +32,11 @@ const Footer = () => (
         <div>
           <h4 className="font-semibold mb-4 text-lg">Link utili</h4>
           <div className="space-y-2 text-sm text-card/70">
-            {["Programma", "Corsi", "Produzioni", "Team", "Contatti", "Privacy Policy"].map((l) => (
-              <a key={l} href="#" className="block hover:text-primary transition-colors">{l}</a>
-            ))}
+            <a href="/chi-siamo" className="block hover:text-primary transition-colors">Chi siamo</a>
+            <a href="/formazione" className="block hover:text-primary transition-colors">Formazione</a>
+            <a href="/eventi" className="block hover:text-primary transition-colors">Eventi</a>
+            <a href="/staff" className="block hover:text-primary transition-colors">Team</a>
+            <a href="/amministrazione-trasparente" className="block hover:text-primary transition-colors">Amministrazione Trasparente</a>
           </div>
         </div>
       </div>
