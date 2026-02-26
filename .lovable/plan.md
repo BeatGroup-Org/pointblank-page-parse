@@ -1,38 +1,30 @@
 
 
-## Adeguare "Produciamo Cultura" allo stile di "Percorsi Formativi"
+## Eliminare CtaSection e aggiungere CTA nelle sezioni
 
-Trasformare la sezione Produzioni da griglia statica 3 colonne a carosello orizzontale con lo stesso stile visivo della sezione Corsi.
+### Cosa cambia
 
-### Modifiche a `src/components/sections/ProduzioniSection.tsx`
+1. **Eliminare la sezione CTA dedicata** -- Rimuovere `<CtaSection />` da `Index.tsx` e rimuovere l'import.
 
-**Layout**: Sostituire la griglia con un Embla Carousel (stesso componente usato in CorsiSection).
+2. **CorsiSection -- "I Nostri Percorsi Formativi"**
+   - Aggiungere un bottone "Prenota una prova" in alto a destra nell'header, allineato con il titolo
+   - Bottone arancione pill (`rounded-full bg-primary`)
 
-**Titolo**: Da centrato piccolo a titolo grande allineato a sinistra, stile multi-riga:
-```
-PRODUCIAMO
-CULTURA
-```
+3. **ProduzioniSection -- "Produciamo Cultura"**
+   - Aggiungere un bottone "Scopri le produzioni" in alto a destra nell'header
+   - Stesso stile pill arancione
 
-**Descrizione**: Spostata sotto il titolo, allineata a sinistra.
+4. **ScuolaGallerySection -- "La Nostra Scuola"**
+   - Aggiungere un bottone "Vieni a trovarci" in alto a destra nell'header
+   - Stesso stile pill arancione
 
-**Card**: Ogni immagine diventa una card alta (`h-[420px]`) con:
-- Overlay gradient scuro dal basso
-- Numerazione progressiva (01, 02, 03)
-- Titolo della produzione in overlay
-- Effetto zoom on hover (`group-hover:scale-105`)
-- Immagini a colori (non grayscale, per differenziarle dai corsi)
+### Posizionamento dei bottoni
 
-**Navigazione**: Frecce prev/next in alto a destra (come CorsiSection).
+In tutte e tre le sezioni, il bottone viene inserito nell'header della sezione, accanto alle frecce del carosello o allineato a destra rispetto al titolo, usando `flex items-end justify-between` gia presente.
 
-**Rimozione**: Il bottone "Scopri le produzioni" viene rimosso (ogni card potra avere il proprio link in futuro).
-
-**Sfondo sezione**: Cambia da `bg-background` a `bg-secondary` per coerenza visiva (o resta `bg-background` per contrasto -- da valutare con le sezioni adiacenti). Dato che PartnerSection precede e TeamSection segue, manterro `bg-background` per alternanza.
-
-### Dettagli tecnici
-- Import di `Carousel`, `CarouselContent`, `CarouselItem`, `CarouselPrevious`, `CarouselNext` da `@/components/ui/carousel`
-- Import di `ArrowRight` da `lucide-react` (opzionale, per coerenza)
-- Array produzioni con `title` aggiunto a ciascuna (es. "Musical 1", "Musical 2", "Musical 3")
-- Basis delle slide: `basis-[85%] sm:basis-[55%] lg:basis-[42%]` -- leggermente piu larghe rispetto ai corsi per foto piu grandi
-- Altezza card: `h-[480px]` (piu alta dei corsi per enfatizzare le foto)
+### File modificati
+- `src/pages/Index.tsx` -- rimuovere import e uso di CtaSection
+- `src/components/sections/CorsiSection.tsx` -- aggiungere CTA "Prenota una prova"
+- `src/components/sections/ProduzioniSection.tsx` -- aggiungere CTA "Scopri le produzioni"
+- `src/components/sections/ScuolaGallerySection.tsx` -- aggiungere CTA "Vieni a trovarci"
 
