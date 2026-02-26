@@ -130,7 +130,7 @@ const CorsoRow = ({ corso }: { corso: Corso }) => {
           {docenti.map((docente) => (
             <Link
               key={docente!.name}
-              to="/staff"
+              to={`/staff#${docente!.name.toLowerCase().replace(/\s+/g, "-")}`}
               className="group flex flex-col items-center text-center w-[140px] md:w-[160px]"
             >
               <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-border group-hover:border-primary transition-colors duration-300">

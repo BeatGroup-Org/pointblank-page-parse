@@ -1,13 +1,27 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { team } from "@/data/team";
 
 const Staff = () => {
+  const location = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    const hash = location.hash.replace("#", "");
+    if (hash) {
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          return;
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location.hash]);
 
   const introRef = useFadeIn();
 
@@ -78,7 +92,7 @@ const StaffMemberSection = ({
   );
 
   return (
-    <section className={alt ? "bg-secondary" : "bg-background"}>
+    <section id={member.name.toLowerCase().replace(/\s+/g, "-")} className={alt ? "bg-secondary" : "bg-background"}>
       <div
         ref={ref}
         className="fade-in-section py-20 md:py-28 container mx-auto px-6"
