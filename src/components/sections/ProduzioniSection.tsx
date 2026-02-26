@@ -1,5 +1,6 @@
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -40,6 +41,9 @@ const ProduzioniSection = () => {
               Musical, concerti e collaborazioni artistiche: la restituzione pubblica del percorso educativo.
             </p>
           </div>
+          <Button className="rounded-full px-6" size="lg">
+            Scopri le produzioni <ArrowRight size={16} className="ml-2" />
+          </Button>
         </header>
 
         {/* Carousel */}

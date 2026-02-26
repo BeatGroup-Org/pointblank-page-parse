@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useFadeIn } from "@/hooks/useFadeIn";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -45,12 +46,17 @@ const ScuolaGallerySection = () => {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight leading-none">
-            LA NOSTRA<br />SCUOLA
-          </h2>
-          <p className="text-muted-foreground max-w-md text-base">
-            Spazi creativi dove la musica prende vita ogni giorno.
-          </p>
+          <div>
+            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight leading-none">
+              LA NOSTRA<br />SCUOLA
+            </h2>
+            <p className="text-muted-foreground max-w-md text-base mt-4">
+              Spazi creativi dove la musica prende vita ogni giorno.
+            </p>
+          </div>
+          <Button className="rounded-full px-6" size="lg">
+            Vieni a trovarci <ArrowRight size={16} className="ml-2" />
+          </Button>
         </div>
 
         {/* Carousel */}
