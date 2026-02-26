@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { CustomEase } from "gsap/CustomEase";
+import { MapPin, Phone, Mail, Facebook, Instagram } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(CustomEase);
@@ -12,6 +13,7 @@ const navLinks = [
   { label: "Formazione Musicale", href: "/formazione" },
   { label: "Eventi", href: "/eventi" },
   { label: "Team", href: "/staff" },
+  { label: "Amministrazione Trasparente", href: "/amministrazione-trasparente" },
 ];
 
 const Header = () => {
@@ -234,10 +236,15 @@ const Header = () => {
                 <path className="shape-element" d="M100 100 Q150 50, 200 100 Q250 150, 200 200 Q150 250, 100 200 Q50 150, 100 100" fill="rgba(99,102,241,0.12)" />
                 <path className="shape-element" d="M250 200 Q300 150, 350 200 Q400 250, 350 300 Q300 350, 250 300 Q200 250, 250 200" fill="rgba(236,72,153,0.1)" />
               </svg>
+              <svg className="bg-shape bg-shape-5" viewBox="0 0 400 400" fill="none">
+                <rect className="shape-element" x="60" y="80" width="120" height="120" rx="20" fill="rgba(99,102,241,0.1)" />
+                <rect className="shape-element" x="220" y="200" width="100" height="100" rx="16" fill="rgba(139,92,246,0.12)" />
+                <circle className="shape-element" cx="180" cy="320" r="50" fill="rgba(236,72,153,0.08)" />
+              </svg>
             </div>
           </div>
 
-          <div className="menu-content-wrapper">
+          <div className="menu-content-wrapper flex flex-col justify-between h-full">
             <ul className="menu-list">
               {navLinks.map((link, i) => (
                 <li key={link.href} className="menu-list-item" data-shape={String(i + 1)}>
@@ -256,6 +263,32 @@ const Header = () => {
                 </li>
               ))}
             </ul>
+
+            <div data-menu-fade className="pt-6 pb-4 px-2 text-xs text-muted-foreground/70 space-y-2">
+              <a
+                href="https://maps.google.com/?q=Via+Duca+d'Aosta+23+88046+Lamezia+Terme+CZ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-foreground transition-colors"
+              >
+                <MapPin size={13} className="shrink-0" />
+                Via Duca d'Aosta, 23 – Lamezia Terme (CZ)
+              </a>
+              <div className="flex items-center gap-4">
+                <a href="tel:+393339568927" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
+                  <Phone size={13} className="shrink-0" />
+                  +39 333 956 8927
+                </a>
+                <a href="mailto:mousike.aps@gmail.com" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
+                  <Mail size={13} className="shrink-0" />
+                  mousike.aps@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-3 pt-1">
+                <a href="https://www.facebook.com/scuoladimusicalamezia" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors"><Facebook size={14} /></a>
+                <a href="https://www.instagram.com/scuoladimusicamousike/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors"><Instagram size={14} /></a>
+              </div>
+            </div>
           </div>
         </nav>
       </div>
