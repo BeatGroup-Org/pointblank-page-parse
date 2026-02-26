@@ -1,35 +1,91 @@
-import { Button } from "@/components/ui/button";
 import { useFadeIn } from "@/hooks/useFadeIn";
+import { ArrowRight } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
+
+const produzioni = [
+  {
+    title: "Musical",
+    src: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Musical.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9NdXNpY2FsLmpwZyIsImlhdCI6MTc3MTg0NjU2OSwiZXhwIjoyNjM1ODQ2NTY5fQ.0JDyQ_3KG7PQlF-sIxLOtWURZYUqV03KRbvwtqUYBI4",
+  },
+  {
+    title: "Concerto dal vivo",
+    src: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Musical%202.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9NdXNpY2FsIDIuanBnIiwiaWF0IjoxNzcxODQ2NTc4LCJleHAiOjI2MzU4NDY1Nzh9.Y3DLSuNJ6jxpQozF9tVOWWqvZIyglsBhS-1AUuQ7Vw0",
+  },
+  {
+    title: "Spettacolo finale",
+    src: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Musical%203.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9NdXNpY2FsIDMuanBnIiwiaWF0IjoxNzcxODQ2NTk1LCJleHAiOjI2MzU4NDY1OTV9.C3jobsNd4tlhZ2iPDUHc6oc6J8omYmGsFovtQJWJx-k",
+  },
+];
 
 const ProduzioniSection = () => {
   const ref = useFadeIn();
 
   return (
     <section id="produzioni" className="py-24 bg-background">
-      <div ref={ref} className="fade-in-section container mx-auto px-6 max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center uppercase">PRODUCIAMO CULTURA</h2>
-        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12 leading-relaxed">
-          Musical, concerti e collaborazioni artistiche rappresentano la restituzione pubblica del percorso educativo.
-          Ogni produzione è il risultato del lavoro di studenti, docenti e professionisti insieme.
-        </p>
+      <div ref={ref} className="fade-in-section container mx-auto px-6">
+        {/* Header */}
+        <header className="mb-12 flex items-end justify-between">
+          <div>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+              <span className="block">PRODUCIAMO</span>
+              <span className="block">CULTURA</span>
+            </h2>
+            <p className="text-muted-foreground max-w-md mt-4 leading-relaxed">
+              Musical, concerti e collaborazioni artistiche: la restituzione pubblica del percorso educativo.
+            </p>
+          </div>
+        </header>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            { src: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Musical.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9NdXNpY2FsLmpwZyIsImlhdCI6MTc3MTg0NjU2OSwiZXhwIjoyNjM1ODQ2NTY5fQ.0JDyQ_3KG7PQlF-sIxLOtWURZYUqV03KRbvwtqUYBI4", alt: "Musical - Produzione 1" },
-            { src: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Musical%202.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9NdXNpY2FsIDIuanBnIiwiaWF0IjoxNzcxODQ2NTc4LCJleHAiOjI2MzU4NDY1Nzh9.Y3DLSuNJ6jxpQozF9tVOWWqvZIyglsBhS-1AUuQ7Vw0", alt: "Musical - Produzione 2" },
-            { src: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Musical%203.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9NdXNpY2FsIDMuanBnIiwiaWF0IjoxNzcxODQ2NTk1LCJleHAiOjI2MzU4NDY1OTV9.C3jobsNd4tlhZ2iPDUHc6oc6J8omYmGsFovtQJWJx-k", alt: "Musical - Produzione 3" },
-          ].map((prod, i) => (
-            <div key={i} className="aspect-[4/3] bg-muted rounded-lg overflow-hidden">
-              <img src={prod.src} alt={prod.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-            </div>
-          ))}
-        </div>
+        {/* Carousel */}
+        <Carousel
+          opts={{ align: "start", slidesToScroll: 1, loop: false }}
+          className="w-full"
+        >
+          <div className="flex items-center gap-2 justify-end mb-6">
+            <CarouselPrevious className="static translate-y-0 h-10 w-10 rounded-full border-border" />
+            <CarouselNext className="static translate-y-0 h-10 w-10 rounded-full border-border" />
+          </div>
 
-        <div className="text-center mt-10">
-          <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground px-8">
-            Scopri le produzioni
-          </Button>
-        </div>
+          <CarouselContent className="-ml-4">
+            {produzioni.map((prod, i) => (
+              <CarouselItem
+                key={prod.title}
+                className="pl-4 basis-[85%] sm:basis-[55%] lg:basis-[42%]"
+              >
+                <div className="group relative h-[480px] rounded-lg overflow-hidden cursor-pointer">
+                  <img
+                    src={prod.src}
+                    alt={prod.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                  {/* Content */}
+                  <div className="relative h-full flex flex-col justify-end p-6 text-white">
+                    <span className="text-sm font-medium opacity-70 mb-1">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-bold mb-4 leading-tight">
+                      {prod.title}
+                    </h3>
+                    <span className="inline-flex items-center gap-2 text-sm font-medium opacity-80 group-hover:opacity-100 transition-opacity">
+                      Scopri di più
+                      <ArrowRight size={16} />
+                    </span>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
     </section>
   );
