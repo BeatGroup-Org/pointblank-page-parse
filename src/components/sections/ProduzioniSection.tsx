@@ -57,34 +57,17 @@ const ProduzioniSection = () => {
           </div>
 
           <CarouselContent className="-ml-4">
-            {produzioni.map((prod, i) => (
+            {produzioni.map((prod) => (
               <CarouselItem
                 key={prod.title}
                 className="pl-4 basis-[85%] sm:basis-[55%] lg:basis-[42%]"
               >
-                <div className="group relative h-[480px] rounded-lg overflow-hidden cursor-pointer">
+                <div className="group relative h-[480px] rounded-lg overflow-hidden">
                   <img
                     src={prod.src}
                     alt={prod.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-                  {/* Content */}
-                  <div className="relative h-full flex flex-col justify-end p-6 text-white">
-                    <span className="text-sm font-medium opacity-70 mb-1">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="text-xl md:text-2xl font-bold mb-4 leading-tight">
-                      {prod.title}
-                    </h3>
-                    <span className="inline-flex items-center gap-2 text-sm font-medium opacity-80 group-hover:opacity-100 transition-opacity">
-                      Scopri di più
-                      <ArrowRight size={16} />
-                    </span>
-                  </div>
                 </div>
               </CarouselItem>
             ))}
