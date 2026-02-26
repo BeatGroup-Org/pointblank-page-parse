@@ -1,32 +1,25 @@
 
 
-## Pulizia del menu di navigazione
+## Nuova pagina "Amministrazione Trasparente"
 
-### Problema
-Il menu contiene 8 voci, di cui 4 sono ancore a sezioni della homepage (`#programma`, `#produzioni`, `#impatto`, `#contatti`) e non pagine reali. L'utente vuole mantenere solo i link a pagine effettive.
+### Panoramica
+Creare una pagina dedicata `/amministrazione-trasparente` con le informazioni obbligatorie di trasparenza, un'area per scaricare il PDF dei contributi pubblici (placeholder per ora), e i riferimenti normativi. La pagina verra anche aggiunta al footer nei "Link utili".
 
-### Cosa cambia
+### Cosa viene creato/modificato
 
-**`src/components/Header.tsx`** -- Ridurre l'array `navLinks` da 8 a 4 voci, mantenendo solo le pagine reali:
+**1. Nuovo file `src/pages/AmministrazioneTrasparente.tsx`**
+Pagina con layout coerente al resto del sito (Header + Footer), strutturata in 3 blocchi:
 
-| Voce attuale | Azione |
-|---|---|
-| Chi siamo (`/chi-siamo`) | Mantieni |
-| Programma (`#programma`) | Rimuovi |
-| Formazione Musicale (`/formazione`) | Mantieni |
-| Eventi (`/eventi`) | Mantieni |
-| Produzioni (`#produzioni`) | Rimuovi |
-| Impatto (`#impatto`) | Rimuovi |
-| Team (`/staff`) | Mantieni |
-| Contatti (`#contatti`) | Rimuovi |
+- **Intestazione**: titolo "Amministrazione Trasparente" + descrizione introduttiva
+- **Sezione "Contributi Pubblici"**: testo normativo (art. 1, commi 125-129, Legge 124/2017) + card con pulsante "Scarica PDF" (per ora disabilitato o con link placeholder, in attesa del file reale)
+- **Sezione "Riferimenti Normativi"**: testo esplicativo sulla normativa
 
-Risultato finale:
-```
-Chi siamo -> /chi-siamo
-Formazione Musicale -> /formazione
-Eventi -> /eventi
-Team -> /staff
-```
+Stile coerente con le altre pagine (uso di `useFadeIn`, sezioni alternate `bg-background`/`bg-secondary`, tipografia esistente).
 
-Ridurre anche le SVG decorative (`bg-shape`) da 6 a 4 per corrispondere al numero di voci. Semplificare la logica di click rimuovendo i casi hash (tutti i link saranno ora route).
+**2. `src/App.tsx`** -- Aggiungere la route `/amministrazione-trasparente`
 
+**3. `src/components/Footer.tsx`** -- Aggiungere il link "Amministrazione Trasparente" nella colonna "Link utili", puntando alla nuova pagina
+
+### Note
+- Il pulsante "Scarica PDF" sara presente ma puntera a un placeholder (`#`) finche l'utente non fornira il file reale da caricare
+- Non serve aggiungere la pagina al menu principale (Header) dato che e una pagina informativa/legale, basta il link nel footer
