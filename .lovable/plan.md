@@ -1,13 +1,14 @@
 
-## Aggiornamento email in tutto il sito
+## Rimuovere tutti gli eventi tranne Dario Panza
 
 ### Cosa cambia
-L'indirizzo email verra aggiornato da `info@mousike.it` a `mousike.aps@gmail.com` in tutti i punti del sito dove appare.
+L'array `eventi` in `src/data/eventi.ts` verra ridotto al solo evento di Dario Panza (id: 1). Gli eventi con id 2-7 (Jacopo Carlini, Musical Alice, Concerti "Ma che Musica Maestro", Saggi di Fine Anno) verranno eliminati.
 
 ### File da modificare
 
-1. **`src/components/Footer.tsx`** -- aggiornare href mailto e testo visualizzato
-2. **`src/components/ContactFab.tsx`** -- aggiornare href mailto e testo visualizzato
-3. **`src/data/eventi.ts`** -- aggiornare il campo `contattoEmail` dell'evento Dario Panza
+**`src/data/eventi.ts`** -- Rimuovere le righe 101-184 (eventi id 2-7), mantenendo solo l'evento Dario Panza e la chiusura dell'array.
 
-In totale 3 file, 6 occorrenze da sostituire.
+### Impatto
+- La pagina `/eventi` mostrera solo la card di Dario Panza
+- La sezione "Prossimi Eventi" in homepage mostrera solo una card invece di tre
+- Nessun altro file da modificare: `EventCard`, `EventiPreviewSection` e `Eventi.tsx` iterano dinamicamente sull'array
