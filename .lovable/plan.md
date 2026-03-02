@@ -1,18 +1,18 @@
 
 
-## Aggiungere "Contatti" al menu e al footer
+## Aggiungere CTA "CONTATTACI" al pannello flottante
 
-### 1. Header (`src/components/Header.tsx`)
-- Aggiungere `{ label: "Contatti", href: "/contatti" }` all'array `navLinks` (riga 17)
-- Aggiungere un sesto SVG shape (`bg-shape-6`) nella sezione `ambient-background-shapes` per mantenere la coerenza con le animazioni hover
+### Modifica
 
-### 2. Footer (`src/components/Footer.tsx`)
-- Aggiungere `<a href="/contatti" ...>Contatti</a>` nella sezione "Link utili", dopo "Amministrazione Trasparente" (riga 39)
+**File:** `src/components/ContactFab.tsx`
 
-### Dettagli tecnici
+- Aggiungere un link "CONTATTACI" ben in evidenza, posizionato come primo elemento del pannello (prima dei recapiti)
+- Stile: bottone pieno con sfondo primary (arancione), testo bianco, uppercase, font bold, larghezza piena, border-radius arrotondato
+- Usa `Link` da `react-router-dom` per navigare a `/contatti`
+- Al click chiude il pannello (`setOpen(false)`)
 
-**File modificati:**
-- `src/components/Header.tsx` -- aggiungere voce nell'array `navLinks` + SVG shape aggiuntivo
-- `src/components/Footer.tsx` -- aggiungere link nella lista "Link utili"
+### Struttura risultante del pannello
+1. **CTA "CONTATTACI"** -- bottone arancione pieno, ben visibile
+2. Indirizzo, telefono, email (invariati)
+3. Icone social (invariate)
 
-Nessuna nuova dipendenza. La rotta `/contatti` e la pagina `Contatti.tsx` esistono gia.
