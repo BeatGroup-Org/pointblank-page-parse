@@ -37,6 +37,7 @@ const Footer = () => (
             <a href="/eventi" className="block hover:text-primary transition-colors">Eventi</a>
             <a href="/staff" className="block hover:text-primary transition-colors">Team</a>
             <a href="/amministrazione-trasparente" className="block hover:text-primary transition-colors">Amministrazione Trasparente</a>
+            <a href="/contatti" className="block hover:text-primary transition-colors">Contatti</a>
           </div>
         </div>
       </div>

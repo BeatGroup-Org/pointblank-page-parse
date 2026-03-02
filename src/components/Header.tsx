@@ -14,6 +14,7 @@ const navLinks = [
   { label: "Eventi", href: "/eventi" },
   { label: "Team", href: "/staff" },
   { label: "Amministrazione Trasparente", href: "/amministrazione-trasparente" },
+  { label: "Contatti", href: "/contatti" },
 ];
 
 const Header = () => {
@@ -240,6 +241,11 @@ const Header = () => {
                 <rect className="shape-element" x="60" y="80" width="120" height="120" rx="20" fill="rgba(99,102,241,0.1)" />
                 <rect className="shape-element" x="220" y="200" width="100" height="100" rx="16" fill="rgba(139,92,246,0.12)" />
                 <circle className="shape-element" cx="180" cy="320" r="50" fill="rgba(236,72,153,0.08)" />
+              </svg>
+              <svg className="bg-shape bg-shape-6" viewBox="0 0 400 400" fill="none">
+                <circle className="shape-element" cx="200" cy="200" r="90" fill="rgba(99,102,241,0.1)" />
+                <circle className="shape-element" cx="120" cy="100" r="40" fill="rgba(236,72,153,0.12)" />
+                <circle className="shape-element" cx="320" cy="300" r="50" fill="rgba(139,92,246,0.1)" />
               </svg>
             </div>
           </div>
