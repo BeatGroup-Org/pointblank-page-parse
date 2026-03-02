@@ -1,24 +1,16 @@
 
-## Adeguare lo stile della pagina Contatti alle altre pagine
 
-### Differenze attuali
-- **Titolo**: "Contattaci" usa `text-4xl font-bold`, mentre le altre pagine usano titoli molto grandi (`text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight`)
-- **Sottotitolo/kicker**: Le altre pagine hanno un kicker sopra il titolo (es. "Mousike -- Formazione"), qui manca
-- **Animazioni**: Le altre pagine usano `useFadeIn` per le sezioni, qui non viene usato
-- **Layout hero**: Le altre pagine hanno sezioni hero piu spaziose con padding verticali generosi; qui il titolo e compresso in un `max-w-3xl`
+## Fix: sezione interattiva non visibile nella pagina Contatti
 
-### Modifiche previste
+### Problema
+Il `ref` di `useFadeIn` e applicato al `div` esterno (riga 137), ma la classe `fade-in-section` e sul `div` interno (riga 138). L'hook aggiunge `visible` solo all'elemento referenziato, quindi il div interno resta nascosto.
+
+### Soluzione
 
 **File:** `src/pages/Contatti.tsx`
 
-1. **Titolo hero** -- Trasformare in stile coerente: aggiungere kicker "Mousike -- Contatti", titolo grande uppercase font-black, e spostare il sottotitolo sotto
-2. **Animazioni** -- Aggiungere `useFadeIn` alle sezioni principali (hero, step argomenti, recapiti)
-3. **Layout** -- Usare lo stesso pattern di spaziatura delle altre pagine (py-20 md:py-28 per le sezioni, container senza max-w troppo restrittivo per l'hero)
-4. **Titoli di sezione** -- I titoli "Di cosa hai bisogno?", "Come vuoi contattarci?", "I nostri recapiti" sono gia uppercase/tracking-wider, coerenti con il resto
+Unificare ref e classe sullo stesso elemento: spostare `fade-in-section` e `ref={stepsRef}` sullo stesso `div`.
 
-### Dettaglio tecnico
+- Riga 137-138: cambiare da due div separati a un unico div con sia `ref={stepsRef}` che `className="fade-in-section container mx-auto px-6 max-w-3xl"`
+- Rimuovere il `div` interno con `fade-in-section` e il relativo tag di chiusura (riga 314)
 
-- Importare `useFadeIn` e applicare ref + classe `fade-in-section` alle sezioni
-- Hero: kicker `text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4` + titolo `text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.95] tracking-tight`
-- Sezione hero dentro `bg-secondary` come in Formazione, con `pt-32 pb-16`
-- Il contenuto interattivo (step 1, step 2, recapiti) resta in `max-w-3xl` per leggibilita
