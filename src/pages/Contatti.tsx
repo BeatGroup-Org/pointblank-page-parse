@@ -134,8 +134,7 @@ const Contatti = () => {
       </section>
 
       <main className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-6 max-w-3xl" ref={stepsRef}>
-          <div className="fade-in-section">
+        <div className="fade-in-section container mx-auto px-6 max-w-3xl" ref={stepsRef}>
 
           {/* Step indicator */}
           <div className="flex items-center gap-3 mb-8">
@@ -311,7 +310,6 @@ const Contatti = () => {
             </section>
           )}
 
-          </div>
         </div>
 
         {/* Static contact info */}
