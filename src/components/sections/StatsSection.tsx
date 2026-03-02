@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { ArrowRight } from "lucide-react";
+import UnderConstructionDialog from "@/components/UnderConstructionDialog";
 
 const ambiti = [
   {
@@ -26,6 +28,7 @@ const ambiti = [
 
 const StatsSection = () => {
   const ref = useFadeIn();
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
     <section className="py-20 bg-card">
@@ -44,6 +47,7 @@ const StatsSection = () => {
             <div
               key={a.title}
               className="group relative h-[320px] md:h-[380px] rounded-lg overflow-hidden cursor-pointer"
+              onClick={() => setDialogOpen(true)}
             >
               <img
                 src={a.image}
@@ -53,12 +57,10 @@ const StatsSection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-              {/* Numerazione */}
               <span className="absolute top-4 left-4 text-white/60 text-sm font-medium">
                 {String(i + 1).padStart(2, "0")}
               </span>
 
-              {/* Contenuto */}
               <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col gap-1">
                 <h3 className="text-xl font-bold text-white">{a.title}</h3>
                 <p className="text-sm text-white/70 leading-snug">{a.subtitle}</p>
@@ -70,6 +72,8 @@ const StatsSection = () => {
           ))}
         </div>
       </div>
+
+      <UnderConstructionDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </section>
   );
 };

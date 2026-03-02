@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { ArrowRight, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -54,8 +55,8 @@ const ScuolaGallerySection = () => {
               Spazi creativi dove la musica prende vita ogni giorno.
             </p>
           </div>
-          <Button className="rounded-full px-6" size="lg">
-            Vieni a trovarci <ArrowRight size={16} className="ml-2" />
+          <Button asChild className="rounded-full px-6" size="lg">
+            <Link to="/contatti">Vieni a trovarci <ArrowRight size={16} className="ml-2" /></Link>
           </Button>
         </div>
 

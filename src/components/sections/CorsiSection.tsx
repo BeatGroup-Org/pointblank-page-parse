@@ -34,7 +34,7 @@ const CorsiSection = () => {
             <span className="block">FORMATIVI</span>
           </h2>
           <Button asChild className="rounded-full px-6" size="lg">
-            <Link to="/formazione">Prenota una prova <ArrowRight size={16} className="ml-2" /></Link>
+            <Link to="/contatti">Prenota una prova <ArrowRight size={16} className="ml-2" /></Link>
           </Button>
         </header>
 

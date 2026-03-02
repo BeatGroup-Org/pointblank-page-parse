@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import UnderConstructionDialog from "@/components/UnderConstructionDialog";
 import {
   Carousel,
   CarouselContent,
@@ -26,6 +28,7 @@ const produzioni = [
 
 const ProduzioniSection = () => {
   const ref = useFadeIn();
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
     <section id="produzioni" className="py-24 bg-background">
@@ -41,7 +44,7 @@ const ProduzioniSection = () => {
               Musical, concerti e collaborazioni artistiche: la restituzione pubblica del percorso educativo.
             </p>
           </div>
-          <Button className="rounded-full px-6" size="lg">
+          <Button className="rounded-full px-6" size="lg" onClick={() => setDialogOpen(true)}>
             Scopri le produzioni <ArrowRight size={16} className="ml-2" />
           </Button>
         </header>
@@ -74,6 +77,8 @@ const ProduzioniSection = () => {
           </CarouselContent>
         </Carousel>
       </div>
+
+      <UnderConstructionDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </section>
   );
 };
