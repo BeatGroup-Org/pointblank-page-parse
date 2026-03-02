@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -22,11 +23,11 @@ const HeroSection = () => (
         Formazione musicale, inclusione sociale e produzioni artistiche.
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-start">
-        <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground text-base px-8 py-6">
-          Scopri il programma educativo
+        <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground text-base px-8 py-6">
+          <Link to="/formazione">Scopri il programma educativo</Link>
         </Button>
-        <Button size="lg" variant="outline" className="rounded-full bg-white text-primary border-white hover:bg-transparent hover:text-white text-base px-8 py-6">
-          Prenota una lezione di prova
+        <Button asChild size="lg" variant="outline" className="rounded-full bg-white text-primary border-white hover:bg-transparent hover:text-white text-base px-8 py-6">
+          <Link to="/contatti">Prenota una lezione di prova</Link>
         </Button>
       </div>
     </div>
