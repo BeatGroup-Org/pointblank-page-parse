@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { X, MapPin, Phone, Mail, Facebook, Instagram } from "lucide-react";
 const ContactFab = () => {
   const [open, setOpen] = useState(false);
@@ -7,6 +8,13 @@ const ContactFab = () => {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       {open && (
         <div className="bg-card border border-border rounded-2xl shadow-xl p-5 w-72 animate-in fade-in slide-in-from-bottom-4 duration-300">
+          <Link
+            to="/contatti"
+            onClick={() => setOpen(false)}
+            className="block w-full bg-primary text-primary-foreground font-bold py-3 rounded-full text-center uppercase tracking-wide hover:opacity-90 transition-opacity mb-4"
+          >
+            Contattaci
+          </Link>
           <h4 className="font-bold text-foreground text-lg mb-3">Contattaci</h4>
           <div className="space-y-3 text-sm">
             <a
