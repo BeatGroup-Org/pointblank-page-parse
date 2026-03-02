@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useFadeIn } from "@/hooks/useFadeIn";
 import { corsi } from "@/data/corsi";
 import { cn } from "@/lib/utils";
 import {
@@ -88,6 +89,10 @@ const Contatti = () => {
   const [argomento, setArgomento] = useState<Argomento | null>(null);
   const [corso, setCorso] = useState<string | null>(null);
 
+  const heroRef = useFadeIn();
+  const stepsRef = useFadeIn();
+  const recapitiRef = useFadeIn();
+
   const showCourses = needsCourse(argomento) && argomento !== null;
   const isReady = argomento !== null && (!needsCourse(argomento) || corso !== null);
 
@@ -113,13 +118,24 @@ const Contatti = () => {
   return (
     <>
       <Header />
-      <main className="pt-32 pb-24 bg-background min-h-screen">
-        <div className="container mx-auto px-6 max-w-3xl">
-          {/* Title */}
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">Contattaci</h1>
-          <p className="text-muted-foreground text-lg mb-12 leading-relaxed">
+      {/* Hero */}
+      <section ref={heroRef} className="fade-in-section bg-secondary pt-32 pb-16">
+        <div className="container mx-auto px-6">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+            Mousikè — Contatti
+          </p>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.95] tracking-tight mb-4">
+            Contattaci
+          </h1>
+          <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">
             Dicci come possiamo aiutarti e scegli il modo che preferisci per raggiungerci.
           </p>
+        </div>
+      </section>
+
+      <main className="py-20 md:py-28 bg-background">
+        <div className="container mx-auto px-6 max-w-3xl" ref={stepsRef}>
+          <div className="fade-in-section">
 
           {/* Step indicator */}
           <div className="flex items-center gap-3 mb-8">
@@ -295,8 +311,12 @@ const Contatti = () => {
             </section>
           )}
 
-          {/* Static contact info */}
-          <section className="border-t border-border pt-12">
+          </div>
+        </div>
+
+        {/* Static contact info */}
+        <div className="container mx-auto px-6 max-w-3xl mt-20" ref={recapitiRef}>
+          <section className="fade-in-section border-t border-border pt-12">
             <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-6">
               I nostri recapiti
             </h2>
