@@ -1,54 +1,51 @@
 
 
-## Fix di tutti i CTA della homepage
+## Pagina Contatti interattiva con flusso guidato
 
-### Riepilogo delle modifiche
+### Flusso utente
 
-Non esiste ancora una pagina Contatti, quindi va creata. Inoltre, le 4 card della sezione "IL NOSTRO IMPEGNO" e il bottone "Scopri le produzioni" devono mostrare un popup "sezione in costruzione".
+**Step 1 -- Scegli l'argomento** (cards cliccabili)
+- Informazioni sui programmi formativi
+- Prenotare una lezione di prova
+- Avere info sulle produzioni
+- Proporre una iniziativa
+- Sostenere la scuola
+- Altro
 
-### 1. Creare la pagina Contatti (`src/pages/Contatti.tsx`)
-- Pagina semplice con Header, Footer e un contenuto placeholder (titolo "Contatti", testo di benvenuto, eventualmente indirizzo/telefono/email)
-- Aggiungere la rotta `/contatti` in `App.tsx`
+**Step 1b -- Se scelto "Info programmi formativi" OPPURE "Lezione di prova"**
+Seleziona il corso di interesse (chips/cards):
+- Canto Pop, Pianoforte, Chitarra, Batteria, Basso, Violino, Musical, Altro
 
-### 2. Hero Section (`HeroSection.tsx`)
-- "Scopri il programma educativo" --> collegare a `/formazione` con `Link`
-- "Prenota una lezione di prova" --> collegare a `/contatti` con `Link`
+**Step 2 -- Scegli come contattarci** (3 bottoni con icone)
+- WhatsApp (apre wa.me con messaggio preimpostato)
+- Email (apre mailto con oggetto e corpo preimpostati)
+- Chiama (apre tel:)
 
-### 3. Sezione "IL NOSTRO IMPEGNO" (`StatsSection.tsx`)
-- Al click su ciascuna delle 4 card, aprire un Dialog (popup) con:
-  - La favicon di Mousike (`/favicon.png`)
-  - Testo: "Sezione in costruzione"
-  - Un sottotitolo: "Questa sezione sara disponibile a breve."
-  - Bottone "Chiudi"
-- Rimuovere il testo "Scopri di piu" dalle card (o mantenerlo ma far aprire il popup)
+### Messaggi preimpostati
 
-### 4. Sezione "PRODUCIAMO CULTURA" (`ProduzioniSection.tsx`)
-- Il bottone "Scopri le produzioni" apre lo stesso tipo di popup "Sezione in costruzione" (con favicon e testo)
-
-### 5. Sezione "IL NOSTRO TEAM" (`TeamSection.tsx`)
-- "Scopri il team" --> gia collegato a `/staff` -- nessuna modifica necessaria
-
-### 6. Sezione "I NOSTRI PERCORSI FORMATIVI" (`CorsiSection.tsx`)
-- "Prenota una prova" --> cambiare destinazione da `/formazione` a `/contatti`
-
-### 7. Sezione "LA NOSTRA SCUOLA" (`ScuolaGallerySection.tsx`)
-- "Vieni a trovarci" --> collegare a `/contatti` con `Link` e `asChild`
+| Argomento | Messaggio |
+|-----------|-----------|
+| Info programmi formativi | "Ciao! Vorrei informazioni sul corso di [corso scelto]." |
+| Lezione di prova | "Ciao! Vorrei prenotare una lezione di prova per il corso di [corso scelto]." |
+| Info produzioni | "Ciao! Vorrei informazioni sulle vostre produzioni." |
+| Proporre iniziativa | "Ciao! Vorrei proporre una iniziativa di collaborazione." |
+| Sostenere la scuola | "Ciao! Vorrei sapere come sostenere la scuola." |
+| Altro | "Ciao! Vorrei contattarvi per..." |
 
 ### Dettagli tecnici
 
-**File da creare:**
-- `src/pages/Contatti.tsx` -- pagina contatti base
+**File creato:** `src/data/corsi.ts` -- array corsi estratto da CorsiSection per riuso in entrambi i componenti
 
-**File da modificare:**
-- `src/App.tsx` -- aggiungere rotta `/contatti`
-- `src/components/sections/HeroSection.tsx` -- wrappare i 2 bottoni con `Link`
-- `src/components/sections/StatsSection.tsx` -- aggiungere stato + Dialog popup "in costruzione"
-- `src/components/sections/ProduzioniSection.tsx` -- aggiungere Dialog popup sul bottone CTA
-- `src/components/sections/CorsiSection.tsx` -- cambiare destinazione Link a `/contatti`
-- `src/components/sections/ScuolaGallerySection.tsx` -- wrappare bottone con `Link to="/contatti"`
+**File modificato:** `src/pages/Contatti.tsx` -- riscrittura completa con:
+- Stato React: `argomento`, `corso` (mostrato quando argomento e "info-corsi" o "lezione-prova")
+- Cards argomento con bordo evidenziato al click
+- Chips/cards per selezione corso (visibili per entrambi gli argomenti che richiedono scelta corso)
+- 3 bottoni contatto (WhatsApp, Email, Telefono) con link dinamici basati su argomento + corso
+- WhatsApp: `https://wa.me/393339568927?text={messaggio}`
+- Email: `mailto:mousike.aps@gmail.com?subject={oggetto}&body={corpo}`
+- Telefono: `tel:+393339568927`
+- Transizioni animate tra gli step
+- Sezione statica in fondo con indirizzo, telefono, email
 
-**Popup "in costruzione"** -- struttura comune:
-- Usa il componente `Dialog` di Radix gia presente nel progetto
-- Mostra l'immagine `/favicon.png` (la favicon di Mousike)
-- Testo centrato, stile minimal, coerente con il design del sito
+**File modificato:** `src/components/sections/CorsiSection.tsx` -- importa corsi da `src/data/corsi.ts`
 
