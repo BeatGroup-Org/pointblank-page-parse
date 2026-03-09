@@ -11,6 +11,7 @@ if (typeof window !== "undefined") {
 const navLinks = [
   { label: "Chi siamo", href: "/chi-siamo" },
   { label: "Formazione Musicale", href: "/formazione" },
+  { label: "Programmi Educativi", href: "/programmi-educativi" },
   { label: "Produzioni", href: "/produzioni" },
   { label: "Eventi", href: "/eventi" },
   { label: "Team", href: "/staff" },
