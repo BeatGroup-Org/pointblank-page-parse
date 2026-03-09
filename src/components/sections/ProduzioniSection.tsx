@@ -42,8 +42,10 @@ const ProduzioniSection = () => {
               Musical, concerti e collaborazioni artistiche: la restituzione pubblica del percorso educativo.
             </p>
           </div>
-          <Button className="rounded-full px-6" size="lg" onClick={() => setDialogOpen(true)}>
-            Scopri le produzioni <ArrowRight size={16} className="ml-2" />
+          <Button asChild className="rounded-full px-6" size="lg">
+            <Link to="/produzioni">
+              Scopri le produzioni <ArrowRight size={16} className="ml-2" />
+            </Link>
           </Button>
         </header>
 
