@@ -1,16 +1,21 @@
 
 
-## Fix: sezione interattiva non visibile nella pagina Contatti
+## Collegare le card "IL NOSTRO IMPEGNO" alle pagine corrispondenti
 
 ### Problema
-Il `ref` di `useFadeIn` e applicato al `div` esterno (riga 137), ma la classe `fade-in-section` e sul `div` interno (riga 138). L'hook aggiunge `visible` solo all'elemento referenziato, quindi il div interno resta nascosto.
+Le 4 card della sezione "IL NOSTRO IMPEGNO" aprono tutte un dialog "in costruzione" invece di navigare alle rispettive pagine, che ora esistono.
 
-### Soluzione
+### Modifiche
 
-**File:** `src/pages/Contatti.tsx`
+**File:** `src/components/sections/StatsSection.tsx`
 
-Unificare ref e classe sullo stesso elemento: spostare `fade-in-section` e `ref={stepsRef}` sullo stesso `div`.
-
-- Riga 137-138: cambiare da due div separati a un unico div con sia `ref={stepsRef}` che `className="fade-in-section container mx-auto px-6 max-w-3xl"`
-- Rimuovere il `div` interno con `fade-in-section` e il relativo tag di chiusura (riga 314)
+1. Rimuovere `useState`, `UnderConstructionDialog` e lo state `dialogOpen`
+2. Importare `useNavigate` da `react-router-dom`
+3. Aggiungere un campo `href` a ciascun elemento dell'array `ambiti`:
+   - Formazione musicale → `/formazione`
+   - Programmi educativi nelle scuole → `/programmi-educativi`
+   - Produzioni culturali → `/produzioni`
+   - Inclusione e impatto sociale → `/chi-siamo` (sezione più vicina al tema, oppure anchor `#impatto` sulla homepage)
+4. Sostituire `onClick={() => setDialogOpen(true)}` con `onClick={() => navigate(a.href)}`
+5. Rimuovere il componente `<UnderConstructionDialog>` dal JSX
 
