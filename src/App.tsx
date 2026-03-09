@@ -11,6 +11,7 @@ import Staff from "./pages/Staff";
 import Formazione from "./pages/Formazione";
 import AmministrazioneTrasparente from "./pages/AmministrazioneTrasparente";
 import Contatti from "./pages/Contatti";
+import Produzioni from "./pages/Produzioni";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import ContactFab from "./components/ContactFab";
