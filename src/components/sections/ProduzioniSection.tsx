@@ -27,7 +27,6 @@ const produzioni = [
 
 const ProduzioniSection = () => {
   const ref = useFadeIn();
-  const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
     <section id="produzioni" className="py-24 bg-background">
