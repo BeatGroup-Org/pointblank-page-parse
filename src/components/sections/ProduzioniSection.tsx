@@ -78,7 +78,7 @@ const ProduzioniSection = () => {
         </Carousel>
       </div>
 
-      <UnderConstructionDialog open={dialogOpen} onOpenChange={setDialogOpen} />
+      
     </section>
   );
 };
