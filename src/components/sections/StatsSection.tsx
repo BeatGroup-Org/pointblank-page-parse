@@ -1,34 +1,37 @@
-import { useState } from "react";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { ArrowRight } from "lucide-react";
-import UnderConstructionDialog from "@/components/UnderConstructionDialog";
+import { useNavigate } from "react-router-dom";
 
 const ambiti = [
   {
     title: "Formazione musicale",
     subtitle: "Percorsi strutturati per bambini, ragazzi e adulti",
+    href: "/formazione",
     image: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/A.%20Formazione%20musicale.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9BLiBGb3JtYXppb25lIG11c2ljYWxlLmpwZyIsImlhdCI6MTc3MDgzNTEwOSwiZXhwIjoyNjM0ODM1MTA5fQ.xesWC9XRNTUnzZITW77ucL75cLyO0dQg-YYW8wDQXJk",
   },
   {
     title: "Programmi educativi nelle scuole",
     subtitle: "Interventi continuativi negli istituti pubblici del territorio",
+    href: "/programmi-educativi",
     image: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/A.%20Programmi%20educativi%20nelle%20scuole.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9BLiBQcm9ncmFtbWkgZWR1Y2F0aXZpIG5lbGxlIHNjdW9sZS5qcGciLCJpYXQiOjE3NzA4MzQ4ODIsImV4cCI6MjYzNDgzNDg4Mn0.Y5joUh1M5nXyDgNoDylTveXsnlnWgFA044r1ee2phk4",
   },
   {
     title: "Produzioni culturali",
     subtitle: "Musical, spettacoli e restituzione pubblica del percorso formativo",
+    href: "/produzioni",
     image: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/A.%20Produzione%20Culturale.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9BLiBQcm9kdXppb25lIEN1bHR1cmFsZS5KUEciLCJpYXQiOjE3NzA4MzQ2MzEsImV4cCI6MjYzNDgzNDYzMX0.T0Ijtnqisq0KVBUIqMd4QZ2jTz1VQJjgx9O4K2oynF8",
   },
   {
     title: "Inclusione e impatto sociale",
     subtitle: "La musica come strumento di integrazione e crescita",
+    href: "/chi-siamo",
     image: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/A.%20Inclusione%20e%20Impatto%20sociale.JPEG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9BLiBJbmNsdXNpb25lIGUgSW1wYXR0byBzb2NpYWxlLkpQRUciLCJpYXQiOjE3NzA4MzQ2NDcsImV4cCI6MjYzNDgzNDY0N30.1V8VG-Bqi-tecMF2MHSLJRP7vwc4OBPm-hM8xNop_6g",
   },
 ];
 
 const StatsSection = () => {
   const ref = useFadeIn();
-  const [dialogOpen, setDialogOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <section className="py-20 bg-card">
@@ -47,7 +50,7 @@ const StatsSection = () => {
             <div
               key={a.title}
               className="group relative h-[320px] md:h-[380px] rounded-lg overflow-hidden cursor-pointer"
-              onClick={() => setDialogOpen(true)}
+              onClick={() => navigate(a.href)}
             >
               <img
                 src={a.image}
@@ -72,8 +75,6 @@ const StatsSection = () => {
           ))}
         </div>
       </div>
-
-      <UnderConstructionDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </section>
   );
 };
