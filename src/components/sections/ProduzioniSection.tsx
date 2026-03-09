@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import UnderConstructionDialog from "@/components/UnderConstructionDialog";
+import { Link } from "react-router-dom";
 import {
   Carousel,
   CarouselContent,
