@@ -98,4 +98,61 @@ export const eventi: Evento[] = [
     immagine: darioPanzaHero,
     locandina: darioPanzaLocandina,
   },
+  {
+    id: 2,
+    titolo: "Masterclass di Pianoforte con Jacopo Carlini",
+    data: "10–11 Aprile 2026",
+    dataISO: "2026-04-10",
+    luogo: "Chiostro San Domenico – Lamezia Terme",
+    categoria: "Masterclass",
+    rassegna: "Stagione Concertistica 2025/26",
+    descrizione:
+      "Pianista, compositore e arrangiatore, Jacopo Carlini guiderà una masterclass dedicata al pianoforte contemporaneo tra jazz e musica d'autore.",
+    descrizioneEstesa:
+      "Due giornate dedicate al pianoforte con Jacopo Carlini, musicista che spazia tra jazz, musica d'autore e produzione artistica.\n\nLa masterclass è aperta a pianisti di tutti i livelli e prevede una sessione collettiva, lezioni individuali e un concerto evento aperto al pubblico.",
+    introduzione:
+      "Mousikè torna ad aprile con due giornate dedicate al pianoforte con Jacopo Carlini, musicista che spazia tra jazz, musica d'autore e produzione artistica. Nel corso della sua carriera ha collaborato con importanti nomi della musica italiana come Giorgia, Riccardo Cocciante e Alex Britti, oltre ad aver lavorato con la Orchestra Sinfonica Nazionale della RAI.\n\nPianista, compositore e arrangiatore, Carlini è noto per la sua capacità di muoversi tra linguaggi musicali diversi mantenendo una cifra personale raffinata e contemporanea, portando nel suo lavoro una visione musicale aperta e profondamente comunicativa.\n\nLa masterclass nasce dall'esperienza concreta di un artista che vive quotidianamente il palco e lo studio, offrendo ai partecipanti un approccio professionale allo sviluppo del suono, dell'interpretazione e della performance pianistica.",
+    programma: [
+      {
+        giorno: "Giovedì 10 Aprile",
+        fasce: [
+          {
+            orario: "16:30 – 19:00",
+            titolo: "Masterclass Collettiva di Pianoforte",
+            descrizione: "Un incontro aperto dedicato a:",
+            punti: [
+              "Approccio al pianoforte contemporaneo tra jazz e musica d'autore",
+              "Costruzione del suono e dell'identità musicale",
+              "Dinamica, espressività e gestione dello spazio sonoro",
+              "Il ruolo del pianista nei contesti live e creativi",
+            ],
+          },
+        ],
+      },
+      {
+        giorno: "Venerdì 11 Aprile",
+        fasce: [
+          {
+            orario: "10:00 – 17:00",
+            titolo: "Lezioni Individuali",
+            descrizione:
+              "Sessioni one to one su prenotazione, dedicate a chi desidera un confronto diretto e personalizzato con il maestro.\nAnalisi tecnica, lavoro sull'interpretazione, suggerimenti pratici e approfondimenti mirati sulle esigenze musicali di ogni partecipante.",
+          },
+          {
+            orario: "18:30",
+            titolo: "Dialogo in Musica – Jacopo Carlini & Chiara Vescio in concerto",
+            descrizione:
+              "Un momento conclusivo aperto al pubblico in cui la formazione incontra il palco. Un dialogo tra pianoforte e voce che diventa occasione di condivisione artistica, con spazio anche al confronto con il pubblico.",
+          },
+        ],
+      },
+    ],
+    ctaMessaggio: "I posti sono limitati per garantire qualità, ascolto e interazione diretta con l'artista.",
+    ctaLabel: "Info costi e prenotazioni",
+    contattoNome: "Segreteria Mousikè",
+    contattoTelefono: "+39 333 956 8927",
+    contattoEmail: "mousike.aps@gmail.com",
+    whatsappNumero: "393339568927",
+    immagine: "/placeholder.svg",
+  },
 ];
