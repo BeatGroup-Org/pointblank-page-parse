@@ -142,7 +142,12 @@ const EventoDetail = () => {
                         .replace(/Annalisa/g, "<strong class='text-foreground'>Annalisa</strong>")
                         .replace(/Willie Peyote/g, "<strong class='text-foreground'>Willie Peyote</strong>")
                         .replace(/Ernia/g, "<strong class='text-foreground'>Ernia</strong>")
-                        .replace(/Serena Brancale/g, "<strong class='text-foreground'>Serena Brancale</strong>"),
+                        .replace(/Serena Brancale/g, "<strong class='text-foreground'>Serena Brancale</strong>")
+                        .replace(/Giorgia/g, "<strong class='text-foreground'>Giorgia</strong>")
+                        .replace(/Riccardo Cocciante/g, "<strong class='text-foreground'>Riccardo Cocciante</strong>")
+                        .replace(/Alex Britti/g, "<strong class='text-foreground'>Alex Britti</strong>")
+                        .replace(/Orchestra Sinfonica Nazionale della RAI/g, "<strong class='text-foreground'>Orchestra Sinfonica Nazionale della RAI</strong>")
+                        .replace(/Chiara Vescio/g, "<strong class='text-foreground'>Chiara Vescio</strong>"),
                     }}
                   />
                 </div>
