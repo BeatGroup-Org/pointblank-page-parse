@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -76,6 +77,10 @@ const Produzioni = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Produzioni Culturali — Mousikè</title>
+        <meta name="description" content="Musical e spettacoli prodotti da Mousikè APS a Lamezia Terme: La Bella e la Bestia, Disney in Concerto e nuove produzioni." />
+      </Helmet>
       <Header />
       <main>
         {/* Hero */}

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import EventCard from "@/components/EventCard";
@@ -5,6 +6,10 @@ import { eventi } from "@/data/eventi";
 
 const Eventi = () => (
   <div className="min-h-screen bg-background">
+    <Helmet>
+      <title>Eventi — Mousikè</title>
+      <meta name="description" content="Concerti, spettacoli, workshop e masterclass organizzati da Mousikè APS a Lamezia Terme." />
+    </Helmet>
     <Header />
 
     <main className="pt-28 pb-20">

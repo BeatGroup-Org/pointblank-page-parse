@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -55,6 +56,10 @@ const ChiSiamo = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Chi Siamo — Mousikè</title>
+        <meta name="description" content="La storia e la missione di Mousikè APS, associazione culturale a Lamezia Terme impegnata nella formazione musicale e nell'inclusione sociale." />
+      </Helmet>
       <Header />
       <main>
         {/* Sezione 1 – Apertura */}

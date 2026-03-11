@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useFadeIn } from "@/hooks/useFadeIn";
@@ -27,6 +28,10 @@ const Staff = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Il Team — Mousikè</title>
+        <meta name="description" content="I docenti e lo staff di Mousikè APS. Professionisti della musica a Lamezia Terme." />
+      </Helmet>
       <Header />
       <main>
         {/* Hero */}

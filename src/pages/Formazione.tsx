@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useFadeIn } from "@/hooks/useFadeIn";
@@ -41,6 +42,10 @@ const Formazione = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Formazione Musicale — Mousikè</title>
+        <meta name="description" content="Corsi di musica individuali e collettivi a Lamezia Terme: canto, pianoforte, chitarra, batteria, basso, violino e musical." />
+      </Helmet>
       <Header />
 
       {/* Hero */}

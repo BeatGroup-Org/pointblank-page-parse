@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -42,6 +43,10 @@ const ProgrammiEducativi = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Ma che Musica Maestro — Mousikè</title>
+        <meta name="description" content="Programmi educativi musicali nelle scuole di Lamezia Terme. Laboratori, percorsi didattici e inclusione attraverso la musica." />
+      </Helmet>
       <Header />
       <main>
         {/* Hero */}

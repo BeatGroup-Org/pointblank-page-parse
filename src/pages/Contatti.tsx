@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useFadeIn } from "@/hooks/useFadeIn";
@@ -117,6 +118,10 @@ const Contatti = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Contatti — Mousikè</title>
+        <meta name="description" content="Contatta Mousikè APS per informazioni, iscrizioni ai corsi di musica e collaborazioni a Lamezia Terme." />
+      </Helmet>
       <Header />
       {/* Hero */}
       <section ref={heroRef} className="fade-in-section bg-secondary pt-32 pb-16">
