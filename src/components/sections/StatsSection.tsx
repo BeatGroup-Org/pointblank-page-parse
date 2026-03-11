@@ -10,8 +10,8 @@ const ambiti = [
     image: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/A.%20Formazione%20musicale.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9BLiBGb3JtYXppb25lIG11c2ljYWxlLmpwZyIsImlhdCI6MTc3MDgzNTEwOSwiZXhwIjoyNjM0ODM1MTA5fQ.xesWC9XRNTUnzZITW77ucL75cLyO0dQg-YYW8wDQXJk",
   },
   {
-    title: "Programmi educativi nelle scuole",
-    subtitle: "Interventi continuativi negli istituti pubblici del territorio",
+    title: "Ma Che Musica Maestro!",
+    subtitle: "Programmi educativi nelle scuole",
     href: "/programmi-educativi",
     image: "https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/A.%20Programmi%20educativi%20nelle%20scuole.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9BLiBQcm9ncmFtbWkgZWR1Y2F0aXZpIG5lbGxlIHNjdW9sZS5qcGciLCJpYXQiOjE3NzA4MzQ4ODIsImV4cCI6MjYzNDgzNDg4Mn0.Y5joUh1M5nXyDgNoDylTveXsnlnWgFA044r1ee2phk4",
   },
