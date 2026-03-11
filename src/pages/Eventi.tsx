@@ -11,6 +11,8 @@ const Eventi = () => (
       <meta name="description" content="Concerti, spettacoli, workshop e masterclass organizzati da Mousikè APS a Lamezia Terme." />
     </Helmet>
     <Header />
+
+    <main className="pt-28 pb-20">
       {/* Hero */}
       <section className="container mx-auto px-6 mb-16">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
