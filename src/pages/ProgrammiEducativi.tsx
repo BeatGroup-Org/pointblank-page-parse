@@ -44,8 +44,8 @@ const ProgrammiEducativi = () => {
   return (
     <>
       <Helmet>
-        <title>Ma che Musica Maestro — Mousikè</title>
-        <meta name="description" content="Il progetto musicale di Mousikè APS a Lamezia Terme. Da oltre quindici anni, Ma che Musica Maestro accompagna la crescita dei più giovani attraverso la musica." />
+        <title>Ma Che Musica Maestro! — Mousikè</title>
+        <meta name="description" content="Il progetto musicale di Mousikè APS a Lamezia Terme. Da oltre quindici anni, Ma Che Musica Maestro! accompagna la crescita dei più giovani attraverso la musica." />
       </Helmet>
       <Header />
       <main>
