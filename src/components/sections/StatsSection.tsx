@@ -38,10 +38,10 @@ const StatsSection = () => {
       <div ref={ref} className="fade-in-section container mx-auto px-6">
         <div className="mb-10">
           <p className="text-xs tracking-[0.3em] text-muted-foreground uppercase mb-2">
-            Cosa facciamo
+            Il nostro impegno
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground uppercase">
-            IL NOSTRO IMPEGNO
+            COSA FACCIAMO
           </h2>
         </div>
 
