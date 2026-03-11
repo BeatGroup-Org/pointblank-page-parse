@@ -68,7 +68,7 @@ const ProgrammiEducativi = () => {
               </div>
               <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
                 <p>
-                  Da oltre quindici anni, <strong className="text-foreground">Ma che Musica Maestro</strong> accompagna
+                  Da oltre quindici anni, <strong className="text-foreground">Ma Che Musica Maestro!</strong> accompagna
                   la crescita di bambine, bambini, ragazze e ragazzi di Lamezia Terme
                   attraverso la musica.
                 </p>
