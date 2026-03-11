@@ -187,9 +187,9 @@ const ProgrammiEducativi = () => {
         </TextSection>
 
         {/* Valore */}
-        <TextSection title="Il valore di Ma che Musica Maestro" alt>
+        <TextSection title="Il valore di Ma Che Musica Maestro!" alt>
           <p>
-            Oggi <strong className="text-foreground">Ma che Musica Maestro</strong> rappresenta
+            Oggi <strong className="text-foreground">Ma Che Musica Maestro!</strong> rappresenta
             una delle esperienze più significative di educazione musicale a Lamezia Terme.
           </p>
           <p>
