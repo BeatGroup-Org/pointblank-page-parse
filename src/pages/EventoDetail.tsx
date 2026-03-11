@@ -50,6 +50,10 @@ const EventoDetail = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{evento.titolo} — Mousikè</title>
+        <meta name="description" content={`${evento.titolo} — ${evento.data}. ${evento.descrizione?.slice(0, 120) ?? "Evento Mousikè APS a Lamezia Terme."}`} />
+      </Helmet>
       <Header />
       <main>
         {/* Hero */}

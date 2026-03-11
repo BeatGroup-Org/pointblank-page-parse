@@ -28,8 +28,11 @@ const Staff = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Il Team — Mousikè</title>
+        <meta name="description" content="I docenti e lo staff di Mousikè APS. Professionisti della musica a Lamezia Terme." />
+      </Helmet>
       <Header />
-      <main>
         {/* Hero */}
         <section className="bg-background">
           <div

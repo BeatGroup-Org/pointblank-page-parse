@@ -42,6 +42,10 @@ const AmministrazioneTrasparente = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Amministrazione Trasparente — Mousikè</title>
+        <meta name="description" content="Documenti e informazioni di trasparenza dell'associazione culturale Mousikè APS di Lamezia Terme." />
+      </Helmet>
       <Header />
       <main>
         {/* Hero – layout a due colonne come Chi Siamo */}

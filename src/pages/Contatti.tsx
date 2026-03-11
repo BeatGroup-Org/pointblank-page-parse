@@ -118,6 +118,10 @@ const Contatti = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Contatti — Mousikè</title>
+        <meta name="description" content="Contatta Mousikè APS per informazioni, iscrizioni ai corsi di musica e collaborazioni a Lamezia Terme." />
+      </Helmet>
       <Header />
       {/* Hero */}
       <section ref={heroRef} className="fade-in-section bg-secondary pt-32 pb-16">

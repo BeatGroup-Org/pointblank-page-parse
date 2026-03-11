@@ -77,6 +77,10 @@ const Produzioni = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Produzioni Culturali — Mousikè</title>
+        <meta name="description" content="Musical e spettacoli prodotti da Mousikè APS a Lamezia Terme: La Bella e la Bestia, Disney in Concerto e nuove produzioni." />
+      </Helmet>
       <Header />
       <main>
         {/* Hero */}

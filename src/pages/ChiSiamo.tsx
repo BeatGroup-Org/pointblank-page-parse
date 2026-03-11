@@ -56,6 +56,10 @@ const ChiSiamo = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Chi Siamo — Mousikè</title>
+        <meta name="description" content="La storia e la missione di Mousikè APS, associazione culturale a Lamezia Terme impegnata nella formazione musicale e nell'inclusione sociale." />
+      </Helmet>
       <Header />
       <main>
         {/* Sezione 1 – Apertura */}

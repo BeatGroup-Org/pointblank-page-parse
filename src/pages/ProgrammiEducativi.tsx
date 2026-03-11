@@ -43,6 +43,10 @@ const ProgrammiEducativi = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Ma che Musica Maestro — Mousikè</title>
+        <meta name="description" content="Programmi educativi musicali nelle scuole di Lamezia Terme. Laboratori, percorsi didattici e inclusione attraverso la musica." />
+      </Helmet>
       <Header />
       <main>
         {/* Hero */}
