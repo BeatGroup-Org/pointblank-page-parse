@@ -14,6 +14,10 @@ import PartnerSection from "@/components/sections/PartnerSection";
 
 const Index = () => (
   <>
+    <Helmet>
+      <title>Mousikè — Scuola di Musica a Lamezia Terme</title>
+      <meta name="description" content="Centro culturale ed educativo a Lamezia Terme. Corsi di musica, produzioni teatrali, programmi nelle scuole e inclusione sociale. Mousikè APS." />
+    </Helmet>
     <Header />
     <main>
       <HeroSection />

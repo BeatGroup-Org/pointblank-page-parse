@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Calendar, Clock, MapPin, Ticket, Phone, Mail, User, ArrowLeft, X } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Header from "@/components/Header";
