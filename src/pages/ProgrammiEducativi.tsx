@@ -175,7 +175,7 @@ const ProgrammiEducativi = () => {
         {/* Tracce */}
         <TextSection title="Un progetto che lascia tracce">
           <p>
-            Nel tempo, <strong className="text-foreground">Ma che Musica Maestro</strong> ha
+            Nel tempo, <strong className="text-foreground">Ma Che Musica Maestro!</strong> ha
             contribuito a far emergere sensibilità, attitudini e talenti, accompagnando
             tanti giovani in un percorso di crescita artistica e personale.
           </p>
