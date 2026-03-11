@@ -121,7 +121,7 @@ const ProgrammiEducativi = () => {
         {/* Famiglie */}
         <TextSection title="Le famiglie dentro il progetto" alt>
           <p>
-            Uno degli aspetti più belli di <strong className="text-foreground">Ma che Musica Maestro</strong> è
+            Uno degli aspetti più belli di <strong className="text-foreground">Ma Che Musica Maestro!</strong> è
             il coinvolgimento attivo delle famiglie.
           </p>
           <p>
