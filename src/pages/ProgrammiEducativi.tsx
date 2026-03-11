@@ -44,8 +44,8 @@ const ProgrammiEducativi = () => {
   return (
     <>
       <Helmet>
-        <title>Ma che Musica Maestro — Mousikè</title>
-        <meta name="description" content="Il progetto musicale di Mousikè APS a Lamezia Terme. Da oltre quindici anni, Ma che Musica Maestro accompagna la crescita dei più giovani attraverso la musica." />
+        <title>Ma Che Musica Maestro! — Mousikè</title>
+        <meta name="description" content="Il progetto musicale di Mousikè APS a Lamezia Terme. Da oltre quindici anni, Ma Che Musica Maestro! accompagna la crescita dei più giovani attraverso la musica." />
       </Helmet>
       <Header />
       <main>
@@ -61,14 +61,14 @@ const ProgrammiEducativi = () => {
                   Il progetto musicale di Mousikè APS a Lamezia Terme
                 </p>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight">
-                  Ma che Musica
-                  <br />
-                  Maestro
-                </h1>
+                   Ma Che Musica
+                   <br />
+                   Maestro!
+                 </h1>
               </div>
               <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
                 <p>
-                  Da oltre quindici anni, <strong className="text-foreground">Ma che Musica Maestro</strong> accompagna
+                  Da oltre quindici anni, <strong className="text-foreground">Ma Che Musica Maestro!</strong> accompagna
                   la crescita di bambine, bambini, ragazze e ragazzi di Lamezia Terme
                   attraverso la musica.
                 </p>
@@ -94,7 +94,7 @@ const ProgrammiEducativi = () => {
             <div className="w-full aspect-[21/9] overflow-hidden">
               <img
                 src={musicaMaestroImg}
-                alt="Ma che Musica Maestro - spettacolo dal vivo"
+                alt="Ma Che Musica Maestro! - spettacolo dal vivo"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -105,7 +105,7 @@ const ProgrammiEducativi = () => {
         {/* Formazione e palcoscenico */}
         <TextSection title="Un percorso che mette insieme formazione e palcoscenico">
           <p>
-            Nel corso degli anni, <strong className="text-foreground">Ma che Musica Maestro</strong> ha
+            Nel corso degli anni, <strong className="text-foreground">Ma Che Musica Maestro!</strong> ha
             coinvolto centinaia di giovani in un lavoro continuo fatto di prove, studio,
             emozione e condivisione.
           </p>
@@ -121,7 +121,7 @@ const ProgrammiEducativi = () => {
         {/* Famiglie */}
         <TextSection title="Le famiglie dentro il progetto" alt>
           <p>
-            Uno degli aspetti più belli di <strong className="text-foreground">Ma che Musica Maestro</strong> è
+            Uno degli aspetti più belli di <strong className="text-foreground">Ma Che Musica Maestro!</strong> è
             il coinvolgimento attivo delle famiglie.
           </p>
           <p>
@@ -175,7 +175,7 @@ const ProgrammiEducativi = () => {
         {/* Tracce */}
         <TextSection title="Un progetto che lascia tracce">
           <p>
-            Nel tempo, <strong className="text-foreground">Ma che Musica Maestro</strong> ha
+            Nel tempo, <strong className="text-foreground">Ma Che Musica Maestro!</strong> ha
             contribuito a far emergere sensibilità, attitudini e talenti, accompagnando
             tanti giovani in un percorso di crescita artistica e personale.
           </p>
@@ -187,9 +187,9 @@ const ProgrammiEducativi = () => {
         </TextSection>
 
         {/* Valore */}
-        <TextSection title="Il valore di Ma che Musica Maestro" alt>
+        <TextSection title="Il valore di Ma Che Musica Maestro!" alt>
           <p>
-            Oggi <strong className="text-foreground">Ma che Musica Maestro</strong> rappresenta
+            Oggi <strong className="text-foreground">Ma Che Musica Maestro!</strong> rappresenta
             una delle esperienze più significative di educazione musicale a Lamezia Terme.
           </p>
           <p>

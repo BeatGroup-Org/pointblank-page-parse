@@ -1,21 +1,16 @@
 
 
-## Correggere "Ma che Musica Maestro" → "Ma Che Musica Maestro!"
+## Fix: sezione interattiva non visibile nella pagina Contatti
 
-### Modifica
+### Problema
+Il `ref` di `useFadeIn` e applicato al `div` esterno (riga 137), ma la classe `fade-in-section` e sul `div` interno (riga 138). L'hook aggiunge `visible` solo all'elemento referenziato, quindi il div interno resta nascosto.
 
-**File:** `src/pages/ProgrammiEducativi.tsx`
+### Soluzione
 
-Sostituire tutte le occorrenze di `Ma che Musica Maestro` con `Ma Che Musica Maestro!` nell'intero file — titolo Helmet, meta description, alt immagine, tutti i `<strong>`, e il titolo della TextSection "Il valore di...". La "C" di "Che" diventa maiuscola e si aggiunge il punto esclamativo alla fine.
+**File:** `src/pages/Contatti.tsx`
 
-Occorrenze da aggiornare (circa 8-9):
-- Riga 47: titolo Helmet
-- Riga 48: meta description
-- Riga 71: primo paragrafo hero
-- Riga 97: alt immagine
-- Riga 108: sezione formazione
-- Riga 124: sezione famiglie
-- Riga 178: sezione tracce
-- Riga 190: titolo TextSection "Il valore di..."
-- Riga 192: paragrafo valore
+Unificare ref e classe sullo stesso elemento: spostare `fade-in-section` e `ref={stepsRef}` sullo stesso `div`.
+
+- Riga 137-138: cambiare da due div separati a un unico div con sia `ref={stepsRef}` che `className="fade-in-section container mx-auto px-6 max-w-3xl"`
+- Rimuovere il `div` interno con `fade-in-section` e il relativo tag di chiusura (riga 314)
 
