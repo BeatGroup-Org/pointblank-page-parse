@@ -94,7 +94,7 @@ const ProgrammiEducativi = () => {
             <div className="w-full aspect-[21/9] overflow-hidden">
               <img
                 src={musicaMaestroImg}
-                alt="Ma che Musica Maestro - spettacolo dal vivo"
+                alt="Ma Che Musica Maestro! - spettacolo dal vivo"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
