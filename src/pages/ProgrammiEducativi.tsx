@@ -61,10 +61,10 @@ const ProgrammiEducativi = () => {
                   Il progetto musicale di Mousikè APS a Lamezia Terme
                 </p>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight">
-                  Ma che Musica
-                  <br />
-                  Maestro
-                </h1>
+                   Ma Che Musica
+                   <br />
+                   Maestro!
+                 </h1>
               </div>
               <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
                 <p>
