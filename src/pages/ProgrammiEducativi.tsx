@@ -105,7 +105,7 @@ const ProgrammiEducativi = () => {
         {/* Formazione e palcoscenico */}
         <TextSection title="Un percorso che mette insieme formazione e palcoscenico">
           <p>
-            Nel corso degli anni, <strong className="text-foreground">Ma che Musica Maestro</strong> ha
+            Nel corso degli anni, <strong className="text-foreground">Ma Che Musica Maestro!</strong> ha
             coinvolto centinaia di giovani in un lavoro continuo fatto di prove, studio,
             emozione e condivisione.
           </p>
