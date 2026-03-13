@@ -12,13 +12,13 @@ import { eventi } from "@/data/eventi";
 import { openGoogleCalendar } from "@/lib/generateIcs";
 
 const EventoDetail = () => {
-  const { id } = useParams<{ id: string }>();
-  const evento = eventi.find((e) => e.id === Number(id));
+  const { slug } = useParams<{ slug: string }>();
+  const evento = eventi.find((e) => e.slug === slug);
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+  }, [slug]);
 
   if (!evento) return <Navigate to="/eventi" replace />;
 

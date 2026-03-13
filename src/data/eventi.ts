@@ -17,6 +17,7 @@ export interface GiornataProgramma {
 
 export interface Evento {
   id: number;
+  slug: string;
   titolo: string;
   data: string;
   dataISO?: string;
@@ -46,6 +47,7 @@ export interface Evento {
 export const eventi: Evento[] = [
   {
     id: 1,
+    slug: "dario-panza",
     titolo: "Masterclass di Batteria con Dario Panza",
     data: "13–14 Marzo 2026",
     dataISO: "2026-03-13",
@@ -102,6 +104,7 @@ export const eventi: Evento[] = [
   },
   {
     id: 2,
+    slug: "jacopo-carlini",
     titolo: "Masterclass di Pianoforte con Jacopo Carlini",
     data: "10–11 Aprile 2026",
     dataISO: "2026-04-10",

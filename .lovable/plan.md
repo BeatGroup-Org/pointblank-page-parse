@@ -1,23 +1,16 @@
 
 
-## Usare slug con nome artista nelle URL degli eventi
+## Fix: sezione interattiva non visibile nella pagina Contatti
 
-Cambiare le rotte da `/eventi/1`, `/eventi/2` a `/eventi/dario-panza`, `/eventi/jacopo-carlini`.
+### Problema
+Il `ref` di `useFadeIn` e applicato al `div` esterno (riga 137), ma la classe `fade-in-section` e sul `div` interno (riga 138). L'hook aggiunge `visible` solo all'elemento referenziato, quindi il div interno resta nascosto.
 
-### Modifiche
+### Soluzione
 
-1. **`src/data/eventi.ts`** — Aggiungere campo `slug` a ogni evento:
-   - Evento 1: `slug: "dario-panza"`
-   - Evento 2: `slug: "jacopo-carlini"`
-   - Aggiungere `slug: string` all'interfaccia `Evento`
+**File:** `src/pages/Contatti.tsx`
 
-2. **`src/pages/EventoDetail.tsx`** (riga 15-16) — Cercare per `slug` invece che per `id`:
-   - `const { slug } = useParams<{ slug: string }>()`
-   - `const evento = eventi.find((e) => e.slug === slug)`
+Unificare ref e classe sullo stesso elemento: spostare `fade-in-section` e `ref={stepsRef}` sullo stesso `div`.
 
-3. **`src/App.tsx`** (riga 36) — Cambiare rotta:
-   - Da `<Route path="/eventi/:id"` a `<Route path="/eventi/:slug"`
-
-4. **`src/components/EventCard.tsx`** (riga 67) — Link con slug:
-   - Da `` to={`/eventi/${evento.id}`} `` a `` to={`/eventi/${evento.slug}`} ``
+- Riga 137-138: cambiare da due div separati a un unico div con sia `ref={stepsRef}` che `className="fade-in-section container mx-auto px-6 max-w-3xl"`
+- Rimuovere il `div` interno con `fade-in-section` e il relativo tag di chiusura (riga 314)
 
