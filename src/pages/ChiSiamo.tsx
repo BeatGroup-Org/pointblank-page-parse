@@ -59,6 +59,14 @@ const ChiSiamo = () => {
       <Helmet>
         <title>Chi Siamo — Mousikè</title>
         <meta name="description" content="La storia e la missione di Mousikè APS, associazione culturale a Lamezia Terme impegnata nella formazione musicale e nell'inclusione sociale." />
+        <link rel="canonical" href="https://mousikeaps.it/chi-siamo" />
+        <meta property="og:title" content="Chi Siamo — Mousikè" />
+        <meta property="og:description" content="La storia e la missione di Mousikè APS, associazione culturale a Lamezia Terme impegnata nella formazione musicale e nell'inclusione sociale." />
+        <meta property="og:url" content="https://mousikeaps.it/chi-siamo" />
+        <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
+        <meta name="twitter:title" content="Chi Siamo — Mousikè" />
+        <meta name="twitter:description" content="La storia e la missione di Mousikè APS, associazione culturale a Lamezia Terme impegnata nella formazione musicale e nell'inclusione sociale." />
+        <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
       </Helmet>
       <Header />
       <main>
