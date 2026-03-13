@@ -17,6 +17,14 @@ const Index = () => (
     <Helmet>
       <title>Mousikè — Scuola di Musica a Lamezia Terme</title>
       <meta name="description" content="Centro culturale ed educativo a Lamezia Terme. Corsi di musica, produzioni teatrali, programmi nelle scuole e inclusione sociale. Mousikè APS." />
+      <link rel="canonical" href="https://mousikeaps.it/" />
+      <meta property="og:title" content="Mousikè — Scuola di Musica a Lamezia Terme" />
+      <meta property="og:description" content="Centro culturale ed educativo a Lamezia Terme. Corsi di musica, produzioni teatrali, programmi nelle scuole e inclusione sociale. Mousikè APS." />
+      <meta property="og:url" content="https://mousikeaps.it/" />
+      <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
+      <meta name="twitter:title" content="Mousikè — Scuola di Musica a Lamezia Terme" />
+      <meta name="twitter:description" content="Centro culturale ed educativo a Lamezia Terme. Corsi di musica, produzioni teatrali, programmi nelle scuole e inclusione sociale. Mousikè APS." />
+      <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
     </Helmet>
     <Header />
     <main>

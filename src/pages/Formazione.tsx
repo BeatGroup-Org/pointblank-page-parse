@@ -45,6 +45,14 @@ const Formazione = () => {
       <Helmet>
         <title>Formazione Musicale — Mousikè</title>
         <meta name="description" content="Corsi di musica individuali e collettivi a Lamezia Terme: canto, pianoforte, chitarra, batteria, basso, violino e musical." />
+        <link rel="canonical" href="https://mousikeaps.it/formazione" />
+        <meta property="og:title" content="Formazione Musicale — Mousikè" />
+        <meta property="og:description" content="Corsi di musica a Lamezia Terme: canto, pianoforte, chitarra, batteria, violino e musical. Mousikè APS." />
+        <meta property="og:url" content="https://mousikeaps.it/formazione" />
+        <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
+        <meta name="twitter:title" content="Formazione Musicale — Mousikè" />
+        <meta name="twitter:description" content="Corsi di musica a Lamezia Terme: canto, pianoforte, chitarra, batteria, violino e musical. Mousikè APS." />
+        <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
       </Helmet>
       <Header />
 

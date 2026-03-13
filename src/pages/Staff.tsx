@@ -31,6 +31,14 @@ const Staff = () => {
       <Helmet>
         <title>Il Team — Mousikè</title>
         <meta name="description" content="I docenti e lo staff di Mousikè APS. Professionisti della musica a Lamezia Terme." />
+        <link rel="canonical" href="https://mousikeaps.it/staff" />
+        <meta property="og:title" content="Il Team — Mousikè" />
+        <meta property="og:description" content="I docenti e lo staff di Mousikè APS. Professionisti della musica a Lamezia Terme." />
+        <meta property="og:url" content="https://mousikeaps.it/staff" />
+        <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
+        <meta name="twitter:title" content="Il Team — Mousikè" />
+        <meta name="twitter:description" content="I docenti e lo staff di Mousikè APS. Professionisti della musica a Lamezia Terme." />
+        <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
       </Helmet>
       <Header />
       <main>

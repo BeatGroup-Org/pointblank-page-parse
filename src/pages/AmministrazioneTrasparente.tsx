@@ -45,6 +45,14 @@ const AmministrazioneTrasparente = () => {
       <Helmet>
         <title>Amministrazione Trasparente — Mousikè</title>
         <meta name="description" content="Documenti e informazioni di trasparenza dell'associazione culturale Mousikè APS di Lamezia Terme." />
+        <link rel="canonical" href="https://mousikeaps.it/amministrazione-trasparente" />
+        <meta property="og:title" content="Amministrazione Trasparente — Mousikè" />
+        <meta property="og:description" content="Documenti e informazioni di trasparenza dell'associazione culturale Mousikè APS di Lamezia Terme." />
+        <meta property="og:url" content="https://mousikeaps.it/amministrazione-trasparente" />
+        <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
+        <meta name="twitter:title" content="Amministrazione Trasparente — Mousikè" />
+        <meta name="twitter:description" content="Documenti e informazioni di trasparenza dell'associazione culturale Mousikè APS di Lamezia Terme." />
+        <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
       </Helmet>
       <Header />
       <main>
