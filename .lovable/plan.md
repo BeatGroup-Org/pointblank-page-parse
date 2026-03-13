@@ -1,16 +1,16 @@
 
 
-## Ripristinare la favicon di Mousikè
+## Fix: sezione interattiva non visibile nella pagina Contatti
 
-Il file `index.html` non ha un tag `<link rel="icon">` esplicito che punti a `/favicon.png` (il logo Mousikè). Il browser quindi usa `/favicon.ico` che è quello di default di Lovable.
+### Problema
+Il `ref` di `useFadeIn` e applicato al `div` esterno (riga 137), ma la classe `fade-in-section` e sul `div` interno (riga 138). L'hook aggiunge `visible` solo all'elemento referenziato, quindi il div interno resta nascosto.
 
-### Modifica
+### Soluzione
 
-**`index.html`** — Aggiungere nella sezione `<head>`, dopo la riga dell'apple-touch-icon:
+**File:** `src/pages/Contatti.tsx`
 
-```html
-<link rel="icon" type="image/png" href="/favicon.png" />
-```
+Unificare ref e classe sullo stesso elemento: spostare `fade-in-section` e `ref={stepsRef}` sullo stesso `div`.
 
-Questo forzerà il browser a usare il logo Mousikè come favicon su tutte le pagine.
+- Riga 137-138: cambiare da due div separati a un unico div con sia `ref={stepsRef}` che `className="fade-in-section container mx-auto px-6 max-w-3xl"`
+- Rimuovere il `div` interno con `fade-in-section` e il relativo tag di chiusura (riga 314)
 
