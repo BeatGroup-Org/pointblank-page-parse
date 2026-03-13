@@ -1,16 +1,10 @@
 
 
-## Fix: sezione interattiva non visibile nella pagina Contatti
+## Aggiungere "Ultimo" in grassetto nella pagina evento
 
-### Problema
-Il `ref` di `useFadeIn` e applicato al `div` esterno (riga 137), ma la classe `fade-in-section` e sul `div` interno (riga 138). L'hook aggiunge `visible` solo all'elemento referenziato, quindi il div interno resta nascosto.
+### Modifica
 
-### Soluzione
+**File:** `src/pages/EventoDetail.tsx` — Aggiungere una riga `.replace(/Ultimo/g, "<strong class='text-foreground'>Ultimo</strong>")` nella catena di replace (dopo riga 145, prima di `.replace(/Giorgia/g, ...)`).
 
-**File:** `src/pages/Contatti.tsx`
-
-Unificare ref e classe sullo stesso elemento: spostare `fade-in-section` e `ref={stepsRef}` sullo stesso `div`.
-
-- Riga 137-138: cambiare da due div separati a un unico div con sia `ref={stepsRef}` che `className="fade-in-section container mx-auto px-6 max-w-3xl"`
-- Rimuovere il `div` interno con `fade-in-section` e il relativo tag di chiusura (riga 314)
+Inoltre aggiornare il testo dell'introduzione in **`src/data/eventi.ts`** per l'evento Jacopo Carlini (id 2), aggiungendo "Ultimo" nella lista dei collaboratori: `"...come Ultimo, Giorgia, Riccardo Cocciante e Alex Britti..."`.
 
