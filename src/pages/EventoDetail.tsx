@@ -143,6 +143,7 @@ const EventoDetail = () => {
                         .replace(/Willie Peyote/g, "<strong class='text-foreground'>Willie Peyote</strong>")
                         .replace(/Ernia/g, "<strong class='text-foreground'>Ernia</strong>")
                         .replace(/Serena Brancale/g, "<strong class='text-foreground'>Serena Brancale</strong>")
+                        .replace(/Ultimo/g, "<strong class='text-foreground'>Ultimo</strong>")
                         .replace(/Giorgia/g, "<strong class='text-foreground'>Giorgia</strong>")
                         .replace(/Riccardo Cocciante/g, "<strong class='text-foreground'>Riccardo Cocciante</strong>")
                         .replace(/Alex Britti/g, "<strong class='text-foreground'>Alex Britti</strong>")
