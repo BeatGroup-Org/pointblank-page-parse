@@ -18,7 +18,7 @@ const EventoDetail = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+  }, [slug]);
 
   if (!evento) return <Navigate to="/eventi" replace />;
 
