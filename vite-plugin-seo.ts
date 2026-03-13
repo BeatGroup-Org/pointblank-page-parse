@@ -1,7 +1,15 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import type { Plugin } from "vite";
 import { routesMeta } from "./src/seo/routes-meta";
+
+const __dirname_safe =
+  typeof __dirname !== "undefined"
+    ? __dirname
+    : path.dirname(fileURLToPath(import.meta.url));
+
+const BASE_URL = "https://mousikeaps.it";
 
 /**
  * Vite plugin that generates a static HTML file for each route
@@ -13,7 +21,7 @@ export function seoPrerender(): Plugin {
     name: "seo-prerender",
     apply: "build",
     closeBundle() {
-      const distDir = path.resolve(__dirname, "dist");
+      const distDir = path.resolve(__dirname_safe, "dist");
       const indexPath = path.join(distDir, "index.html");
 
       if (!fs.existsSync(indexPath)) return;
@@ -50,6 +58,8 @@ interface Meta {
 }
 
 function patchHtml(html: string, meta: Meta): string {
+  // Ensure ogImage is absolute
+  const ogImage = meta.ogImage.startsWith("http") ? meta.ogImage : `${BASE_URL}${meta.ogImage}`;
   let result = html;
 
   // Title
@@ -85,7 +95,7 @@ function patchHtml(html: string, meta: Meta): string {
   );
   result = result.replace(
     /<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/,
-    `<meta property="og:image" content="${meta.ogImage}">`
+    `<meta property="og:image" content="${ogImage}">`
   );
 
   // Twitter tags
@@ -99,7 +109,7 @@ function patchHtml(html: string, meta: Meta): string {
   );
   result = result.replace(
     /<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/?>/,
-    `<meta name="twitter:image" content="${meta.ogImage}">`
+    `<meta name="twitter:image" content="${ogImage}">`
   );
 
   return result;

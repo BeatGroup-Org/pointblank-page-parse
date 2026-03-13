@@ -89,7 +89,7 @@ export const routesMeta: RouteMeta[] = [
     title: "Masterclass di Batteria con Dario Panza — Mousikè",
     description:
       "Batterista di fama nazionale, Dario Panza guiderà una masterclass dedicata al ritmo, alla tecnica e all'espressività nella batteria moderna. 13–14 Marzo 2026 a Lamezia Terme.",
-    ogImage: "/assets/eventi/dario-panza-hero.png",
+    ogImage: `${BASE}/assets/eventi/dario-panza-hero.png`,
     canonical: `${BASE}/eventi/dario-panza`,
   },
   {
@@ -97,7 +97,7 @@ export const routesMeta: RouteMeta[] = [
     title: "Masterclass di Pianoforte con Jacopo Carlini — Mousikè",
     description:
       "Pianista, compositore e arrangiatore, Jacopo Carlini guiderà una masterclass dedicata al pianoforte contemporaneo. 10–11 Aprile 2026 a Lamezia Terme.",
-    ogImage: "/assets/eventi/jacopo-carlini-hero.jpg",
+    ogImage: `${BASE}/assets/eventi/jacopo-carlini-hero.jpg`,
     canonical: `${BASE}/eventi/jacopo-carlini`,
   },
 ];
