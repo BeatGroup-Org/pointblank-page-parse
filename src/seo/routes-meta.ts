@@ -97,7 +97,7 @@ export const routesMeta: RouteMeta[] = [
     title: "Masterclass di Pianoforte con Jacopo Carlini — Mousikè",
     description:
       "Pianista, compositore e arrangiatore, Jacopo Carlini guiderà una masterclass dedicata al pianoforte contemporaneo. 10–11 Aprile 2026 a Lamezia Terme.",
-    ogImage: "/assets/eventi/jacopo-carlini-hero.jpg",
+    ogImage: `${BASE}/assets/eventi/jacopo-carlini-hero.jpg`,
     canonical: `${BASE}/eventi/jacopo-carlini`,
   },
 ];

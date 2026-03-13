@@ -1,7 +1,15 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import type { Plugin } from "vite";
 import { routesMeta } from "./src/seo/routes-meta";
+
+const __dirname_safe =
+  typeof __dirname !== "undefined"
+    ? __dirname
+    : path.dirname(fileURLToPath(import.meta.url));
+
+const BASE_URL = "https://mousikeaps.it";
 
 /**
  * Vite plugin that generates a static HTML file for each route
@@ -13,7 +21,7 @@ export function seoPrerender(): Plugin {
     name: "seo-prerender",
     apply: "build",
     closeBundle() {
-      const distDir = path.resolve(__dirname, "dist");
+      const distDir = path.resolve(__dirname_safe, "dist");
       const indexPath = path.join(distDir, "index.html");
 
       if (!fs.existsSync(indexPath)) return;
