@@ -155,6 +155,7 @@ export const eventi: Evento[] = [
     contattoTelefono: "+39 333 956 8927",
     contattoEmail: "mousike.aps@gmail.com",
     whatsappNumero: "393339568927",
-    immagine: "/placeholder.svg",
+    immagine: jacopoCarliniHero,
+    locandina: jacopoCarliniLocandina,
   },
 ];
