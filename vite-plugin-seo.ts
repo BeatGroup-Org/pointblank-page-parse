@@ -109,7 +109,7 @@ function patchHtml(html: string, meta: Meta): string {
   );
   result = result.replace(
     /<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/?>/,
-    `<meta name="twitter:image" content="${meta.ogImage}">`
+    `<meta name="twitter:image" content="${ogImage}">`
   );
 
   return result;
