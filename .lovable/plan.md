@@ -1,16 +1,20 @@
 
 
-## Fix: sezione interattiva non visibile nella pagina Contatti
+## Problema
 
-### Problema
-Il `ref` di `useFadeIn` e applicato al `div` esterno (riga 137), ma la classe `fade-in-section` e sul `div` interno (riga 138). L'hook aggiunge `visible` solo all'elemento referenziato, quindi il div interno resta nascosto.
+Nel file `index.html` ci sono ancora 3 riferimenti al vecchio dominio Lovable (`pointblank-page-parse.lovable.app`) invece di `mousikeaps.it`:
 
-### Soluzione
+- Riga 10: `<link rel="canonical">`
+- Riga 14: `<meta property="og:url">`
+- Riga 32: `"url"` nel JSON-LD
 
-**File:** `src/pages/Contatti.tsx`
+Quando condividi una pagina su WhatsApp, Facebook ecc., questi servizi leggono i meta tag Open Graph e il canonical, mostrando il dominio sbagliato.
 
-Unificare ref e classe sullo stesso elemento: spostare `fade-in-section` e `ref={stepsRef}` sullo stesso `div`.
+Inoltre nel sitemap c'è ancora `/eventi/2` (vecchio ID numerico) da aggiornare a `/eventi/jacopo-carlini`.
 
-- Riga 137-138: cambiare da due div separati a un unico div con sia `ref={stepsRef}` che `className="fade-in-section container mx-auto px-6 max-w-3xl"`
-- Rimuovere il `div` interno con `fade-in-section` e il relativo tag di chiusura (riga 314)
+## Modifiche
+
+1. **`index.html`** — Sostituire tutte e 3 le occorrenze di `https://pointblank-page-parse.lovable.app` con `https://mousikeaps.it`.
+
+2. **`public/sitemap.xml`** — Cambiare `<url><loc>https://mousikeaps.it/eventi/2</loc></url>` in `<url><loc>https://mousikeaps.it/eventi/jacopo-carlini</loc></url>` e aggiungere l'URL per Dario Panza (`/eventi/dario-panza`).
 
