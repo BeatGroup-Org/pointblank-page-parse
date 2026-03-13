@@ -58,6 +58,8 @@ interface Meta {
 }
 
 function patchHtml(html: string, meta: Meta): string {
+  // Ensure ogImage is absolute
+  const ogImage = meta.ogImage.startsWith("http") ? meta.ogImage : `${BASE_URL}${meta.ogImage}`;
   let result = html;
 
   // Title
