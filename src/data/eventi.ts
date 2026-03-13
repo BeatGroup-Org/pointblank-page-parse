@@ -104,6 +104,7 @@ export const eventi: Evento[] = [
   },
   {
     id: 2,
+    slug: "jacopo-carlini",
     titolo: "Masterclass di Pianoforte con Jacopo Carlini",
     data: "10–11 Aprile 2026",
     dataISO: "2026-04-10",

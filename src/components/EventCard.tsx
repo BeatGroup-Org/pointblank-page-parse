@@ -64,7 +64,7 @@ const EventCard = ({ evento }: { evento: Evento }) => (
         </div>
 
         <Link
-          to={`/eventi/${evento.id}`}
+          to={`/eventi/${evento.slug}`}
           className="event-link-btn"
           aria-label={`Dettagli: ${evento.titolo}`}
         >
