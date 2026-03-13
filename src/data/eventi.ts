@@ -17,6 +17,7 @@ export interface GiornataProgramma {
 
 export interface Evento {
   id: number;
+  slug: string;
   titolo: string;
   data: string;
   dataISO?: string;
