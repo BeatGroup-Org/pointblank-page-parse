@@ -89,7 +89,7 @@ export const routesMeta: RouteMeta[] = [
     title: "Masterclass di Batteria con Dario Panza — Mousikè",
     description:
       "Batterista di fama nazionale, Dario Panza guiderà una masterclass dedicata al ritmo, alla tecnica e all'espressività nella batteria moderna. 13–14 Marzo 2026 a Lamezia Terme.",
-    ogImage: "/assets/eventi/dario-panza-hero.png",
+    ogImage: `${BASE}/assets/eventi/dario-panza-hero.png`,
     canonical: `${BASE}/eventi/dario-panza`,
   },
   {
