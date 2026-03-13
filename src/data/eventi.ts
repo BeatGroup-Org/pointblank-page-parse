@@ -1,5 +1,7 @@
 import darioPanzaHero from "@/assets/eventi/dario-panza-hero.png";
 import darioPanzaLocandina from "@/assets/eventi/dario-panza-locandina.png";
+import jacopoCarliniHero from "@/assets/eventi/jacopo-carlini-hero.jpg";
+import jacopoCarliniLocandina from "@/assets/eventi/jacopo-carlini-locandina.jpg";
 
 export interface FasciaOraria {
   orario: string;
