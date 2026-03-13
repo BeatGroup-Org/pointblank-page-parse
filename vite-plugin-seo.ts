@@ -95,7 +95,7 @@ function patchHtml(html: string, meta: Meta): string {
   );
   result = result.replace(
     /<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/,
-    `<meta property="og:image" content="${meta.ogImage}">`
+    `<meta property="og:image" content="${ogImage}">`
   );
 
   // Twitter tags
