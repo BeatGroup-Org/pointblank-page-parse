@@ -42,6 +42,7 @@ export interface Evento {
   contattoEmail?: string;
   whatsappNumero?: string;
   gallery?: string[];
+  mostraFormIscrizione?: boolean;
 }
 
 export const eventi: Evento[] = [
