@@ -202,6 +202,14 @@ const EventoDetail = () => {
                   </div>
                 )}
 
+                {/* Sezione Form Iscrizione */}
+                {evento.mostraFormIscrizione && evento.whatsappNumero && (
+                  <IscrizioneForm
+                    titoloEvento={evento.titolo}
+                    whatsappNumero={evento.whatsappNumero}
+                  />
+                )}
+
                 {/* Sezione 3: CTA e Contatti */}
                 <div ref={ctaRef} className="fade-in-section">
                   {evento.ctaMessaggio && (
