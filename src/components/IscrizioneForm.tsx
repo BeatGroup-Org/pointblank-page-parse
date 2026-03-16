@@ -199,6 +199,8 @@ const IscrizioneForm = ({ titoloEvento, whatsappNumero }: IscrizioneFormProps) =
             <Label htmlFor="privacy" className="text-sm text-muted-foreground leading-snug cursor-pointer">
               Acconsento al trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR).
               I dati saranno utilizzati esclusivamente per la gestione dell'iscrizione.
+              Leggi la{" "}
+              <a href="https://www.iubenda.com/privacy-policy/544f6a7b-1d0e-406f-ad85-5363aab12887" className="iubenda-nostyle iubenda-noiframe iubenda-embed text-primary underline hover:text-primary/80" title="Privacy Policy">Privacy Policy</a>.
             </Label>
           </div>
           {errors.privacy && <p className="text-sm text-destructive">{errors.privacy}</p>}
