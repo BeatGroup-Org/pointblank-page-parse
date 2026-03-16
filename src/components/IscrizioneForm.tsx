@@ -58,19 +58,19 @@ const IscrizioneForm = ({ titoloEvento, whatsappNumero }: IscrizioneFormProps) =
     if (!validate()) return;
 
     const lines = [
-      `📋 ISCRIZIONE ${titoloEvento.toUpperCase()}`,
+      `ISCRIZIONE ${titoloEvento.toUpperCase()}`,
       "",
-      `👤 Nome: ${form.nome.trim()} ${form.cognome.trim()}`,
+      `Nome: ${form.nome.trim()} ${form.cognome.trim()}`,
     ];
-    if (form.dataNascita) lines.push(`📅 Nascita: ${form.dataNascita}`);
-    if (form.codiceFiscale.trim()) lines.push(`🏷️ CF: ${form.codiceFiscale.trim()}`);
-    lines.push(`📞 Tel: ${form.telefono.trim()}`);
-    if (form.email.trim()) lines.push(`📧 Email: ${form.email.trim()}`);
-    if (form.citta.trim()) lines.push(`📍 Città: ${form.citta.trim()}`);
-    if (form.strumento.trim()) lines.push(`🎵 Strumento: ${form.strumento.trim()}`);
-    if (form.livello.trim()) lines.push(`📊 Livello: ${form.livello.trim()}`);
-    lines.push("", `✅ Partecipazione: ${partecipazioneLabel}`);
-    if (form.note.trim()) lines.push("", `📝 Note: ${form.note.trim()}`);
+    if (form.dataNascita) lines.push(`Nascita: ${form.dataNascita}`);
+    if (form.codiceFiscale.trim()) lines.push(`CF: ${form.codiceFiscale.trim()}`);
+    lines.push(`Tel: ${form.telefono.trim()}`);
+    if (form.email.trim()) lines.push(`Email: ${form.email.trim()}`);
+    if (form.citta.trim()) lines.push(`Città: ${form.citta.trim()}`);
+    if (form.strumento.trim()) lines.push(`Strumento: ${form.strumento.trim()}`);
+    if (form.livello.trim()) lines.push(`Livello: ${form.livello.trim()}`);
+    lines.push("", `Partecipazione: ${partecipazioneLabel}`);
+    if (form.note.trim()) lines.push("", `Note: ${form.note.trim()}`);
     lines.push("", "Accetto il trattamento dati (GDPR 679/2016)");
 
     const url = `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(lines.join("\n"))}`;
