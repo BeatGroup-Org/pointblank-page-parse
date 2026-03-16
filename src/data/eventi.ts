@@ -42,6 +42,7 @@ export interface Evento {
   contattoEmail?: string;
   whatsappNumero?: string;
   gallery?: string[];
+  mostraFormIscrizione?: boolean;
 }
 
 export const eventi: Evento[] = [
@@ -160,5 +161,6 @@ export const eventi: Evento[] = [
     whatsappNumero: "393339568927",
     immagine: jacopoCarliniHero,
     locandina: jacopoCarliniLocandina,
+    mostraFormIscrizione: true,
   },
 ];

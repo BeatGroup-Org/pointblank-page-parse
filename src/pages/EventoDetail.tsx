@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { eventi } from "@/data/eventi";
 import { openGoogleCalendar } from "@/lib/generateIcs";
+import IscrizioneForm from "@/components/IscrizioneForm";
 
 const EventoDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -199,6 +200,14 @@ const EventoDetail = () => {
                       ))}
                     </div>
                   </div>
+                )}
+
+                {/* Sezione Form Iscrizione */}
+                {evento.mostraFormIscrizione && evento.whatsappNumero && (
+                  <IscrizioneForm
+                    titoloEvento={evento.titolo}
+                    whatsappNumero={evento.whatsappNumero}
+                  />
                 )}
 
                 {/* Sezione 3: CTA e Contatti */}
