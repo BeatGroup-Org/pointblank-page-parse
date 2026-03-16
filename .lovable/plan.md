@@ -1,16 +1,22 @@
 
 
-## Fix: sezione interattiva non visibile nella pagina Contatti
+## Integrazione Iubenda Privacy Policy nel form di iscrizione
 
-### Problema
-Il `ref` di `useFadeIn` e applicato al `div` esterno (riga 137), ma la classe `fade-in-section` e sul `div` interno (riga 138). L'hook aggiunge `visible` solo all'elemento referenziato, quindi il div interno resta nascosto.
+Lo script Iubenda fornito genera un widget/link alla privacy policy. Lo integreremo nel form di iscrizione, collegandolo al testo della checkbox GDPR.
 
-### Soluzione
+### Modifiche
 
-**File:** `src/pages/Contatti.tsx`
+1. **`index.html`** — Aggiungere lo script Iubenda nel `<head>`:
+   ```html
+   <script type="text/javascript" src="https://embeds.iubenda.com/widgets/544f6a7b-1d0e-406f-ad85-5363aab12887.js"></script>
+   ```
 
-Unificare ref e classe sullo stesso elemento: spostare `fade-in-section` e `ref={stepsRef}` sullo stesso `div`.
+2. **`src/components/IscrizioneForm.tsx`** (riga ~199-202) — Aggiornare il testo della Label privacy per includere un link alla policy Iubenda:
+   ```
+   Acconsento al trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR).
+   Leggi la <a href="..." class="iubenda-...">Privacy Policy</a>.
+   ```
+   Il link sarà generato automaticamente dal widget Iubenda caricato nello script.
 
-- Riga 137-138: cambiare da due div separati a un unico div con sia `ref={stepsRef}` che `className="fade-in-section container mx-auto px-6 max-w-3xl"`
-- Rimuovere il `div` interno con `fade-in-section` e il relativo tag di chiusura (riga 314)
+3. **`src/components/Footer.tsx`** — Aggiungere un link "Privacy Policy" nella sezione "Link utili" del footer, sempre tramite il widget Iubenda.
 
