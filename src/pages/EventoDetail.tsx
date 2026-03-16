@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { eventi } from "@/data/eventi";
 import { openGoogleCalendar } from "@/lib/generateIcs";
+import IscrizioneForm from "@/components/IscrizioneForm";
 
 const EventoDetail = () => {
   const { slug } = useParams<{ slug: string }>();

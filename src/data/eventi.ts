@@ -161,5 +161,6 @@ export const eventi: Evento[] = [
     whatsappNumero: "393339568927",
     immagine: jacopoCarliniHero,
     locandina: jacopoCarliniLocandina,
+    mostraFormIscrizione: true,
   },
 ];
