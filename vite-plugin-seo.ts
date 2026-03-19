@@ -45,7 +45,19 @@ export function seoPrerender(): Plugin {
         fs.writeFileSync(outFile, patched, "utf-8");
       }
 
-      console.log(`[seo-prerender] Generated ${routesMeta.length} static HTML files`);
+      // Generate _redirects in dist/ (overwrites the one copied from public/)
+      const redirectLines: string[] = [];
+      for (const route of routesMeta) {
+        if (route.path === "/") continue;
+        const clean = route.path.replace(/^\//, "");
+        const target = `/${clean}/index.html`;
+        redirectLines.push(`${route.path}    ${target}    200`);
+        redirectLines.push(`${route.path}/   ${target}    200`);
+      }
+      redirectLines.push(`/*    /index.html    200`);
+      fs.writeFileSync(path.join(distDir, "_redirects"), redirectLines.join("\n") + "\n", "utf-8");
+
+      console.log(`[seo-prerender] Generated ${routesMeta.length} static HTML files + _redirects`);
     },
   };
 }
