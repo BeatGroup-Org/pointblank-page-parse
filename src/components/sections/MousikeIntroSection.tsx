@@ -38,8 +38,12 @@ const MousikeIntroSection = () => {
 
   // Flatten segments into individual words with styling info
   let wordIndex = 0;
-  const words: { word: string; bold?: boolean; italic?: boolean; index: number }[] = [];
+  const words: { word: string; bold?: boolean; italic?: boolean; index: number; break?: boolean }[] = [];
   SEGMENTS.forEach((seg) => {
+    if (seg.break) {
+      words.push({ word: "\n", break: true, index: wordIndex++ });
+      return;
+    }
     seg.text.split(" ").forEach((w) => {
       words.push({ word: w, bold: seg.bold, italic: seg.italic, index: wordIndex++ });
     });
