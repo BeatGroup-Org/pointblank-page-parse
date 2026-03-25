@@ -167,18 +167,34 @@ const Produzioni = () => {
         </TextSection>
 
         {/* Impatto Sociale */}
-        <TextSection title="Un Impatto Sociale Misurabile" alt>
-          <p>
-            I numeri delle produzioni parlano da soli: migliaia di spettatori,
-            famiglie e studenti coinvolti in pochi anni di attività. Il musical
-            si conferma non solo come forma d'arte, ma come strumento di
-            aggregazione e coesione sociale per l'intera comunità.
-          </p>
-          <p>
-            Ogni spettacolo è un momento in cui Lamezia Terme si ritrova, si
-            emoziona e riscopre il valore della cultura come bene comune.
-          </p>
-        </TextSection>
+        <section className="bg-secondary">
+          <div className="fade-in-section py-20 md:py-28 container mx-auto px-6 max-w-5xl">
+            <div className="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-14 items-start">
+              {/* Foto */}
+              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-muted flex items-center justify-center">
+                <span className="text-muted-foreground text-sm">Foto</span>
+              </div>
+              {/* Testo */}
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-8">
+                  Un Impatto Sociale Misurabile
+                </h2>
+                <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
+                  <p>
+                    I numeri delle produzioni parlano da soli: migliaia di spettatori,
+                    famiglie e studenti coinvolti in pochi anni di attività. Il musical
+                    si conferma non solo come forma d'arte, ma come strumento di
+                    aggregazione e coesione sociale per l'intera comunità.
+                  </p>
+                  <p>
+                    Ogni spettacolo è un momento in cui Lamezia Terme si ritrova, si
+                    emoziona e riscopre il valore della cultura come bene comune.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* CTA finale */}
         <section className="py-24 bg-background">
