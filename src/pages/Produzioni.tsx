@@ -133,37 +133,24 @@ const Produzioni = () => {
         ))}
 
         {/* Una Scelta Strategica */}
-        <TextSection title="Una Scelta Strategica" alt>
+        <TextSection title="Una scelta strategica, radicata nel territorio e aperta all'Europa" alt>
           <p>
-            Le motivazioni che hanno spinto Mousikè APS ad investire nel mondo
+            Le motivazioni che hanno spinto Mousikè APS a investire nel mondo
             dei musical sono molteplici. Al centro vi è la volontà di creare
-            cultura attraverso la musica, con una visione orientata alla
-            produzione di nuovi spettacoli e alla valorizzazione del talento
-            locale.
+            cultura attraverso la musica, promuovendo nuovi spettacoli,
+            valorizzando il talento locale e sviluppando percorsi attenti anche
+            all'inclusione sociale, grazie a partenariati significativi con
+            altre associazioni attive in questo ambito.
           </p>
           <p>
-            Un impegno che guarda con particolare attenzione all'inclusione
-            sociale, sviluppato attraverso forme di partenariato significative
-            con altre associazioni attive in questo settore.
-          </p>
-        </TextSection>
-
-        {/* Radici nel Territorio */}
-        <TextSection title="Radici nel Territorio, Sguardo sull'Europa">
-          <p>
-            Mousikè APS ha sempre fatto del territorio la propria forza: ogni
-            produzione nasce dal talento locale, coinvolgendo artisti, famiglie e
-            comunità di Lamezia Terme e della Calabria. Questo radicamento non è
-            un limite, ma una solida base da cui proiettarsi verso orizzonti più
-            ampi.
-          </p>
-          <p>
-            L'associazione guarda con crescente interesse al resto d'Italia e
-            all'Europa, con l'obiettivo di costruire reti culturali durature. In
-            questo contesto si inserisce l'impegno verso programmi europei come
-            Erasmus+, che permettono scambi artistici e formativi tra
-            organizzazioni di paesi diversi, arricchendo il tessuto culturale
-            locale con esperienze e visioni internazionali.
+            Questo impegno nasce da un forte radicamento nel territorio: ogni
+            produzione coinvolge artisti, famiglie e comunità di Lamezia Terme
+            e della Calabria. Proprio questa base solida consente
+            all'associazione di guardare oltre, verso il resto d'Italia e
+            l'Europa, con l'obiettivo di costruire reti culturali durature e
+            cogliere opportunità come Erasmus+, capaci di favorire scambi
+            artistici e formativi e di arricchire il tessuto culturale locale
+            con esperienze e visioni internazionali.
           </p>
         </TextSection>
 
