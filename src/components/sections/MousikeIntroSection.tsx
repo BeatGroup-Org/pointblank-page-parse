@@ -53,7 +53,10 @@ const MousikeIntroSection = () => {
     <section className="py-24 bg-secondary">
       <div ref={sectionRef} className="container mx-auto px-6 max-w-3xl">
         <p className="text-center text-xl md:text-2xl leading-relaxed">
-          {words.map(({ word, bold, italic, index }) => {
+          {words.map(({ word, bold, italic, index, break: isBreak }) => {
+            if (isBreak) {
+              return <span key={index} className="block my-4" />;
+            }
             const baseClass = bold
               ? "font-semibold text-foreground"
               : "font-light text-muted-foreground";
