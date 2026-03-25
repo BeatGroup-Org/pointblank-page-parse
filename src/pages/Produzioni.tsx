@@ -172,8 +172,8 @@ const Produzioni = () => {
           <div ref={impattoRef} className="fade-in-section py-20 md:py-28 container mx-auto px-6 max-w-5xl">
             <div className="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-14 items-start">
               {/* Foto */}
-              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-muted flex items-center justify-center">
-                <span className="text-muted-foreground text-sm">Foto</span>
+              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-muted">
+                <img src="https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Produzioni/Impatto%20Sociale%20Misurabile_Mousike.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9Qcm9kdXppb25pL0ltcGF0dG8gU29jaWFsZSBNaXN1cmFiaWxlX01vdXNpa2UuanBnIiwiaWF0IjoxNzc0NDYyMTUwLCJleHAiOjI2Mzg0NjIxNTB9.kUomOJdzw34LjQC9uxpBamqHH7BXUB_7S4QtII3AnZs" alt="Impatto sociale misurabile" className="w-full h-full object-cover" loading="lazy" />
               </div>
               {/* Testo */}
               <div>
