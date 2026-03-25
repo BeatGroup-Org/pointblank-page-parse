@@ -30,6 +30,7 @@ const Index = () => (
     <Header />
     <main>
       <HeroSection />
+      <MousikeIntroSection />
       <StatsSection />
       <PartnerSection />
       <ProduzioniSection />
