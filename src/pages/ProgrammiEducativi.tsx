@@ -45,14 +45,14 @@ const ProgrammiEducativi = () => {
     <>
       <Helmet>
         <title>Ma Che Musica Maestro! - Mousikè</title>
-        <meta name="description" content="Il progetto musicale di Mousikè APS a Lamezia Terme. Da oltre quindici anni, Ma Che Musica Maestro! accompagna la crescita dei più giovani attraverso la musica." />
+        <meta name="description" content="Nato nel 2012, Ma Che Musica Maestro! è un progetto musicale di Mousikè APS a Lamezia Terme pensato per bambini e ragazzi, per crescere attraverso la musica." />
         <link rel="canonical" href="https://mousikeaps.it/programmi-educativi" />
         <meta property="og:title" content="Ma Che Musica Maestro! - Mousikè" />
-        <meta property="og:description" content="Il progetto musicale di Mousikè APS a Lamezia Terme. Da oltre quindici anni, Ma Che Musica Maestro! accompagna la crescita dei più giovani attraverso la musica." />
+        <meta property="og:description" content="Nato nel 2012, Ma Che Musica Maestro! è un progetto musicale di Mousikè APS a Lamezia Terme pensato per bambini e ragazzi, per crescere attraverso la musica." />
         <meta property="og:url" content="https://mousikeaps.it/programmi-educativi" />
         <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
         <meta name="twitter:title" content="Ma Che Musica Maestro! - Mousikè" />
-        <meta name="twitter:description" content="Il progetto musicale di Mousikè APS a Lamezia Terme. Da oltre quindici anni, Ma Che Musica Maestro! accompagna la crescita dei più giovani attraverso la musica." />
+        <meta name="twitter:description" content="Nato nel 2012, Ma Che Musica Maestro! è un progetto musicale di Mousikè APS a Lamezia Terme pensato per bambini e ragazzi, per crescere attraverso la musica." />
         <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
       </Helmet>
       <Header />
@@ -76,20 +76,25 @@ const ProgrammiEducativi = () => {
               </div>
               <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
                 <p>
-                  Da oltre quindici anni, <strong className="text-foreground">Ma Che Musica Maestro!</strong> accompagna
-                  la crescita di bambine, bambini, ragazze e ragazzi di Lamezia Terme
-                  attraverso la musica.
+                  Nato nel 2012, <strong className="text-foreground">Ma Che Musica Maestro!</strong> è un progetto
+                  musicale pensato per bambine, bambini, ragazze e ragazzi, con l'obiettivo di offrire
+                  loro l'opportunità di crescere attraverso la musica in un ambiente accogliente e stimolante.
                 </p>
                 <p>
-                  Nato come laboratorio musicale, il progetto è cresciuto nel tempo fino
-                  a diventare uno degli appuntamenti più riconoscibili e partecipati del
-                  percorso educativo e culturale portato avanti da Mousikè APS.
+                  Il percorso educativo permette ai più piccoli non solo di avvicinarsi allo studio di
+                  uno strumento ma anche di vivere un'esperienza formativa completa, capace di sviluppare
+                  ascolto, rispetto e fiducia in sé stessi, aiutandoli a scoprire ed esprimere la propria
+                  voce in armonia con gli altri.
                 </p>
                 <p>
-                  Non si tratta solo di imparare a cantare o stare su un palco.
-                  <br />
-                  Si tratta di fare esperienza della musica come linguaggio, disciplina,
-                  ascolto, relazione.
+                  Per le famiglie di Lamezia Terme è diventato negli anni un punto di riferimento:
+                  l'iniziativa unisce creatività e formazione, ed è capace di accompagnare i più giovani
+                  in un percorso fatto di impegno, collaborazione e soddisfazioni condivise.
+                </p>
+                <p>
+                  Anche il nome racconta lo spirito del progetto: <strong className="text-foreground">Ma Che Musica Maestro!</strong> richiama
+                  entusiasmo e allegria, ispirandosi alla famosa sigla di Canzonissima del 1970, interpretata
+                  da Raffaella Carrà, un simbolo di una musica che unisce, coinvolge e fa stare bene insieme.
                 </p>
               </div>
             </div>
@@ -111,102 +116,59 @@ const ProgrammiEducativi = () => {
         </section>
 
         {/* Formazione e palcoscenico */}
-        <TextSection title="Un percorso che mette insieme formazione e palcoscenico">
+        <TextSection title="Il valore del progetto: dove la formazione incontra il palcoscenico">
           <p>
             Nel corso degli anni, <strong className="text-foreground">Ma Che Musica Maestro!</strong> ha
-            coinvolto centinaia di giovani in un lavoro continuo fatto di prove, studio,
-            emozione e condivisione.
+            coinvolto centinaia di giovani in un percorso continuo in cui la formazione musicale si
+            intreccia con l'esperienza diretta del palcoscenico, tra prove, studio e condivisione.
           </p>
           <p>
-            Il progetto prende forma in spettacoli dal vivo, concerti e produzioni
-            musicali ospitati nei teatri e nei luoghi più significativi del territorio.
-            Ogni esibizione è il risultato di un percorso vero: un momento in cui ciò che
-            è stato costruito durante l'anno incontra il pubblico e diventa esperienza
-            collettiva.
-          </p>
-        </TextSection>
-
-        {/* Famiglie */}
-        <TextSection title="Le famiglie dentro il progetto" alt>
-          <p>
-            Uno degli aspetti più belli di <strong className="text-foreground">Ma Che Musica Maestro!</strong> è
-            il coinvolgimento attivo delle famiglie.
+            Il progetto prende forma in spettacoli dal vivo, concerti e produzioni musicali ospitati
+            nei teatri e nei luoghi più significativi del territorio. In questi momenti, il lavoro
+            svolto durante l'anno permette ai partecipanti di mettere in pratica le competenze
+            acquisite, esprimere il proprio talento e vivere pienamente la propria dimensione artistica.
           </p>
           <p>
-            Nel tempo, genitori e figli hanno condiviso prove, concerti ed emozioni,
-            rendendo questo progetto qualcosa di più di un semplice laboratorio. È
-            diventato uno spazio di partecipazione, affetto e crescita comune, in cui la
-            musica crea legami e rafforza il senso di comunità.
-          </p>
-        </TextSection>
-
-        {/* Esperienza culturale */}
-        <TextSection title="La musica come esperienza culturale">
-          <p>
-            Alla base del progetto c'è un'idea precisa: la musica è cultura.
+            Questo incontro tra apprendimento e scena contribuisce a far emergere sensibilità,
+            attitudini e capacità espressive, accompagnando i giovani in un percorso di crescita
+            artistica e personale.
           </p>
           <p>
-            Per questo il percorso proposto da Mousikè APS mette in contatto i più
-            giovani con linguaggi diversi, repertori differenti e modalità espressive
-            capaci di allargare lo sguardo: dalla musica popolare al canto, dall'ensemble
-            alle forme più strutturate della performance dal vivo.
-          </p>
-          <p>
-            L'obiettivo non è solo formare piccoli interpreti, ma accompagnare ragazze e
-            ragazzi verso una relazione più profonda con la musica, con l'ascolto e con il
-            mondo che li circonda.
+            Alcuni di loro hanno poi proseguito il proprio cammino nel mondo della musica e dello
+            spettacolo, portando con sé un'esperienza nata proprio all'interno di un'iniziativa
+            costruita con serietà, cura e visione.
           </p>
         </TextSection>
 
         {/* Collaborazioni */}
         <TextSection title="Collaborazioni e incontri che lasciano il segno" alt>
           <p>
-            Negli anni, il progetto si è arricchito grazie a collaborazioni di grande
-            valore, che hanno portato a Lamezia Terme esperienze formative e artistiche di
-            rilievo nazionale.
+            Le numerose collaborazioni a livello nazionale rappresentano uno degli aspetti più
+            significativi del progetto. Tra queste si ricordano la partnership con{" "}
+            <strong className="text-foreground">l'Antoniano di Bologna</strong>, con la partecipazione
+            di <strong className="text-foreground">Sabrina Simoni</strong>, e le masterclass con artisti
+            come <strong className="text-foreground">Massimo Varini</strong>, musicista e chitarrista
+            noto per il suo lavoro con alcuni dei più importanti nomi della musica italiana.
           </p>
           <p>
-            Tra queste, la collaborazione con{" "}
-            <strong className="text-foreground">l'Antoniano di Bologna</strong>, con la
-            presenza di <strong className="text-foreground">Sabrina Simoni</strong>, e le
-            masterclass con artisti come{" "}
-            <strong className="text-foreground">Massimo Varini</strong>, musicista e
-            chitarrista noto per il suo lavoro con alcuni dei più importanti nomi della
-            musica italiana.
-          </p>
-          <p>
-            Esperienze che hanno dato ai partecipanti l'occasione di confrontarsi con
-            professionalità autorevoli, senza mai perdere il legame con il territorio.
+            L'obiettivo è offrire ai partecipanti l'opportunità di confrontarsi direttamente con
+            professionisti di alto livello, trasformando le conoscenze acquisite durante i laboratori
+            annuali in momenti concreti di pratica e scoperta. In questo modo, i ragazzi affinano le
+            proprie competenze tecniche e artistiche, accrescono fiducia e consapevolezza di sé e
+            imparano il valore dell'impegno, della dedizione e della collaborazione, vivendo esperienze
+            che lasciano un segno duraturo nel loro percorso formativo.
           </p>
         </TextSection>
 
-        {/* Tracce */}
-        <TextSection title="Un progetto che lascia tracce">
+        {/* Famiglie */}
+        <TextSection title="Le famiglie dentro il progetto">
           <p>
-            Nel tempo, <strong className="text-foreground">Ma Che Musica Maestro!</strong> ha
-            contribuito a far emergere sensibilità, attitudini e talenti, accompagnando
-            tanti giovani in un percorso di crescita artistica e personale.
-          </p>
-          <p>
-            Alcuni di loro hanno poi proseguito il proprio cammino nel mondo della musica
-            e dello spettacolo, portando con sé un'esperienza nata proprio qui, all'interno
-            di un progetto costruito con serietà, cura e visione.
-          </p>
-        </TextSection>
-
-        {/* Valore */}
-        <TextSection title="Il valore di Ma Che Musica Maestro!" alt>
-          <p>
-            Oggi <strong className="text-foreground">Ma Che Musica Maestro!</strong> rappresenta
-            una delle esperienze più significative di educazione musicale a Lamezia Terme.
-          </p>
-          <p>
-            È un progetto che unisce formazione, spettacolo dal vivo, partecipazione e
-            radicamento territoriale.
-            <br />
-            Ed è, soprattutto, la dimostrazione che la musica, quando è proposta con
-            qualità e continuità, può diventare uno strumento concreto di crescita per i
-            più giovani e per l'intera comunità.
+            Uno degli aspetti più belli di <strong className="text-foreground">Ma Che Musica Maestro!</strong> è
+            il coinvolgimento attivo delle famiglie. Nel tempo, genitori e figli hanno condiviso prove,
+            concerti ed emozioni. Partecipare insieme permette di rafforzare i legami familiari,
+            sperimentare la collaborazione tra generazioni e vivere la musica come momento collettivo.
+            In questo modo, la musica diventa strumento di legame, condivisione e inclusione, rendendo
+            il percorso formativo un'esperienza completa e significativa per tutti.
           </p>
         </TextSection>
 
