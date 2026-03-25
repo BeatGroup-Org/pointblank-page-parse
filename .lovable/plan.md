@@ -1,13 +1,19 @@
 
 
-## Problema
+## Modifiche al file `src/pages/Produzioni.tsx`
 
-La sezione "Un Impatto Sociale Misurabile" (riga 171) ha la classe `fade-in-section` ma **non ha un `ref` collegato a `useFadeIn()`**. Senza il ref, l'IntersectionObserver non aggiunge mai la classe `visible`, quindi l'opacità resta a 0 e la sezione è completamente invisibile.
+### Struttura attuale
+1. "Una scelta strategica..." (TextSection, sfondo alt/secondary)
+2. "Un Impatto Sociale Misurabile" (sezione a 2 colonne: foto sx + testo dx, sfondo secondary)
 
-## Soluzione
+### Nuova struttura
+1. "Una scelta strategica..." (TextSection, sfondo alt/secondary) — invariata
+2. **Nuova sezione foto full-width** — la foto attuale viene estratta e messa in una sezione standalone `bg-background`, con immagine centrata, `max-w-5xl`, `rounded-2xl`, aspect ratio ampio (es. `aspect-[16/9]` o `aspect-[3/2]`)
+3. "Un Impatto Sociale Misurabile" — torna a essere una `TextSection` a colonna singola (come era originariamente), con sfondo `alt` (secondary), contenente solo titolo e i due paragrafi di testo
 
-1. **Creare un ref** con `useFadeIn()` nel componente `Produzioni` (aggiungere `const impattoRef = useFadeIn();`)
-2. **Collegare il ref** al `<div>` con classe `fade-in-section` alla riga 171: `ref={impattoRef}`
-
-Modifica unica nel file `src/pages/Produzioni.tsx`.
+### Dettagli tecnici
+- Righe 157-185: sostituire l'intera sezione "Impatto Sociale" con:
+  - Una sezione immagine standalone con `useFadeIn` (riusa `impattoRef` o ne crea uno nuovo)
+  - Una `TextSection` con il testo esistente
+- La foto usa la stessa URL Supabase già presente
 
