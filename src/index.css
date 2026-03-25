@@ -100,6 +100,16 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  .word-fade-in {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+  }
+  .word-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===== Header Pill ===== */
