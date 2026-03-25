@@ -154,35 +154,28 @@ const Produzioni = () => {
           </p>
         </TextSection>
 
-        {/* Impatto Sociale */}
-        <section className="bg-secondary">
-          <div ref={impattoRef} className="fade-in-section py-20 md:py-28 container mx-auto px-6 max-w-5xl">
-            <div className="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-14 items-start">
-              {/* Foto */}
-              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-muted">
-                <img src="https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Produzioni/Impatto%20Sociale%20Misurabile_Mousike.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9Qcm9kdXppb25pL0ltcGF0dG8gU29jaWFsZSBNaXN1cmFiaWxlX01vdXNpa2UuanBnIiwiaWF0IjoxNzc0NDYyMTUwLCJleHAiOjI2Mzg0NjIxNTB9.kUomOJdzw34LjQC9uxpBamqHH7BXUB_7S4QtII3AnZs" alt="Impatto sociale misurabile" className="w-full h-full object-cover" loading="lazy" />
-              </div>
-              {/* Testo */}
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                  Un Impatto Sociale Misurabile
-                </h2>
-                <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
-                  <p>
-                    I numeri delle produzioni parlano da soli: migliaia di spettatori,
-                    famiglie e studenti coinvolti in pochi anni di attività. Il musical
-                    si conferma non solo come forma d'arte, ma come strumento di
-                    aggregazione e coesione sociale per l'intera comunità.
-                  </p>
-                  <p>
-                    Ogni spettacolo è un momento in cui Lamezia Terme si ritrova, si
-                    emoziona e riscopre il valore della cultura come bene comune.
-                  </p>
-                </div>
-              </div>
+        {/* Foto standalone */}
+        <section className="bg-background">
+          <div ref={impattoRef} className="fade-in-section py-16 md:py-24 container mx-auto px-6 max-w-5xl">
+            <div className="w-full aspect-[3/2] rounded-2xl overflow-hidden">
+              <img src="https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Produzioni/Impatto%20Sociale%20Misurabile_Mousike.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9Qcm9kdXppb25pL0ltcGF0dG8gU29jaWFsZSBNaXN1cmFiaWxlX01vdXNpa2UuanBnIiwiaWF0IjoxNzc0NDYyMTUwLCJleHAiOjI2Mzg0NjIxNTB9.kUomOJdzw34LjQC9uxpBamqHH7BXUB_7S4QtII3AnZs" alt="Impatto sociale misurabile" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
         </section>
+
+        {/* Un Impatto Sociale Misurabile */}
+        <TextSection title="Un Impatto Sociale Misurabile" alt>
+          <p>
+            I numeri delle produzioni parlano da soli: migliaia di spettatori,
+            famiglie e studenti coinvolti in pochi anni di attività. Il musical
+            si conferma non solo come forma d'arte, ma come strumento di
+            aggregazione e coesione sociale per l'intera comunità.
+          </p>
+          <p>
+            Ogni spettacolo è un momento in cui Lamezia Terme si ritrova, si
+            emoziona e riscopre il valore della cultura come bene comune.
+          </p>
+        </TextSection>
 
         {/* CTA finale */}
         <section className="py-24 bg-background">
