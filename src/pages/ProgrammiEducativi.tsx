@@ -122,24 +122,17 @@ const ProgrammiEducativi = () => {
                 <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
                   <p>
                     Nel corso degli anni, <strong className="text-foreground">Ma Che Musica Maestro!</strong> ha
-                    coinvolto centinaia di giovani in un percorso continuo in cui la formazione musicale si
-                    intreccia con l'esperienza diretta del palcoscenico, tra prove, studio e condivisione.
+                    coinvolto centinaia di giovani in un percorso in cui formazione musicale e palcoscenico
+                    si intrecciano tra studio, prove e condivisione.
                   </p>
                   <p>
-                    Il progetto prende forma in spettacoli dal vivo, concerti e produzioni musicali ospitati
-                    nei teatri e nei luoghi più significativi del territorio. In questi momenti, il lavoro
-                    svolto durante l'anno permette ai partecipanti di mettere in pratica le competenze
-                    acquisite, esprimere il proprio talento e vivere pienamente la propria dimensione artistica.
+                    Spettacoli, concerti e produzioni musicali nei teatri e nei luoghi più significativi
+                    del territorio permettono ai partecipanti di mettere in pratica le competenze acquisite,
+                    esprimere il proprio talento e crescere sul piano artistico e personale.
                   </p>
                   <p>
-                    Questo incontro tra apprendimento e scena contribuisce a far emergere sensibilità,
-                    attitudini e capacità espressive, accompagnando i giovani in un percorso di crescita
-                    artistica e personale.
-                  </p>
-                  <p>
-                    Alcuni di loro hanno poi proseguito il proprio cammino nel mondo della musica e dello
-                    spettacolo, portando con sé un'esperienza nata proprio all'interno di un'iniziativa
-                    costruita con serietà, cura e visione.
+                    Per alcuni, questa esperienza ha rappresentato anche l'inizio di un percorso nel mondo
+                    della musica e dello spettacolo.
                   </p>
                 </div>
               </div>
