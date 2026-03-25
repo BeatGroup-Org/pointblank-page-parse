@@ -87,11 +87,6 @@ const ProgrammiEducativi = () => {
                   voce in armonia con gli altri.
                 </p>
                 <p>
-                  Per le famiglie di Lamezia Terme è diventato negli anni un punto di riferimento:
-                  l'iniziativa unisce creatività e formazione, ed è capace di accompagnare i più giovani
-                  in un percorso fatto di impegno, collaborazione e soddisfazioni condivise.
-                </p>
-                <p>
                   Anche il nome racconta lo spirito del progetto: <strong className="text-foreground">Ma Che Musica Maestro!</strong> richiama
                   entusiasmo e allegria, ispirandosi alla famosa sigla di Canzonissima del 1970, interpretata
                   da Raffaella Carrà, un simbolo di una musica che unisce, coinvolge e fa stare bene insieme.
