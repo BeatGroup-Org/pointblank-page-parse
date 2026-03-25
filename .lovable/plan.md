@@ -1,10 +1,20 @@
 
 
-## Piano: Aggiungere un "a capo" tra le due frasi
+## Piano: Spostare la sezione MousikeIntro sotto "Produciamo Cultura"
 
 ### Modifica
 
-**File**: `src/components/sections/MousikeIntroSection.tsx`
+**File**: `src/pages/Index.tsx`
 
-Inserire un segmento speciale (es. `{ text: "\n", break: true }`) nell'array `SEGMENTS` tra "la musica, la danza e il teatro." e "Le nostre produzioni…". Nel rendering, quando si incontra questo segmento, viene inserito un `<br className="block my-4" />` invece di una parola, creando la separazione visiva tra le due frasi.
+Spostare `<MousikeIntroSection />` dalla posizione attuale (dopo `<HeroSection />`) a dopo `<ProduzioniSection />`.
+
+Sequenza attuale:
+```text
+Hero → MousikeIntro → Stats → Partner → Produzioni → Team → Corsi → Eventi → Gallery → Impatto
+```
+
+Nuova sequenza:
+```text
+Hero → Stats → Partner → Produzioni → MousikeIntro → Team → Corsi → Eventi → Gallery → Impatto
+```
 
