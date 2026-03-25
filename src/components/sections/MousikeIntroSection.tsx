@@ -8,6 +8,7 @@ const SEGMENTS: Segment[] = [
   { text: "si intendeva" },
   { text: "l'insieme delle arti:", bold: true },
   { text: "la musica, la danza e il teatro.", bold: true },
+  { text: "\n", break: true },
   { text: "Le nostre produzioni e i percorsi di formazione nascono da questa visione: offrire ai ragazzi esperienze che intrecciano" },
   { text: "linguaggi diversi,", bold: true },
   { text: "talento e crescita personale,", bold: true },
