@@ -1,12 +1,10 @@
 
 
-## Piano: Correggere il word-wrap nella sezione MousikeIntro
+## Piano: Aggiungere un "a capo" tra le due frasi
 
-### Problema
-Le parole `inline-block` non vanno a capo perché nel DOM non c'è spazio bianco tra gli `<span>`. Il browser le tratta come un blocco continuo senza punti di interruzione.
+### Modifica
 
-### Soluzione
 **File**: `src/components/sections/MousikeIntroSection.tsx`
 
-Aggiungere uno spazio testuale `{" "}` dopo ogni `<span>` nel JSX, oppure sostituire `inline-block` con `inline` e usare un margine destro. L'approccio più semplice e affidabile: aggiungere `{" "}` dopo ogni span per creare i break point naturali del browser, rimuovendo `mr-[0.3em]` dato che lo spazio viene gestito dal carattere spazio.
+Inserire un segmento speciale (es. `{ text: "\n", break: true }`) nell'array `SEGMENTS` tra "la musica, la danza e il teatro." e "Le nostre produzioni…". Nel rendering, quando si incontra questo segmento, viene inserito un `<br className="block my-4" />` invece di una parola, creando la separazione visiva tra le due frasi.
 
