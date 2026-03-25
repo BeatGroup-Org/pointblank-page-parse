@@ -55,11 +55,11 @@ const MousikeIntroSection = () => {
             return (
               <span
                 key={index}
-                className={`word-fade-in inline-block mr-[0.3em] ${baseClass} ${visible ? "visible" : ""}`}
+                className={`word-fade-in inline ${baseClass} ${visible ? "visible" : ""}`}
                 style={{ transitionDelay: `${index * 35}ms` }}
               >
                 {italic ? <em>{word}</em> : word}
-              </span>
+              </span>{" "}
             );
           })}
         </p>
