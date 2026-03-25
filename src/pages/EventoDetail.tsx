@@ -52,15 +52,15 @@ const EventoDetail = () => {
   return (
     <>
       <Helmet>
-        <title>{evento.titolo} — Mousikè</title>
-        <meta name="description" content={`${evento.titolo} — ${evento.data}. ${evento.descrizione?.slice(0, 120) ?? "Evento Mousikè APS a Lamezia Terme."}`} />
+        <title>{evento.titolo} - Mousikè</title>
+        <meta name="description" content={`${evento.titolo} - ${evento.data}. ${evento.descrizione?.slice(0, 120) ?? "Evento Mousikè APS a Lamezia Terme."}`} />
         <link rel="canonical" href={`https://mousikeaps.it/eventi/${evento.slug}`} />
-        <meta property="og:title" content={`${evento.titolo} — Mousikè`} />
-        <meta property="og:description" content={`${evento.titolo} — ${evento.data}. ${evento.descrizione?.slice(0, 120) ?? "Evento Mousikè APS a Lamezia Terme."}`} />
+        <meta property="og:title" content={`${evento.titolo} - Mousikè`} />
+        <meta property="og:description" content={`${evento.titolo} - ${evento.data}. ${evento.descrizione?.slice(0, 120) ?? "Evento Mousikè APS a Lamezia Terme."}`} />
         <meta property="og:url" content={`https://mousikeaps.it/eventi/${evento.slug}`} />
         <meta property="og:image" content={evento.immagine.startsWith("http") ? evento.immagine : `https://mousikeaps.it${evento.immagine}`} />
-        <meta name="twitter:title" content={`${evento.titolo} — Mousikè`} />
-        <meta name="twitter:description" content={`${evento.titolo} — ${evento.data}. ${evento.descrizione?.slice(0, 120) ?? "Evento Mousikè APS a Lamezia Terme."}`} />
+        <meta name="twitter:title" content={`${evento.titolo} - Mousikè`} />
+        <meta name="twitter:description" content={`${evento.titolo} - ${evento.data}. ${evento.descrizione?.slice(0, 120) ?? "Evento Mousikè APS a Lamezia Terme."}`} />
         <meta name="twitter:image" content={evento.immagine.startsWith("http") ? evento.immagine : `https://mousikeaps.it${evento.immagine}`} />
       </Helmet>
       <Header />

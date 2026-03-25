@@ -119,14 +119,14 @@ const Contatti = () => {
   return (
     <>
       <Helmet>
-        <title>Contatti — Mousikè</title>
+        <title>Contatti - Mousikè</title>
         <meta name="description" content="Contatta Mousikè APS per informazioni, iscrizioni ai corsi di musica e collaborazioni a Lamezia Terme." />
         <link rel="canonical" href="https://mousikeaps.it/contatti" />
-        <meta property="og:title" content="Contatti — Mousikè" />
+        <meta property="og:title" content="Contatti - Mousikè" />
         <meta property="og:description" content="Contatta Mousikè APS per informazioni, iscrizioni ai corsi di musica e collaborazioni a Lamezia Terme." />
         <meta property="og:url" content="https://mousikeaps.it/contatti" />
         <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
-        <meta name="twitter:title" content="Contatti — Mousikè" />
+        <meta name="twitter:title" content="Contatti - Mousikè" />
         <meta name="twitter:description" content="Contatta Mousikè APS per informazioni, iscrizioni ai corsi di musica e collaborazioni a Lamezia Terme." />
         <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
       </Helmet>
@@ -135,7 +135,7 @@ const Contatti = () => {
       <section ref={heroRef} className="fade-in-section bg-secondary pt-32 pb-16">
         <div className="container mx-auto px-6">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
-            Mousikè — Contatti
+            Mousikè - Contatti
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.95] tracking-tight mb-4">
             Contattaci

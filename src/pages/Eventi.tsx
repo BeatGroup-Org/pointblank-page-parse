@@ -7,14 +7,14 @@ import { eventi } from "@/data/eventi";
 const Eventi = () => (
   <div className="min-h-screen bg-background">
     <Helmet>
-      <title>Eventi — Mousikè</title>
+      <title>Eventi - Mousikè</title>
       <meta name="description" content="Concerti, spettacoli, workshop e masterclass organizzati da Mousikè APS a Lamezia Terme." />
       <link rel="canonical" href="https://mousikeaps.it/eventi" />
-      <meta property="og:title" content="Eventi — Mousikè" />
+      <meta property="og:title" content="Eventi - Mousikè" />
       <meta property="og:description" content="Concerti, spettacoli, workshop e masterclass organizzati da Mousikè APS a Lamezia Terme." />
       <meta property="og:url" content="https://mousikeaps.it/eventi" />
       <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
-      <meta name="twitter:title" content="Eventi — Mousikè" />
+      <meta name="twitter:title" content="Eventi - Mousikè" />
       <meta name="twitter:description" content="Concerti, spettacoli, workshop e masterclass organizzati da Mousikè APS a Lamezia Terme." />
       <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
     </Helmet>

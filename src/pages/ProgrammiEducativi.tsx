@@ -44,14 +44,14 @@ const ProgrammiEducativi = () => {
   return (
     <>
       <Helmet>
-        <title>Ma Che Musica Maestro! — Mousikè</title>
+        <title>Ma Che Musica Maestro! - Mousikè</title>
         <meta name="description" content="Il progetto musicale di Mousikè APS a Lamezia Terme. Da oltre quindici anni, Ma Che Musica Maestro! accompagna la crescita dei più giovani attraverso la musica." />
         <link rel="canonical" href="https://mousikeaps.it/programmi-educativi" />
-        <meta property="og:title" content="Ma Che Musica Maestro! — Mousikè" />
+        <meta property="og:title" content="Ma Che Musica Maestro! - Mousikè" />
         <meta property="og:description" content="Il progetto musicale di Mousikè APS a Lamezia Terme. Da oltre quindici anni, Ma Che Musica Maestro! accompagna la crescita dei più giovani attraverso la musica." />
         <meta property="og:url" content="https://mousikeaps.it/programmi-educativi" />
         <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
-        <meta name="twitter:title" content="Ma Che Musica Maestro! — Mousikè" />
+        <meta name="twitter:title" content="Ma Che Musica Maestro! - Mousikè" />
         <meta name="twitter:description" content="Il progetto musicale di Mousikè APS a Lamezia Terme. Da oltre quindici anni, Ma Che Musica Maestro! accompagna la crescita dei più giovani attraverso la musica." />
         <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
       </Helmet>

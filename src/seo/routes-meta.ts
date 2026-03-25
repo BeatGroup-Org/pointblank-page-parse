@@ -14,7 +14,7 @@ export interface RouteMeta {
 export const routesMeta: RouteMeta[] = [
   {
     path: "/",
-    title: "Mousikè — Scuola di Musica a Lamezia Terme",
+    title: "Mousikè - Scuola di Musica a Lamezia Terme",
     description:
       "Centro culturale ed educativo a Lamezia Terme. Corsi di musica, produzioni teatrali, programmi nelle scuole e inclusione sociale. Mousikè APS.",
     ogImage: OG_IMAGE_DEFAULT,
@@ -22,7 +22,7 @@ export const routesMeta: RouteMeta[] = [
   },
   {
     path: "/chi-siamo",
-    title: "Chi Siamo — Mousikè",
+    title: "Chi Siamo - Mousikè",
     description:
       "La storia e la missione di Mousikè APS, associazione culturale a Lamezia Terme impegnata nella formazione musicale e nell'inclusione sociale.",
     ogImage: OG_IMAGE_DEFAULT,
@@ -30,7 +30,7 @@ export const routesMeta: RouteMeta[] = [
   },
   {
     path: "/staff",
-    title: "Il Team — Mousikè",
+    title: "Il Team - Mousikè",
     description:
       "I docenti e lo staff di Mousikè APS. Professionisti della musica a Lamezia Terme.",
     ogImage: OG_IMAGE_DEFAULT,
@@ -38,7 +38,7 @@ export const routesMeta: RouteMeta[] = [
   },
   {
     path: "/formazione",
-    title: "Formazione Musicale — Mousikè",
+    title: "Formazione Musicale - Mousikè",
     description:
       "Corsi di musica a Lamezia Terme: canto, pianoforte, chitarra, batteria, violino e musical. Mousikè APS.",
     ogImage: OG_IMAGE_DEFAULT,
@@ -46,7 +46,7 @@ export const routesMeta: RouteMeta[] = [
   },
   {
     path: "/produzioni",
-    title: "Produzioni Culturali — Mousikè",
+    title: "Produzioni Culturali - Mousikè",
     description:
       "Musical e spettacoli prodotti da Mousikè APS a Lamezia Terme: La Bella e la Bestia, Disney in Concerto e nuove produzioni.",
     ogImage: OG_IMAGE_DEFAULT,
@@ -54,7 +54,7 @@ export const routesMeta: RouteMeta[] = [
   },
   {
     path: "/programmi-educativi",
-    title: "Ma Che Musica Maestro! — Mousikè",
+    title: "Ma Che Musica Maestro! - Mousikè",
     description:
       "Il progetto musicale di Mousikè APS a Lamezia Terme. Da oltre quindici anni, Ma Che Musica Maestro! accompagna la crescita dei più giovani attraverso la musica.",
     ogImage: OG_IMAGE_DEFAULT,
@@ -62,7 +62,7 @@ export const routesMeta: RouteMeta[] = [
   },
   {
     path: "/eventi",
-    title: "Eventi — Mousikè",
+    title: "Eventi - Mousikè",
     description:
       "Concerti, spettacoli, workshop e masterclass organizzati da Mousikè APS a Lamezia Terme.",
     ogImage: OG_IMAGE_DEFAULT,
@@ -70,7 +70,7 @@ export const routesMeta: RouteMeta[] = [
   },
   {
     path: "/contatti",
-    title: "Contatti — Mousikè",
+    title: "Contatti - Mousikè",
     description:
       "Contatta Mousikè APS per informazioni, iscrizioni ai corsi di musica e collaborazioni a Lamezia Terme.",
     ogImage: OG_IMAGE_DEFAULT,
@@ -78,7 +78,7 @@ export const routesMeta: RouteMeta[] = [
   },
   {
     path: "/amministrazione-trasparente",
-    title: "Amministrazione Trasparente — Mousikè",
+    title: "Amministrazione Trasparente - Mousikè",
     description:
       "Documenti e informazioni di trasparenza dell'associazione culturale Mousikè APS di Lamezia Terme.",
     ogImage: OG_IMAGE_DEFAULT,
@@ -86,7 +86,7 @@ export const routesMeta: RouteMeta[] = [
   },
   {
     path: "/eventi/dario-panza",
-    title: "Masterclass di Batteria con Dario Panza — Mousikè",
+    title: "Masterclass di Batteria con Dario Panza - Mousikè",
     description:
       "Batterista di fama nazionale, Dario Panza guiderà una masterclass dedicata al ritmo, alla tecnica e all'espressività nella batteria moderna. 13–14 Marzo 2026 a Lamezia Terme.",
     ogImage: `${BASE}/assets/eventi/dario-panza-hero.png`,
@@ -94,7 +94,7 @@ export const routesMeta: RouteMeta[] = [
   },
   {
     path: "/eventi/jacopo-carlini",
-    title: "Masterclass di Pianoforte con Jacopo Carlini — Mousikè",
+    title: "Masterclass di Pianoforte con Jacopo Carlini - Mousikè",
     description:
       "Pianista, compositore e arrangiatore, Jacopo Carlini guiderà una masterclass dedicata al pianoforte contemporaneo. 10–11 Aprile 2026 a Lamezia Terme.",
     ogImage: `${BASE}/assets/eventi/jacopo-carlini-hero.jpg`,
