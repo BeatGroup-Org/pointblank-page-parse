@@ -40,6 +40,7 @@ const ProgrammiEducativi = () => {
   const heroRef = useFadeIn();
   const imageRef = useFadeIn();
   const ctaRef = useFadeIn();
+  const valoreRef = useFadeIn();
 
   return (
     <>
@@ -107,7 +108,7 @@ const ProgrammiEducativi = () => {
 
         {/* Formazione e palcoscenico */}
         <section className="bg-background">
-          <div className="fade-in-section py-20 md:py-28 container mx-auto px-6 max-w-5xl">
+          <div ref={valoreRef} className="fade-in-section py-20 md:py-28 container mx-auto px-6 max-w-5xl">
             <div className="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-14 items-start">
               {/* Foto verticale */}
               <div className="w-full aspect-[3/4] rounded-2xl bg-muted flex items-center justify-center overflow-hidden">
