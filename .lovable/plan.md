@@ -1,14 +1,14 @@
 
 
-## Piano: Fix sezione "Il valore del progetto" non visibile
+## Piano: Aggiungere riquadro foto a destra nella sezione "Collaborazioni"
 
-### Problema
-La sezione a riga 110 ha `className="fade-in-section ..."` ma nessun `ref` da `useFadeIn()`. Senza il ref, l'IntersectionObserver non aggiunge mai la classe `visible`, quindi la sezione resta nascosta.
+La seconda sezione dopo "Il valore del progetto" è **"Collaborazioni e incontri che lasciano il segno"** (riga 143-161), attualmente un `TextSection` a colonna singola.
 
-### Soluzione
+### Modifica in `src/pages/ProgrammiEducativi.tsx`
 
-**File**: `src/pages/ProgrammiEducativi.tsx`
-
-1. Aggiungere un nuovo ref: `const valoreRef = useFadeIn();` (accanto agli altri ref, riga 42)
-2. Collegare il ref al div della sezione a riga 110: `<div ref={valoreRef} className="fade-in-section ...">`
+1. **Sostituire** il `TextSection` "Collaborazioni" con markup custom a due colonne: `md:grid-cols-[2fr_1fr]` (testo a sinistra, foto a destra — speculare alla sezione sopra)
+2. **Colonna sinistra**: titolo + i due paragrafi esistenti
+3. **Colonna destra**: riquadro verticale placeholder (`aspect-[3/4]`, `rounded-2xl`, `bg-muted`) come nella sezione sopra
+4. Usare un nuovo `useFadeIn()` ref e `fade-in-section` per l'animazione
+5. Mantenere sfondo `bg-secondary` (come aveva con `alt`)
 
