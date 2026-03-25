@@ -127,58 +127,9 @@ const Produzioni = () => {
         </section>
 
         {/* Le Produzioni */}
-        {produzioniData.map((prod, index) => {
-          const ref = useFadeIn();
-          const reversed = index % 2 !== 0;
-          return (
-            <section
-              key={prod.title}
-              className={index % 2 === 0 ? "bg-background" : "bg-secondary"}
-            >
-              <div
-                ref={ref}
-                className="fade-in-section py-20 md:py-28 container mx-auto px-6"
-              >
-                <div
-                  className={`grid md:grid-cols-2 gap-12 md:gap-16 items-center ${
-                    reversed ? "md:direction-rtl" : ""
-                  }`}
-                >
-                  <div className={reversed ? "md:order-2" : ""}>
-                    <div className="w-full aspect-[4/3] overflow-hidden rounded-lg">
-                      <img
-                        src={prod.image}
-                        alt={prod.title}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                  <div className={reversed ? "md:order-1" : ""}>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-none tracking-tight mb-6">
-                      {prod.title}
-                    </h2>
-                    <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8">
-                      {prod.description}
-                    </p>
-                    <div className="flex gap-8">
-                      {prod.stats.map((stat) => (
-                        <div key={stat.label}>
-                          <p className="text-3xl md:text-4xl font-black text-primary">
-                            {stat.value}
-                          </p>
-                          <p className="text-sm text-muted-foreground mt-1">
-                            {stat.label}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          );
-        })}
+        {produzioniData.map((prod, index) => (
+          <ProduzioneRow key={prod.title} prod={prod} index={index} />
+        ))}
 
         {/* Una Scelta Strategica */}
         <TextSection title="Una Scelta Strategica" alt>
