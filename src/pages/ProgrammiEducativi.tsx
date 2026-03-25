@@ -150,7 +150,7 @@ const ProgrammiEducativi = () => {
         {/* Collaborazioni */}
         <section className="bg-secondary">
           <div ref={collabRef} className="fade-in-section py-20 md:py-28 container mx-auto px-6 max-w-5xl">
-            <div className="grid md:grid-cols-[2fr_1fr] gap-10 md:gap-14 items-start">
+            <div className="grid md:grid-cols-[2fr_1fr] gap-10 md:gap-14 items-end">
               {/* Testo */}
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-8">
