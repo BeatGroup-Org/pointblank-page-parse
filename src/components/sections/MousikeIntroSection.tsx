@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-type Segment = { text: string; bold?: boolean; italic?: boolean };
+type Segment = { text: string; bold?: boolean; italic?: boolean; break?: boolean };
 
 const SEGMENTS: Segment[] = [
   { text: "Nella cultura greca, con la parola" },
@@ -8,6 +8,7 @@ const SEGMENTS: Segment[] = [
   { text: "si intendeva" },
   { text: "l'insieme delle arti:", bold: true },
   { text: "la musica, la danza e il teatro.", bold: true },
+  { text: "\n", break: true },
   { text: "Le nostre produzioni e i percorsi di formazione nascono da questa visione: offrire ai ragazzi esperienze che intrecciano" },
   { text: "linguaggi diversi,", bold: true },
   { text: "talento e crescita personale,", bold: true },
@@ -37,8 +38,12 @@ const MousikeIntroSection = () => {
 
   // Flatten segments into individual words with styling info
   let wordIndex = 0;
-  const words: { word: string; bold?: boolean; italic?: boolean; index: number }[] = [];
+  const words: { word: string; bold?: boolean; italic?: boolean; index: number; break?: boolean }[] = [];
   SEGMENTS.forEach((seg) => {
+    if (seg.break) {
+      words.push({ word: "\n", break: true, index: wordIndex++ });
+      return;
+    }
     seg.text.split(" ").forEach((w) => {
       words.push({ word: w, bold: seg.bold, italic: seg.italic, index: wordIndex++ });
     });
@@ -48,7 +53,10 @@ const MousikeIntroSection = () => {
     <section className="py-24 bg-secondary">
       <div ref={sectionRef} className="container mx-auto px-6 max-w-3xl">
         <p className="text-center text-xl md:text-2xl leading-relaxed">
-          {words.map(({ word, bold, italic, index }) => {
+          {words.map(({ word, bold, italic, index, break: isBreak }) => {
+            if (isBreak) {
+              return <span key={index} className="block my-4" />;
+            }
             const baseClass = bold
               ? "font-semibold text-foreground"
               : "font-light text-muted-foreground";
