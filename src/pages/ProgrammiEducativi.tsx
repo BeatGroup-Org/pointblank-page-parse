@@ -176,8 +176,13 @@ const ProgrammiEducativi = () => {
                 </div>
               </div>
               {/* Foto verticale */}
-              <div className="w-full aspect-[3/4] rounded-2xl bg-muted flex items-center justify-center overflow-hidden">
-                <span className="text-muted-foreground text-sm">Foto</span>
+              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden">
+                <img
+                  src="https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Ma%20che%20musica%20maestro/MaCheMusicaMaestro_Collab.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9NYSBjaGUgbXVzaWNhIG1hZXN0cm8vTWFDaGVNdXNpY2FNYWVzdHJvX0NvbGxhYi5qcGVnIiwiaWF0IjoxNzc0NDU3ODg2LCJleHAiOjI2Mzg0NTc4ODZ9.GY_h1PYzeoFEPvgmjfd8aaOri-XDheHwX0R34LorLY4"
+                  alt="Collaborazioni e incontri - Ma Che Musica Maestro!"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
