@@ -41,6 +41,7 @@ const ProgrammiEducativi = () => {
   const imageRef = useFadeIn();
   const ctaRef = useFadeIn();
   const valoreRef = useFadeIn();
+  const collabRef = useFadeIn();
 
   return (
     <>
@@ -141,24 +142,40 @@ const ProgrammiEducativi = () => {
         </section>
 
         {/* Collaborazioni */}
-        <TextSection title="Collaborazioni e incontri che lasciano il segno" alt>
-          <p>
-            Le numerose collaborazioni a livello nazionale rappresentano uno degli aspetti più
-            significativi del progetto. Tra queste si ricordano la partnership con{" "}
-            <strong className="text-foreground">l'Antoniano di Bologna</strong>, con la partecipazione
-            di <strong className="text-foreground">Sabrina Simoni</strong>, e le masterclass con artisti
-            come <strong className="text-foreground">Massimo Varini</strong>, musicista e chitarrista
-            noto per il suo lavoro con alcuni dei più importanti nomi della musica italiana.
-          </p>
-          <p>
-            L'obiettivo è offrire ai partecipanti l'opportunità di confrontarsi direttamente con
-            professionisti di alto livello, trasformando le conoscenze acquisite durante i laboratori
-            annuali in momenti concreti di pratica e scoperta. In questo modo, i ragazzi affinano le
-            proprie competenze tecniche e artistiche, accrescono fiducia e consapevolezza di sé e
-            imparano il valore dell'impegno, della dedizione e della collaborazione, vivendo esperienze
-            che lasciano un segno duraturo nel loro percorso formativo.
-          </p>
-        </TextSection>
+        <section className="bg-secondary">
+          <div ref={collabRef} className="fade-in-section py-20 md:py-28 container mx-auto px-6 max-w-5xl">
+            <div className="grid md:grid-cols-[2fr_1fr] gap-10 md:gap-14 items-start">
+              {/* Testo */}
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-8">
+                  Collaborazioni e incontri che lasciano il segno
+                </h2>
+                <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
+                  <p>
+                    Le numerose collaborazioni a livello nazionale rappresentano uno degli aspetti più
+                    significativi del progetto. Tra queste si ricordano la partnership con{" "}
+                    <strong className="text-foreground">l'Antoniano di Bologna</strong>, con la partecipazione
+                    di <strong className="text-foreground">Sabrina Simoni</strong>, e le masterclass con artisti
+                    come <strong className="text-foreground">Massimo Varini</strong>, musicista e chitarrista
+                    noto per il suo lavoro con alcuni dei più importanti nomi della musica italiana.
+                  </p>
+                  <p>
+                    L'obiettivo è offrire ai partecipanti l'opportunità di confrontarsi direttamente con
+                    professionisti di alto livello, trasformando le conoscenze acquisite durante i laboratori
+                    annuali in momenti concreti di pratica e scoperta. In questo modo, i ragazzi affinano le
+                    proprie competenze tecniche e artistiche, accrescono fiducia e consapevolezza di sé e
+                    imparano il valore dell'impegno, della dedizione e della collaborazione, vivendo esperienze
+                    che lasciano un segno duraturo nel loro percorso formativo.
+                  </p>
+                </div>
+              </div>
+              {/* Foto verticale */}
+              <div className="w-full aspect-[3/4] rounded-2xl bg-muted flex items-center justify-center overflow-hidden">
+                <span className="text-muted-foreground text-sm">Foto</span>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Famiglie */}
         <TextSection title="Le famiglie dentro il progetto">
