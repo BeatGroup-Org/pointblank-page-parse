@@ -30,10 +30,10 @@ const Index = () => (
     <Header />
     <main>
       <HeroSection />
-      <MousikeIntroSection />
       <StatsSection />
       <PartnerSection />
       <ProduzioniSection />
+      <MousikeIntroSection />
       <TeamSection />
       <CorsiSection />
       <EventiPreviewSection />
