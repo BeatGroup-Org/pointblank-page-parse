@@ -86,11 +86,6 @@ const ProgrammiEducativi = () => {
                   ascolto, rispetto e fiducia in sé stessi, aiutandoli a scoprire ed esprimere la propria
                   voce in armonia con gli altri.
                 </p>
-                <p>
-                  Anche il nome racconta lo spirito del progetto: <strong className="text-foreground">Ma Che Musica Maestro!</strong> richiama
-                  entusiasmo e allegria, ispirandosi alla famosa sigla di Canzonissima del 1970, interpretata
-                  da Raffaella Carrà, un simbolo di una musica che unisce, coinvolge e fa stare bene insieme.
-                </p>
               </div>
             </div>
           </div>
@@ -164,6 +159,11 @@ const ProgrammiEducativi = () => {
             sperimentare la collaborazione tra generazioni e vivere la musica come momento collettivo.
             In questo modo, la musica diventa strumento di legame, condivisione e inclusione, rendendo
             il percorso formativo un'esperienza completa e significativa per tutti.
+          </p>
+          <p>
+            Anche il nome racconta lo spirito del progetto: <strong className="text-foreground">Ma Che Musica Maestro!</strong> richiama
+            entusiasmo e allegria, ispirandosi alla famosa sigla di Canzonissima del 1970, interpretata
+            da Raffaella Carrà, un simbolo di una musica che unisce, coinvolge e fa stare bene insieme.
           </p>
         </TextSection>
 
