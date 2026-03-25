@@ -43,14 +43,14 @@ const Formazione = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Formazione Musicale — Mousikè</title>
+        <title>Formazione Musicale - Mousikè</title>
         <meta name="description" content="Corsi di musica individuali e collettivi a Lamezia Terme: canto, pianoforte, chitarra, batteria, basso, violino e musical." />
         <link rel="canonical" href="https://mousikeaps.it/formazione" />
-        <meta property="og:title" content="Formazione Musicale — Mousikè" />
+        <meta property="og:title" content="Formazione Musicale - Mousikè" />
         <meta property="og:description" content="Corsi di musica a Lamezia Terme: canto, pianoforte, chitarra, batteria, violino e musical. Mousikè APS." />
         <meta property="og:url" content="https://mousikeaps.it/formazione" />
         <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
-        <meta name="twitter:title" content="Formazione Musicale — Mousikè" />
+        <meta name="twitter:title" content="Formazione Musicale - Mousikè" />
         <meta name="twitter:description" content="Corsi di musica a Lamezia Terme: canto, pianoforte, chitarra, batteria, violino e musical. Mousikè APS." />
         <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
       </Helmet>
@@ -60,7 +60,7 @@ const Formazione = () => {
       <section className="pt-32 pb-16 bg-secondary">
         <div ref={heroRef} className="fade-in-section container mx-auto px-6">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
-            Mousikè — Formazione
+            Mousikè - Formazione
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.95] tracking-tight">
             Percorsi<br />Formativi
@@ -127,7 +127,7 @@ const CorsoRow = ({ corso }: { corso: Corso }) => {
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary text-xs font-medium text-foreground">
                     <Clock size={12} />
-                    1 volta / settimana — 1h 30
+                    1 volta / settimana - 1h 30
                   </span>
                 </div>
               </div>
@@ -143,7 +143,7 @@ const CorsoRow = ({ corso }: { corso: Corso }) => {
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary text-xs font-medium text-foreground">
                     <Clock size={12} />
-                    2 volte / settimana — 1h 30 ciascuno
+                    2 volte / settimana - 1h 30 ciascuno
                   </span>
                 </div>
               </div>

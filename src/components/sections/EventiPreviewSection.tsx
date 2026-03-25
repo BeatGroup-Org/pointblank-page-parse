@@ -17,7 +17,7 @@ const EventiPreviewSection = () => (
         </p>
       </div>
 
-      {/* Grid — primi 3 eventi */}
+      {/* Grid - primi 3 eventi */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {eventi.slice(0, 3).map((e) => (
           <EventCard key={e.id} evento={e} />

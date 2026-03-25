@@ -78,14 +78,14 @@ const Produzioni = () => {
   return (
     <>
       <Helmet>
-        <title>Produzioni Culturali — Mousikè</title>
+        <title>Produzioni Culturali - Mousikè</title>
         <meta name="description" content="Musical e spettacoli prodotti da Mousikè APS a Lamezia Terme: La Bella e la Bestia, Disney in Concerto e nuove produzioni." />
         <link rel="canonical" href="https://mousikeaps.it/produzioni" />
-        <meta property="og:title" content="Produzioni Culturali — Mousikè" />
+        <meta property="og:title" content="Produzioni Culturali - Mousikè" />
         <meta property="og:description" content="Musical e spettacoli prodotti da Mousikè APS a Lamezia Terme: La Bella e la Bestia, Disney in Concerto e nuove produzioni." />
         <meta property="og:url" content="https://mousikeaps.it/produzioni" />
         <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
-        <meta name="twitter:title" content="Produzioni Culturali — Mousikè" />
+        <meta name="twitter:title" content="Produzioni Culturali - Mousikè" />
         <meta name="twitter:description" content="Musical e spettacoli prodotti da Mousikè APS a Lamezia Terme: La Bella e la Bestia, Disney in Concerto e nuove produzioni." />
         <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/thZ330Re6XMnk35BVH7RLZnxa6R2/social-images/social-1770828975515-Sfondo_Logo.jpg" />
       </Helmet>
@@ -100,7 +100,7 @@ const Produzioni = () => {
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
               <div>
                 <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">
-                  Mousikè — Produzioni
+                  Mousikè - Produzioni
                 </p>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight">
                   Il percorso
@@ -111,7 +111,7 @@ const Produzioni = () => {
               <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
                 <p>
                   Da alcuni anni, Mousikè APS ha intrapreso con convinzione il
-                  percorso nel mondo dei musical — una scelta non casuale, poiché
+                  percorso nel mondo dei musical - una scelta non casuale, poiché
                   il nome stesso dell'associazione richiama la Mousikè greca, la
                   dea che unisce in sé le arti della musica, della danza e del
                   teatro.
