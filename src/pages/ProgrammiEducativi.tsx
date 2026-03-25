@@ -113,8 +113,13 @@ const ProgrammiEducativi = () => {
           <div ref={valoreRef} className="fade-in-section py-20 md:py-28 container mx-auto px-6 max-w-5xl">
             <div className="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-14 items-start">
               {/* Foto verticale */}
-              <div className="w-full aspect-[3/4] rounded-2xl bg-muted flex items-center justify-center overflow-hidden">
-                <span className="text-muted-foreground text-sm">Foto</span>
+              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden">
+                <img
+                  src="https://apsvfcqshxmqigyihehe.supabase.co/storage/v1/object/sign/Customers/Mousike/Ma%20che%20musica%20maestro/MaCheMusicaMaestro_valore%20del%20progetto.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jODgwZDk1Ny0wYzcxLTRjZmUtOWQwOS1iNDlmMjVhNjc4MmUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJDdXN0b21lcnMvTW91c2lrZS9NYSBjaGUgbXVzaWNhIG1hZXN0cm8vTWFDaGVNdXNpY2FNYWVzdHJvX3ZhbG9yZSBkZWwgcHJvZ2V0dG8uanBnIiwiaWF0IjoxNzc0NDU3NDkzLCJleHAiOjI2Mzg0NTc0OTN9.v32ZspfwDmZthgg2h5o52wuQa2TykBskwfZRlp57r34"
+                  alt="Il valore del progetto - Ma Che Musica Maestro!"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
               {/* Testo */}
               <div>
