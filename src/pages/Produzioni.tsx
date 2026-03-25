@@ -73,6 +73,7 @@ const Produzioni = () => {
   }, []);
 
   const heroRef = useFadeIn();
+  const impattoRef = useFadeIn();
   const ctaRef = useFadeIn();
 
   return (
@@ -168,7 +169,7 @@ const Produzioni = () => {
 
         {/* Impatto Sociale */}
         <section className="bg-secondary">
-          <div className="fade-in-section py-20 md:py-28 container mx-auto px-6 max-w-5xl">
+          <div ref={impattoRef} className="fade-in-section py-20 md:py-28 container mx-auto px-6 max-w-5xl">
             <div className="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-14 items-start">
               {/* Foto */}
               <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-muted flex items-center justify-center">
