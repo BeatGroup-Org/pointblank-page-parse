@@ -53,13 +53,14 @@ const MousikeIntroSection = () => {
               ? "font-semibold text-foreground"
               : "font-light text-muted-foreground";
             return (
-              <span
-                key={index}
-                className={`word-fade-in inline ${baseClass} ${visible ? "visible" : ""}`}
-                style={{ transitionDelay: `${index * 35}ms` }}
-              >
-                {italic ? <em>{word}</em> : word}
-              </span>{" "}
+              <span key={index}>
+                <span
+                  className={`word-fade-in inline ${baseClass} ${visible ? "visible" : ""}`}
+                  style={{ transitionDelay: `${index * 35}ms` }}
+                >
+                  {italic ? <em>{word}</em> : word}
+                </span>{" "}
+              </span>
             );
           })}
         </p>
