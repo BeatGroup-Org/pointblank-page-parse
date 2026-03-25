@@ -38,7 +38,6 @@ const Footer = () => (
             <a href="/staff" className="block hover:text-primary transition-colors">Team</a>
             <a href="/amministrazione-trasparente" className="block hover:text-primary transition-colors">Amministrazione Trasparente</a>
             <a href="/contatti" className="block hover:text-primary transition-colors">Contatti</a>
-            <a href="https://www.iubenda.com/privacy-policy/544f6a7b-1d0e-406f-ad85-5363aab12887" className="iubenda-nostyle iubenda-noiframe iubenda-embed block hover:text-primary transition-colors" title="Privacy Policy">Privacy Policy</a>
           </div>
         </div>
       </div>
