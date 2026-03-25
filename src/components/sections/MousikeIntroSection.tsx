@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-type Segment = { text: string; bold?: boolean; italic?: boolean };
+type Segment = { text: string; bold?: boolean; italic?: boolean; break?: boolean };
 
 const SEGMENTS: Segment[] = [
   { text: "Nella cultura greca, con la parola" },
