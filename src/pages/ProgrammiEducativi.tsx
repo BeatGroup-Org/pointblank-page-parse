@@ -42,6 +42,7 @@ const ProgrammiEducativi = () => {
   const ctaRef = useFadeIn();
   const valoreRef = useFadeIn();
   const collabRef = useFadeIn();
+  const famiglieRef = useFadeIn();
 
   return (
     <>
@@ -178,21 +179,37 @@ const ProgrammiEducativi = () => {
         </section>
 
         {/* Famiglie */}
-        <TextSection title="Le famiglie dentro il progetto">
-          <p>
-            Uno degli aspetti più belli di <strong className="text-foreground">Ma Che Musica Maestro!</strong> è
-            il coinvolgimento attivo delle famiglie. Nel tempo, genitori e figli hanno condiviso prove,
-            concerti ed emozioni. Partecipare insieme permette di rafforzare i legami familiari,
-            sperimentare la collaborazione tra generazioni e vivere la musica come momento collettivo.
-            In questo modo, la musica diventa strumento di legame, condivisione e inclusione, rendendo
-            il percorso formativo un'esperienza completa e significativa per tutti.
-          </p>
-          <p>
-            Anche il nome racconta lo spirito del progetto: <strong className="text-foreground">Ma Che Musica Maestro!</strong> richiama
-            entusiasmo e allegria, ispirandosi alla famosa sigla di Canzonissima del 1970, interpretata
-            da Raffaella Carrà, un simbolo di una musica che unisce, coinvolge e fa stare bene insieme.
-          </p>
-        </TextSection>
+        <section className="bg-background">
+          <div ref={famiglieRef} className="fade-in-section py-20 md:py-28 container mx-auto px-6 max-w-5xl">
+            <div className="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-14 items-start">
+              {/* Foto verticale */}
+              <div className="w-full aspect-[3/4] rounded-2xl bg-muted flex items-center justify-center overflow-hidden">
+                <span className="text-muted-foreground text-sm">Foto</span>
+              </div>
+              {/* Testo */}
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-8">
+                  Le famiglie dentro il progetto
+                </h2>
+                <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
+                  <p>
+                    Uno degli aspetti più belli di <strong className="text-foreground">Ma Che Musica Maestro!</strong> è
+                    il coinvolgimento attivo delle famiglie. Nel tempo, genitori e figli hanno condiviso prove,
+                    concerti ed emozioni. Partecipare insieme permette di rafforzare i legami familiari,
+                    sperimentare la collaborazione tra generazioni e vivere la musica come momento collettivo.
+                    In questo modo, la musica diventa strumento di legame, condivisione e inclusione, rendendo
+                    il percorso formativo un'esperienza completa e significativa per tutti.
+                  </p>
+                  <p>
+                    Anche il nome racconta lo spirito del progetto: <strong className="text-foreground">Ma Che Musica Maestro!</strong> richiama
+                    entusiasmo e allegria, ispirandosi alla famosa sigla di Canzonissima del 1970, interpretata
+                    da Raffaella Carrà, un simbolo di una musica che unisce, coinvolge e fa stare bene insieme.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* CTA */}
         <section className="bg-secondary">
