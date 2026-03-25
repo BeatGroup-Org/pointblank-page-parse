@@ -106,29 +106,45 @@ const ProgrammiEducativi = () => {
         </section>
 
         {/* Formazione e palcoscenico */}
-        <TextSection title="Il valore del progetto: dove la formazione incontra il palcoscenico">
-          <p>
-            Nel corso degli anni, <strong className="text-foreground">Ma Che Musica Maestro!</strong> ha
-            coinvolto centinaia di giovani in un percorso continuo in cui la formazione musicale si
-            intreccia con l'esperienza diretta del palcoscenico, tra prove, studio e condivisione.
-          </p>
-          <p>
-            Il progetto prende forma in spettacoli dal vivo, concerti e produzioni musicali ospitati
-            nei teatri e nei luoghi più significativi del territorio. In questi momenti, il lavoro
-            svolto durante l'anno permette ai partecipanti di mettere in pratica le competenze
-            acquisite, esprimere il proprio talento e vivere pienamente la propria dimensione artistica.
-          </p>
-          <p>
-            Questo incontro tra apprendimento e scena contribuisce a far emergere sensibilità,
-            attitudini e capacità espressive, accompagnando i giovani in un percorso di crescita
-            artistica e personale.
-          </p>
-          <p>
-            Alcuni di loro hanno poi proseguito il proprio cammino nel mondo della musica e dello
-            spettacolo, portando con sé un'esperienza nata proprio all'interno di un'iniziativa
-            costruita con serietà, cura e visione.
-          </p>
-        </TextSection>
+        <section className="bg-background">
+          <div className="fade-in-section py-20 md:py-28 container mx-auto px-6 max-w-5xl">
+            <div className="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-14 items-start">
+              {/* Foto verticale */}
+              <div className="w-full aspect-[3/4] rounded-2xl bg-muted flex items-center justify-center overflow-hidden">
+                <span className="text-muted-foreground text-sm">Foto</span>
+              </div>
+              {/* Testo */}
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-8">
+                  Il valore del progetto: dove la formazione incontra il palcoscenico
+                </h2>
+                <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
+                  <p>
+                    Nel corso degli anni, <strong className="text-foreground">Ma Che Musica Maestro!</strong> ha
+                    coinvolto centinaia di giovani in un percorso continuo in cui la formazione musicale si
+                    intreccia con l'esperienza diretta del palcoscenico, tra prove, studio e condivisione.
+                  </p>
+                  <p>
+                    Il progetto prende forma in spettacoli dal vivo, concerti e produzioni musicali ospitati
+                    nei teatri e nei luoghi più significativi del territorio. In questi momenti, il lavoro
+                    svolto durante l'anno permette ai partecipanti di mettere in pratica le competenze
+                    acquisite, esprimere il proprio talento e vivere pienamente la propria dimensione artistica.
+                  </p>
+                  <p>
+                    Questo incontro tra apprendimento e scena contribuisce a far emergere sensibilità,
+                    attitudini e capacità espressive, accompagnando i giovani in un percorso di crescita
+                    artistica e personale.
+                  </p>
+                  <p>
+                    Alcuni di loro hanno poi proseguito il proprio cammino nel mondo della musica e dello
+                    spettacolo, portando con sé un'esperienza nata proprio all'interno di un'iniziativa
+                    costruita con serietà, cura e visione.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Collaborazioni */}
         <TextSection title="Collaborazioni e incontri che lasciano il segno" alt>
