@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import { trackContactConversion } from "@/lib/trackConversion";
 
 const Footer = () => (
   <footer id="contatti" className="bg-foreground text-card py-16">
@@ -19,10 +20,10 @@ const Footer = () => (
             <a href="https://maps.google.com/?q=Via+Duca+d'Aosta+23+88046+Lamezia+Terme+CZ" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
               <MapPin size={16} /> Via Duca d'Aosta, 23, 88046 Lamezia Terme CZ
             </a>
-            <a href="tel:+393339568927" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <a href="tel:+393339568927" onClick={trackContactConversion} className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone size={16} /> +39 333 956 8927
             </a>
-            <a href="mailto:mousike.aps@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <a href="mailto:mousike.aps@gmail.com" onClick={trackContactConversion} className="flex items-center gap-2 hover:text-primary transition-colors">
               <Mail size={16} /> mousike.aps@gmail.com
             </a>
           </div>

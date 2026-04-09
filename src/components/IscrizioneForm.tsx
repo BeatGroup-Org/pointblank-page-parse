@@ -6,6 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { trackContactConversion } from "@/lib/trackConversion";
 
 interface IscrizioneFormProps {
   titoloEvento: string;
@@ -74,6 +75,7 @@ const IscrizioneForm = ({ titoloEvento, whatsappNumero }: IscrizioneFormProps) =
     lines.push("", "Accetto il trattamento dati (GDPR 679/2016)");
 
     const url = `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(lines.join("\n"))}`;
+    trackContactConversion();
     window.open(url, "_blank", "noopener,noreferrer");
   };
 

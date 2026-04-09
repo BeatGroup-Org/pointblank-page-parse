@@ -19,6 +19,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackContactConversion } from "@/lib/trackConversion";
 
 type Argomento =
   | "info-corsi"
@@ -290,7 +291,7 @@ const Contatti = () => {
                   size="lg"
                   className="h-auto py-5 rounded-xl bg-[hsl(142,70%,40%)] hover:bg-[hsl(142,70%,35%)] text-white flex flex-col items-center gap-2"
                 >
-                  <a href={waUrl} target="_blank" rel="noopener noreferrer">
+                  <a href={waUrl} target="_blank" rel="noopener noreferrer" onClick={trackContactConversion}>
                     <MessageCircle size={24} />
                     <span className="text-sm font-semibold">WhatsApp</span>
                   </a>
@@ -302,7 +303,7 @@ const Contatti = () => {
                   variant="outline"
                   className="h-auto py-5 rounded-xl flex flex-col items-center gap-2"
                 >
-                  <a href={mailUrl}>
+                  <a href={mailUrl} onClick={trackContactConversion}>
                     <Mail size={24} />
                     <span className="text-sm font-semibold">Email</span>
                   </a>
@@ -314,7 +315,7 @@ const Contatti = () => {
                   variant="outline"
                   className="h-auto py-5 rounded-xl flex flex-col items-center gap-2"
                 >
-                  <a href={telUrl}>
+                  <a href={telUrl} onClick={trackContactConversion}>
                     <Phone size={24} />
                     <span className="text-sm font-semibold">Chiama</span>
                   </a>
