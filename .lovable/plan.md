@@ -1,23 +1,35 @@
 
 
-## Piano: Aggiungere Google Ads gtag.js
+## Piano: Tracciamento conversioni Google Ads sui click di contatto
 
-### Modifica
+### Cosa fare
 
-**File**: `index.html`
+1. **Creare un helper centralizzato** `src/lib/trackConversion.ts` con la funzione:
+   ```ts
+   export const trackContactConversion = () => {
+     if (typeof window.gtag === 'function') {
+       window.gtag('event', 'conversion', {
+         'send_to': 'AW-18032101058/OLHICIX5ypIcEMKNsJZD'
+       });
+     }
+   };
+   ```
 
-Inserire lo snippet Google Tag nel `<head>`, subito dopo `<meta charset="UTF-8" />` e prima degli altri meta tag:
+2. **Aggiungere la dichiarazione TypeScript per gtag** in `src/vite-env.d.ts`:
+   ```ts
+   declare function gtag(...args: any[]): void;
+   interface Window { gtag: typeof gtag; }
+   ```
 
-```html
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18032101058"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18032101058');
-</script>
-```
+3. **Aggiungere `onClick={trackContactConversion}`** ai link di contatto (tel:, mailto:, wa.me) in questi file:
+   - `src/pages/Contatti.tsx` — 3 bottoni (WhatsApp, Email, Chiama)
+   - `src/components/ContactFab.tsx` — 2 link (tel, mailto)
+   - `src/components/Footer.tsx` — 2 link (tel, mailto)
+   - `src/components/Header.tsx` — 2 link (tel, mailto)
+   - `src/pages/EventoDetail.tsx` — link tel, mailto, e bottone WhatsApp
+   - `src/components/IscrizioneForm.tsx` — nel `window.open` del WhatsApp (chiamare prima di `window.open`)
 
-Essendo nel `index.html` (punto di ingresso unico della SPA), si carica automaticamente su tutte le pagine.
+### Note
+- Non si blocca la navigazione: `onClick` viene eseguito prima che il browser segua l'`href`
+- Il check `typeof window.gtag === 'function'` evita errori se gtag non è caricato
 
