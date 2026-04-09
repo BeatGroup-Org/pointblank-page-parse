@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import { MapPin, Phone, Mail, Facebook, Instagram } from "lucide-react";
+import { trackContactConversion } from "@/lib/trackConversion";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(CustomEase);
@@ -283,11 +284,11 @@ const Header = () => {
                 Via Duca d'Aosta, 23 – Lamezia Terme (CZ)
               </a>
               <div className="flex items-center gap-4">
-                <a href="tel:+393339568927" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
+                <a href="tel:+393339568927" onClick={trackContactConversion} className="flex items-center gap-1.5 hover:text-foreground transition-colors">
                   <Phone size={13} className="shrink-0" />
                   +39 333 956 8927
                 </a>
-                <a href="mailto:mousike.aps@gmail.com" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
+                <a href="mailto:mousike.aps@gmail.com" onClick={trackContactConversion} className="flex items-center gap-1.5 hover:text-foreground transition-colors">
                   <Mail size={13} className="shrink-0" />
                   mousike.aps@gmail.com
                 </a>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { X, MapPin, Phone, Mail, Facebook, Instagram } from "lucide-react";
+import { trackContactConversion } from "@/lib/trackConversion";
 const ContactFab = () => {
   const [open, setOpen] = useState(false);
 
@@ -21,6 +22,7 @@ const ContactFab = () => {
             </a>
             <a
               href="tel:+393339568927"
+              onClick={trackContactConversion}
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Phone size={16} className="shrink-0" />
@@ -28,6 +30,7 @@ const ContactFab = () => {
             </a>
             <a
               href="mailto:mousike.aps@gmail.com"
+              onClick={trackContactConversion}
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail size={16} className="shrink-0" />
