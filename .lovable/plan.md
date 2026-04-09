@@ -1,20 +1,23 @@
 
 
-## Piano: Spostare la sezione MousikeIntro sotto "Produciamo Cultura"
+## Piano: Aggiungere Google Ads gtag.js
 
 ### Modifica
 
-**File**: `src/pages/Index.tsx`
+**File**: `index.html`
 
-Spostare `<MousikeIntroSection />` dalla posizione attuale (dopo `<HeroSection />`) a dopo `<ProduzioniSection />`.
+Inserire lo snippet Google Tag nel `<head>`, subito dopo `<meta charset="UTF-8" />` e prima degli altri meta tag:
 
-Sequenza attuale:
-```text
-Hero → MousikeIntro → Stats → Partner → Produzioni → Team → Corsi → Eventi → Gallery → Impatto
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18032101058"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18032101058');
+</script>
 ```
 
-Nuova sequenza:
-```text
-Hero → Stats → Partner → Produzioni → MousikeIntro → Team → Corsi → Eventi → Gallery → Impatto
-```
+Essendo nel `index.html` (punto di ingresso unico della SPA), si carica automaticamente su tutte le pagine.
 
